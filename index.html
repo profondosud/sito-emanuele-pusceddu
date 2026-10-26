@@ -753,11 +753,8 @@ html { scroll-padding-top: 124px; }
 <script>
 (function () {
   var intro = document.getElementById('race-intro');
-  var key = 'push-intro-v3';
   var replay = new URLSearchParams(location.search).get('intro') === '1';
-  var seen = false;
-  try { seen = sessionStorage.getItem(key) === '1'; } catch (e) {}
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches || (seen && !replay) || (location.hash && !replay)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || (location.hash && !replay)) return;
   intro.hidden = false;
   intro.style.animation = 'none';
   intro.style.background = 'transparent';
@@ -779,7 +776,6 @@ html { scroll-padding-top: 124px; }
     if (title) title.style.visibility = '';
     intro.hidden = true;
     document.documentElement.style.overflow = previousOverflow;
-    try { sessionStorage.setItem(key, '1'); } catch (e) {}
     document.removeEventListener('keydown', escapeIntro);
     window.removeEventListener('resize', finish);
   }
