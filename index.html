@@ -660,6 +660,11 @@ html { scroll-padding-top: 124px; }
 .lang-btn { background: transparent; border: 1px solid #3a3a3a; color: var(--muted); font-family: var(--font-title); font-weight: 700; font-size: .8rem; letter-spacing: .08em; padding: 5px 10px; cursor: pointer; border-radius: 2px; }
 .lang-btn:hover, .lang-btn:focus-visible { color: var(--fg); border-color: var(--fg); }
 .lang-btn[aria-pressed="true"] { background: var(--red-grad); border-color: transparent; color: var(--fg); }
+/* Galleria stagione 2026 */
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 28px; }
+@media (min-width: 900px) { .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+.photo-grid img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+.photo-grid img:nth-child(6n+1), .photo-grid img:nth-child(6n+6) { aspect-ratio: 2 / 3; }
 </style>
 </head>
 <body>
@@ -791,16 +796,22 @@ html { scroll-padding-top: 124px; }
     <section id="stagione">
       <div class="rule"></div>
       <h2>Stagione <span class="red">2026</span></h2>
-      <p class="sub">La stagione 2026 risulta conclusa. Posizione finale e statistiche complete da confermare con le classifiche ufficiali.</p>
+      <p class="sub">Il ritorno nella classe regina, la Superbike del CIV, dopo aver lottato più volte per il titolo nella Supersport 600. Una stagione di crescita: più volte in lotta per il podio, in più occasioni la migliore delle BMW in pista, chiusa in sesta posizione in classifica.</p>
       <div class="cards three">
         <div class="card"><h3>Campionato</h3><p>Campionato Italiano Velocità, categoria 1000.</p></div>
         <div class="card"><h3>Team</h3><p>Axon Seven Team.</p></div>
         <div class="card"><h3>Moto</h3><p>BMW S 1000 RR.</p></div>
       </div>
-      <div class="gallery" style="margin-top:24px">
-        <div class="photo-ph land">Foto in gara 2026</div>
-        <div class="photo-ph land">Foto paddock 2026</div>
-        <div class="photo-ph land">Foto podio o gara 2026</div>
+      <div class="photo-grid">
+        <img src="stagione-01.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
+        <img src="stagione-02.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
+        <img src="stagione-03.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
+        <img src="stagione-04.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
+        <img src="stagione-05.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
+        <img src="stagione-06.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
+        <img src="stagione-07.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
+        <img src="stagione-08.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
+        <img src="stagione-09.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy">
       </div>
     </section>
 
