@@ -745,6 +745,19 @@ section:first-of-type { padding-top: 120px; }
   #evento h2 { font-size: clamp(2.25rem,4vw,3.35rem); }
   #evento::before { background: linear-gradient(90deg,rgba(8,8,9,.03) 0%,rgba(8,8,9,.08) 40%,rgba(8,8,9,.78) 66%,#080809 100%),linear-gradient(0deg,#080809,transparent 28%,transparent 76%,#080809); }
 }
+/* Apertura partner: titolo editoriale e testo su una griglia comune. */
+#partners-page .back { margin: 0 0 36px; font-size: .75rem; }
+#partners-page .back a { color: #a0a0a7; text-decoration: none; }
+#partners-page .back a:hover { color: #fff; }
+.partner-intro-text { position: relative; max-width: none; margin: 0 0 54px; padding: 26px 0 36px; display: grid; grid-template-columns: 1.1fr 1fr; column-gap: clamp(28px,5vw,72px); border-bottom: 1px solid rgba(255,255,255,.12); background: radial-gradient(ellipse at 15% 45%,rgba(241,43,54,.07),transparent 65%); }
+.partner-intro-text .civ-label { grid-column: 1 / -1; margin: 0 0 22px; font-size: .7rem; letter-spacing: .19em; }
+.partner-intro-title { margin: 0; width: auto; max-width: none; font-size: clamp(2.6rem,5.2vw,4.7rem); line-height: .96; letter-spacing: -.015em; text-wrap: initial; }
+.partner-intro-title span { color: #f12b36; }
+.partner-intro-copy { padding-top: 2px; }
+.partner-intro-text .sub { max-width: none; font-size: .9rem; line-height: 1.8; color: #a6a6af; margin: 0 0 18px; }
+.partner-intro-text .partner-intro-lead { color: #f2f2f4; font-size: 1.05rem; line-height: 1.6; }
+.partner-intro-foot { font-size: .72rem; line-height: 1.7; color: #8d8d96; margin: 24px 0 0; padding-left: 16px; border-left: 2px solid #f12b36; }
+@media (max-width: 639px) { .partner-intro-text { grid-template-columns: 1fr; gap: 0; margin-bottom: 32px; } .partner-intro-title { margin-bottom: 28px; font-size: clamp(2.8rem,11vw,4rem); } }
 </style>
 </head>
 <body>
@@ -770,8 +783,12 @@ section:first-of-type { padding-top: 120px; }
       <p class="back"><a href="index.html#partner">← Torna alla home</a></p>
       <div class="partner-intro-text">
         <p class="civ-label">Perché sponsorizzare Emanuele</p>
-        <p class="sub">Emanuele corre in un campionato di rilievo, seguito da un pubblico ampio e appassionato. Chi sceglie di affiancare il suo nome entra in una vetrina con una visibilità costante, dalle gare in pista alle dirette televisive e ai canali social del pilota.</p>
-        <p class="sub">Le pagine che seguono raccolgono i dati del campionato e dell'evento in cui Emanuele è protagonista, per mostrare con numeri concreti il valore di questa collaborazione.</p>
+        <h1 class="partner-intro-title">La tua azienda.<br><span>La nostra corsa.</span></h1>
+        <div class="partner-intro-copy">
+          <p class="sub partner-intro-lead">Affianca Emanuele e porta il tuo brand nel mondo del Campionato Italiano Velocità.</p>
+          <p class="sub">Un pubblico appassionato, la visibilità delle gare e delle dirette televisive, il racconto quotidiano sui canali social. Un percorso da costruire insieme, dentro e fuori la pista.</p>
+          <p class="partner-intro-foot">Il campionato, gli eventi, i numeri: scopri il valore di questa collaborazione.</p>
+        </div>
       </div>
       <div class="civ-grid">
         <div class="civ-info">
