@@ -629,6 +629,15 @@ section:first-of-type { padding-top: 120px; }
 .civ-bullets b { color: var(--fg); }
 .civ-source { color: var(--muted); font-size: .8rem; margin: 0 0 22px; }
 .civ-photo img { width: 100%; height: auto; display: block; border-left: 3px solid #e10600; box-shadow: 0 24px 50px rgba(0,0,0,.6); }
+/* Valore per gli sponsor: schema dal sito di riferimento, colori Emanuele */
+.val-section { border-top: 1px solid var(--line); padding-block: 56px 72px; }
+.val-section h2 { font-size: clamp(2.2rem, 7vw, 3.8rem); }
+.val-grid { display: grid; grid-template-columns: 1fr; gap: 22px 28px; margin-top: 28px; }
+@media (min-width: 700px) { .val-grid { grid-template-columns: repeat(3, 1fr); } }
+.val-item { border-left: 3px solid #e10600; padding: 4px 0 4px 16px; }
+.val-item b { display: block; font-family: var(--font-title); font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); line-height: 1; background: linear-gradient(90deg, #ff3b2a, #e10600 60%, #7a0000); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.val-item span { display: block; margin-top: 8px; color: #fff; font-size: 1rem; }
+.val-item small { display: block; margin-top: 4px; color: var(--muted); font-size: .8rem; }
 </style>
 </head>
 <body>
@@ -672,6 +681,20 @@ section:first-of-type { padding-top: 120px; }
         </div>
         <div class="civ-photo"><img src="partners-hero.jpg" alt="Emanuele Pusceddu in pista"></div>
       </div>
+    </section>
+
+    <section id="valore" class="val-section">
+      <p class="civ-label">Il valore per gli sponsor</p>
+      <h2>Una vetrina <span class="civ-outline">che cresce</span></h2>
+      <div class="val-grid">
+        <div class="val-item"><b>DA VERIFICARE</b><span>valore mediatico per gli sponsor</span><small>fonte da confermare</small></div>
+        <div class="val-item"><b>DA VERIFICARE</b><span>contatti tra web, stampa e TV</span><small>fonte da confermare</small></div>
+        <div class="val-item"><b>DA VERIFICARE</b><span>spettatori TV</span><small>fonte da confermare</small></div>
+        <div class="val-item"><b>DA VERIFICARE</b><span>ore di messa in onda</span><small>fonte da confermare</small></div>
+        <div class="val-item"><b>DA VERIFICARE</b><span>articoli online</span><small>fonte da confermare</small></div>
+        <div class="val-item"><b>DA VERIFICARE</b><span>impression digitali</span><small>fonte da confermare</small></div>
+      </div>
+      <p class="civ-source">Fonte: da inserire, con la pubblicazione ufficiale del campionato.</p>
     </section>
   </div>
 </main>
