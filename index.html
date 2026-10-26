@@ -51,6 +51,8 @@ a { color: var(--fg); }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
 .logo { font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; text-transform: uppercase; letter-spacing: .04em; text-decoration: none; }
 .logo-img { height: 34px; width: auto; }
+#profilo { position: relative; }
+.num-deco { position: absolute; right: 0; top: 40px; width: min(170px, 36vw); height: auto; opacity: .9; pointer-events: none; }
 .nav { display: flex; gap: 18px; flex-wrap: wrap; }
 .nav a { text-decoration: none; font-size: .9rem; color: var(--muted); }
 .nav a:hover, .nav a:focus-visible { color: var(--fg); }
@@ -234,6 +236,7 @@ footer button { background: none; border: 0; color: var(--muted); text-decoratio
 
   <div class="wrap">
     <section id="profilo">
+      <img class="num-deco" src="numero-6-rosso.png" alt="" aria-hidden="true">
       <div class="grid-2">
         <div class="photo-ph">Ritratto<br>da caricare</div>
         <div>
