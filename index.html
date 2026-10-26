@@ -503,6 +503,25 @@ html { scroll-padding-top: 124px; }
   .hero .actions { margin-top: 16px; }
 }
 
+/* Testi sotto la foto: il pilota resta completamente libero. */
+.hero { display: flex; flex-direction: column; min-height: 0; }
+.hero-photo {
+  position: relative;
+  inset: auto;
+  flex: none;
+  width: calc(100% - clamp(24px, 6vw, 84px));
+  height: min(840px, 90svh);
+  margin: 12px auto 0;
+}
+.hero-content {
+  flex: none;
+  align-self: auto;
+  padding: 24px clamp(20px, 5vw, 72px) 56px;
+}
+@media (max-width: 700px) {
+  .hero-photo { width: calc(100% - 16px); height: 68svh; min-height: 400px; margin-top: 8px; }
+  .hero-content { padding: 24px 18px 42px; }
+}
 </style>
 </head>
 <body>
@@ -528,11 +547,6 @@ html { scroll-padding-top: 124px; }
       <!-- FOTO APERTURA: sostituire il segnaposto con la foto ad alta risoluzione in azione -->
       <p class="eyebrow">Campionato Italiano Velocità · 2026</p>
       <h1>Emanuele <span class="accent">Pusceddu</span></h1>
-      <div class="stats">
-        <div class="stat"><b>Nº DA DEFINIRE</b><small>Numero di gara</small></div>
-        <div class="stat"><b>BMW S 1000 RR</b><small>Moto 2026</small></div>
-        <div class="stat"><b>Axon Seven</b><small>Team 2026</small></div>
-      </div>
       <div class="actions">
         <a class="btn" href="#contatti">Proponi una partnership</a>
         <a class="btn ghost" href="#profilo">Conosci Emanuele</a>
