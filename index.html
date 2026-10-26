@@ -613,7 +613,8 @@ html { scroll-padding-top: 124px; }
 .ig-bullets li::before { content: "◆ "; color: var(--red); }
 .ig-bullets b { font-family: var(--font-title); font-size: 1.15rem; }
 .ig-note { margin: 0; color: var(--muted); font-size: .8rem; }
-.ig-phone { width: 100%; max-width: 330px; justify-self: center; border: 1px solid #3a3a3a; border-radius: 34px; background: #0c0c0c; padding: 10px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(225,6,0,.15); }
+.ig-phone { position: relative; width: 100%; max-width: 330px; justify-self: center; border: 1px solid rgba(255,255,255,.28); border-radius: 34px; background: #0c0c0c; padding: 0; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 0 46px rgba(255,255,255,.14), 0 30px 60px rgba(0,0,0,.6); }
+.ig-phone::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(120% 60% at 15% 0%, rgba(255,255,255,.22), rgba(255,255,255,0) 55%), radial-gradient(90% 50% at 100% 100%, rgba(255,255,255,.10), rgba(255,255,255,0) 60%); }
 .ig-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
 .ig-user { font-family: var(--font-title); font-weight: 700; font-size: 1.05rem; }
 .ig-head { display: flex; gap: 14px; align-items: center; }
@@ -630,7 +631,8 @@ html { scroll-padding-top: 124px; }
 .ig-hl small { font-size: .62rem; color: var(--muted); }
 .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .ig-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
-.ig-phone img { display: block; width: 100%; height: auto; border-radius: 26px; image-rendering: -webkit-optimize-contrast; }
+.ig-phone img { display: block; width: 100%; height: auto; image-rendering: -webkit-optimize-contrast; }
+@media (min-width: 900px) { #social .ig-phone { margin-top: -48px; } }
 
 /* Pannello contatto in basso a destra */
 .mail-panel { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); width: min(380px, calc(100vw - 32px)); background: var(--bg-2); border: 1px solid var(--line); border-top: 3px solid var(--red); box-shadow: 0 24px 60px rgba(0,0,0,.6); padding: 20px; z-index: 30; max-height: calc(100vh - 32px); overflow-y: auto; }
