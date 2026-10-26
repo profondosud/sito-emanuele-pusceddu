@@ -617,7 +617,7 @@ html { scroll-padding-top: 124px; }
 .ig-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
 .ig-user { font-family: var(--font-title); font-weight: 700; font-size: 1.05rem; }
 .ig-head { display: flex; gap: 14px; align-items: center; }
-.ig-avatar { width: 72px; height: 72px; flex: 0 0 auto; border-radius: 50%; background: var(--red-grad); padding: 2px; box-sizing: border-box; border: 0; }
+.ig-avatar { width: 72px; height: 72px; flex: 0 0 auto; border-radius: 50%; object-fit: cover; border: 2px solid #e10600; box-sizing: border-box; }
 .ig-counts { display: flex; gap: 14px; flex: 1; justify-content: space-between; text-align: center; }
 .ig-counts b { display: block; font-family: var(--font-title); font-size: 1.05rem; line-height: 1; }
 .ig-counts small { font-size: .7rem; color: var(--muted); }
@@ -629,7 +629,7 @@ html { scroll-padding-top: 124px; }
 .ig-hl span { width: 52px; height: 52px; border-radius: 50%; border: 2px solid #3a3a3a; background: #1a1a1a; }
 .ig-hl small { font-size: .62rem; color: var(--muted); }
 .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.ig-thumb { aspect-ratio: 1 / 1; background: #161616; border: 1px dashed #333; }
+.ig-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
 </style>
 </head>
 <body>
@@ -792,7 +792,7 @@ html { scroll-padding-top: 124px; }
             <span class="ig-user">emanuele_pusceddu</span>
           </div>
           <div class="ig-head">
-            <div class="ig-avatar"></div>
+            <img class="ig-avatar" src="profilo-ig.jpg" alt="Emanuele Pusceddu">
             <div class="ig-counts">
               <div><b>489</b><small>post</small></div>
               <div><b>10,7 mila</b><small>follower</small></div>
@@ -813,12 +813,9 @@ html { scroll-padding-top: 124px; }
             <div class="ig-hl"><span></span><small>Texas</small></div>
           </div>
           <div class="ig-grid">
-            <div class="ig-thumb"></div>
-            <div class="ig-thumb"></div>
-            <div class="ig-thumb"></div>
-            <div class="ig-thumb"></div>
-            <div class="ig-thumb"></div>
-            <div class="ig-thumb"></div>
+            <img src="post-1.jpg" alt="Post Instagram 1">
+            <img src="post-2.jpg" alt="Post Instagram 2">
+            <img src="post-3.jpg" alt="Post Instagram 3">
           </div>
         </div>
       </div>
