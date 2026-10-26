@@ -728,6 +728,15 @@ html { scroll-padding-top: 124px; }
 }
 #partner .actions { justify-content: center; margin-top: 32px; }
 #partner .actions .btn { text-align: center; max-width: 100%; }
+/* Mobile: fotografia intera invece del ritaglio verticale. */
+@media(max-width: 700px) {
+ .hero { min-height: 0; padding-top: 120px; display: flex; flex-direction: column; }
+ .hero-photo { position: relative; inset: auto; flex: none; width: 100%; height: auto; aspect-ratio: 1600 / 1066; margin: 0; background-size: cover,cover,cover,contain; background-position: center,center,center,center; background-color: #080809; }
+ .hero-content { position: relative; width: 100%; padding: 14px 16px 34px; margin: 0; }
+ .hero .eyebrow { font-size: .6rem; letter-spacing: .12em; }
+ .hero h1 { font-size: clamp(1.7rem,8vw,3.6rem); }
+ .hero .actions { margin-top: 20px; }
+}
 </style>
 </head>
 <body>
