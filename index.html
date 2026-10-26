@@ -631,6 +631,21 @@ html { scroll-padding-top: 124px; }
 .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .ig-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
 .ig-phone img { display: block; width: 100%; height: auto; border-radius: 26px; }
+
+/* Pannello contatto in basso a destra */
+.mail-panel { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); width: min(380px, calc(100vw - 32px)); background: var(--bg-2); border: 1px solid var(--line); border-top: 3px solid var(--red); box-shadow: 0 24px 60px rgba(0,0,0,.6); padding: 20px; z-index: 30; max-height: calc(100vh - 32px); overflow-y: auto; }
+.mail-panel[hidden] { display: none; }
+.mail-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+.mail-title { margin: 0; font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; text-transform: uppercase; line-height: 1; }
+.mail-title .red { background: var(--red-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.mail-close { background: none; border: 0; color: var(--muted); font-size: 1.6rem; line-height: 1; cursor: pointer; padding: 0 4px; }
+.mail-close:hover, .mail-close:focus-visible { color: var(--fg); }
+.mail-field { display: grid; gap: 6px; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.mail-field input, .mail-field textarea { font: inherit; font-size: .95rem; letter-spacing: 0; text-transform: none; color: var(--fg); background: #0d0d0d; border: 1px solid #333; padding: 10px 12px; border-radius: 2px; width: 100%; }
+.mail-field input:focus, .mail-field textarea:focus { outline: 2px solid var(--red); outline-offset: 1px; border-color: transparent; }
+.mail-field textarea { resize: vertical; min-height: 96px; }
+.mail-send { width: 100%; border: 0; cursor: pointer; }
+.mail-status { margin: 12px 0 0; font-size: .85rem; color: var(--muted); min-height: 1.2em; }
 </style>
 </head>
 <body>
@@ -733,7 +748,7 @@ html { scroll-padding-top: 124px; }
       <p class="eyebrow">Campionato Italiano Velocità · 2026</p>
       <h1>Emanuele <span class="accent">Pusceddu</span></h1>
       <div class="actions">
-        <a class="btn" href="contatti.html">Proponi una partnership</a>
+        <a class="btn" href="contatti.html" data-contact-open>Proponi una partnership</a>
         <a class="btn ghost" href="#profilo">Conosci Emanuele</a>
       </div>
     </div>
@@ -800,7 +815,7 @@ html { scroll-padding-top: 124px; }
         <div class="partner">Partner 4<br>da caricare</div>
       </div>
       <div class="actions">
-        <a class="btn" href="contatti.html">Diventa partner</a>
+        <a class="btn" href="contatti.html" data-contact-open>Diventa partner</a>
       </div>
     </section>
 
@@ -813,6 +828,29 @@ html { scroll-padding-top: 124px; }
     <span><button type="button" id="cookie-open">Cookie</button></span>
   </div>
 </footer>
+
+<div class="mail-panel" id="mail-panel" role="dialog" aria-modal="false" aria-labelledby="mail-title" hidden>
+  <div class="mail-head">
+    <p id="mail-title" class="mail-title">Proponi una <span class="red">partnership</span></p>
+    <button type="button" class="mail-close" id="mail-close" aria-label="Chiudi">×</button>
+  </div>
+  <form id="mail-form" novalidate>
+    <label class="mail-field">Nome e cognome
+      <input type="text" name="nome" autocomplete="name" required>
+    </label>
+    <label class="mail-field">Azienda
+      <input type="text" name="azienda" autocomplete="organization">
+    </label>
+    <label class="mail-field">Email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label class="mail-field">Messaggio
+      <textarea name="messaggio" rows="4" required></textarea>
+    </label>
+    <button type="submit" class="btn mail-send">Invia messaggio</button>
+    <p class="mail-status" id="mail-status" role="status" aria-live="polite"></p>
+  </form>
+</div>
 
 <div class="cookie" id="cookie" role="region" aria-label="Avviso cookie" hidden>
   <p>Questo sito usa solo strumenti tecnici. Nessun cookie di profilazione o statistica.</p>
@@ -835,6 +873,35 @@ html { scroll-padding-top: 124px; }
     try { localStorage.setItem(KEY, "1"); } catch (e) {}
   });
   open.addEventListener("click", function () { box.hidden = false; });
+})();
+</script>
+<script>
+(function () {
+  var panel = document.getElementById('mail-panel');
+  var closeBtn = document.getElementById('mail-close');
+  var form = document.getElementById('mail-form');
+  var status = document.getElementById('mail-status');
+  if (!panel) return;
+  document.querySelectorAll('[data-contact-open]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      panel.hidden = false;
+      var first = panel.querySelector('input');
+      if (first) first.focus();
+    });
+  });
+  closeBtn.addEventListener('click', function () { panel.hidden = true; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.hidden) panel.hidden = true;
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      status.textContent = 'Compila nome, email e messaggio.';
+      return;
+    }
+    status.textContent = 'Invio non ancora collegato: il messaggio non è stato inviato.';
+  });
 })();
 </script>
 </body>
