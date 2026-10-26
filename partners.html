@@ -656,6 +656,13 @@ section:first-of-type { padding-top: 120px; }
 .civ-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,.16) 50%, rgba(255,255,255,0) 65%); }
 .val-section h2 { text-shadow: 0 0 26px rgba(255,255,255,.16); }
 .val-item { background: linear-gradient(120deg, rgba(255,255,255,.07), rgba(255,255,255,0) 60%); }
+/* Evento: foto di sfondo con ombre e luci rosse */
+.evt-bg { position: relative; isolation: isolate; border-top: 0; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); background: #0a0a0a url("evento-bg.jpg") center 40% / cover no-repeat; min-height: 560px; display: flex; align-items: center; overflow: hidden; }
+.evt-bg::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.82) 38%, rgba(10,10,10,.25) 70%, rgba(10,10,10,.55) 100%), radial-gradient(60% 70% at 85% 30%, rgba(225,6,0,.35), transparent 70%); }
+.evt-bg::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 1; background: linear-gradient(90deg, transparent, #e10600 30%, #ff3b2a 50%, #e10600 70%, transparent); box-shadow: 0 0 22px rgba(225,6,0,.8); }
+.evt-bg .evt-grid { grid-template-columns: 1fr; width: 100%; max-width: 1100px; margin: 0 auto; }
+.evt-bg .evt-num b { text-shadow: 0 0 40px rgba(225,6,0,.45); }
+.evt-bg .civ-source { color: #c9c9c9; }
 </style>
 </head>
 <body>
@@ -715,7 +722,7 @@ section:first-of-type { padding-top: 120px; }
       <p class="civ-source">Fonte: Nielsen Sports per Dunlop CIV, bilancio della stagione 2025 (tutte le classi, Superbike compresa). I dati 2026 escono a fine stagione.</p>
     </section>
 
-    <section id="evento" class="evt-section">
+    <section id="evento" class="evt-section evt-bg">
       <p class="civ-label">CIV Racing Night · Misano</p>
       <div class="evt-grid">
         <div class="evt-info">
@@ -727,11 +734,6 @@ section:first-of-type { padding-top: 120px; }
             <li>Diretta <b>FedermotoTV</b>, replica <b>Sky Sport MotoGP</b></li>
           </ul>
           <p class="civ-source">Fonti: Federmoto, Moto.it, Motopress</p>
-        </div>
-        <div class="evt-photos">
-          <img src="stagione-02.jpg" alt="Emanuele Pusceddu in pista">
-          <img src="stagione-05.jpg" alt="Emanuele Pusceddu in pista">
-          <img src="stagione-08.jpg" alt="Emanuele Pusceddu in pista">
         </div>
       </div>
     </section>
