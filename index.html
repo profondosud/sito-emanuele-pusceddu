@@ -648,6 +648,11 @@ html { scroll-padding-top: 124px; }
 .mail-status { margin: 12px 0 0; font-size: .85rem; color: var(--muted); min-height: 1.2em; }
 #social .rule { margin-bottom: 14px; }
 #social h2 { margin-bottom: 0; }
+/* Tessere sponsor: sfondo bianco per leggere i loghi originali */
+.partners-row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 768px) { .partners-row { grid-template-columns: repeat(3, 1fr); } }
+.partner-logo { background: #fff; aspect-ratio: 3 / 2; display: grid; place-items: center; padding: 18px; }
+.partner-logo img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
 </style>
 </head>
 <body>
@@ -737,7 +742,7 @@ html { scroll-padding-top: 124px; }
       <a href="carriera.html">Carriera</a>
       <a href="index.html#stagione">Stagione</a>
       <a class="team-link" href="team.html">Team</a>
-      <a href="index.html#partner">Partner</a>
+      <a href="partners.html">Partner</a>
     </nav>
   </div>
 </header>
@@ -807,15 +812,13 @@ html { scroll-padding-top: 124px; }
     <section id="partner">
       <div class="rule"></div>
       <h2>I <span class="red">partner</span></h2>
-      <p class="sub">Loghi e ordine da concordare con il pilota. Nessun partner è inserito finché non è approvato.</p>
-      <div class="partners">
-        <div class="partner">Partner 1<br>da caricare</div>
-        <div class="partner">Partner 2<br>da caricare</div>
-        <div class="partner">Partner 3<br>da caricare</div>
-        <div class="partner">Partner 4<br>da caricare</div>
+      <div class="partners-row">
+        <div class="partner-logo"><img src="partner-1.png" alt="Reco Service"></div>
+        <div class="partner-logo"><img src="partner-2.png" alt="RS Group"></div>
+        <div class="partner-logo"><img src="partner-3.png" alt="ISMED"></div>
       </div>
       <div class="actions">
-        <a class="btn" href="contatti.html" data-contact-open>Diventa partner</a>
+        <a class="btn" href="partners.html">Diventa partner</a>
       </div>
     </section>
 
