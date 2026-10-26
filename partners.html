@@ -738,6 +738,13 @@ section:first-of-type { padding-top: 120px; }
  #evento .evt-grid { width: 100%; max-width: none; }
  #evento h2 { font-size: 2.7rem; }
 }
+/* Più spazio alla moto: testi raccolti sul margine destro. */
+@media (min-width: 640px) {
+  #evento { padding-right: 24px; }
+  #evento .evt-grid { width: 39%; max-width: 420px; }
+  #evento h2 { font-size: clamp(2.25rem,4vw,3.35rem); }
+  #evento::before { background: linear-gradient(90deg,rgba(8,8,9,.03) 0%,rgba(8,8,9,.08) 40%,rgba(8,8,9,.78) 66%,#080809 100%),linear-gradient(0deg,#080809,transparent 28%,transparent 76%,#080809); }
+}
 </style>
 </head>
 <body>
