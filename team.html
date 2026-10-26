@@ -622,6 +622,55 @@ section:first-of-type { padding-top: 120px; }
 #team .team-assist p { color: #aaaab2; font-size: .93rem; line-height: 1.7; margin: 0; }
 #team .team-assist .btn { flex: 0 0 auto; margin: 0; min-width: 160px; text-align: center; }
 @media(max-width: 639px) { #team .team-assist { flex-direction: column; align-items: flex-start; gap: 24px; } #team .team-assist .btn { width: 100%; } }
+/* Identità EMC2: nero, bianco e giallo fluo. */
+:root { --red: #e8ff00; --red-grad: linear-gradient(115deg,#f3ff65,#e8ff00 60%,#bfce00); --red-line: linear-gradient(90deg,#e8ff00,transparent); --bg: #080909; --bg-2: #111313; }
+::selection { background: #e8ff00; color: #080909; }
+.top .team-link, .btn { color: #090a08; background: var(--red-grad); box-shadow: 0 6px 24px rgba(232,255,0,.1); }
+.nav .team-link:hover, .nav .team-link:focus-visible { color: #090a08; }
+.nav a:not(.team-link)::after { background: #e8ff00; }
+.nav a:not(.team-link):hover { color: #e8ff00; }
+.lang-btn.active, .lang-btn[aria-pressed="true"] { background: #e8ff00; color: #090a08; border-color: #e8ff00; }
+.emc-page { padding-top: 160px; padding-bottom: 72px; }
+.emc-hero { position: relative; isolation: isolate; min-height: 680px; display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; }
+.emc-hero-copy { position: relative; z-index: 2; padding: 20px 0 54px; }
+.emc-logo { width: 132px; height: 132px; object-fit: contain; margin-bottom: 30px; }
+.emc-kicker { color: #e8ff00; text-transform: uppercase; font: 600 .65rem var(--font-body); letter-spacing: .2em; margin: 0 0 18px; }
+.emc-page h1 { font-size: clamp(3rem,5.8vw,5.6rem); line-height: .96; width: auto; max-width: none; white-space: normal; letter-spacing: -.02em; }
+.emc-page h1 span, .emc-page h2 span { color: #e8ff00; }
+.emc-lead { color: #bebfc0; font-size: .98rem; line-height: 1.8; margin: 26px 0 0; }
+.emc-hero-photo { position: absolute; inset: 0 -24px 0 40%; z-index: -1; }
+.emc-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 46%; }
+.emc-hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,#080909,rgba(8,9,9,.45) 14%,transparent 40%),linear-gradient(0deg,#080909,transparent 24%,transparent 80%,#080909); }
+.emc-story { position: relative; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; gap: clamp(24px,4vw,64px); margin-top: 100px; }
+.emc-story-photo { position: relative; min-width: 0; }
+.emc-story-photo img { width: 100%; height: 620px; object-fit: cover; object-position: center 48%; }
+.emc-story-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg,#080909,transparent 24%,transparent 86%,rgba(8,9,9,.2)),linear-gradient(90deg,rgba(8,9,9,.18),transparent 20%,transparent 80%,rgba(8,9,9,.4)); pointer-events: none; }
+.emc-story-copy { position: relative; padding-block: 28px; }
+.emc-page h2 { font-size: clamp(2.3rem,4.2vw,3.7rem); line-height: 1; margin-bottom: 26px; }
+.emc-story-copy > p:not(.emc-kicker):not(.emc-quote) { color: #aaadb0; font-size: .92rem; line-height: 1.85; margin: 0 0 20px; }
+.emc-people { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid rgba(232,255,0,.25); padding-top: 22px; margin-top: 28px; }
+.emc-people b { display: block; font-family: var(--font-title); font-size: 1.2rem; text-transform: uppercase; }
+.emc-people span { display: block; color: #8d9294; font-size: .72rem; margin-top: 4px; }
+.emc-quote { border-left: 2px solid #e8ff00; padding-left: 18px; margin: 28px 0 0; color: #eee; font-family: var(--font-title); font-size: 1.5rem; line-height: 1.25; text-transform: uppercase; }
+.emc-story-grid .emc-story-photo img { object-position: center 43%; }
+#team .team-assist { margin-top: 90px; border-left-color: #e8ff00; background: radial-gradient(ellipse at 0 100%,rgba(232,255,0,.07),transparent 62%),#101212; }
+#team .team-assist .assist-label, #team .team-assist h3 span { color: #e8ff00; }
+.contact-panel, .cookie { border-top-color: #e8ff00; }
+@media(max-width: 700px) {
+ .emc-page { padding-top: 140px; }
+ .emc-hero { grid-template-columns: 1fr; min-height: 0; }
+ .emc-hero-photo { position: relative; inset: auto; height: 540px; grid-row: 1; margin-bottom: -70px; }
+ .emc-hero-photo::after { background: linear-gradient(0deg,#080909,transparent 35%,transparent 85%,#080909); }
+ .emc-hero-copy { padding: 0 8px 24px; }
+ .emc-logo { width: 100px; height: 100px; margin-bottom: 22px; }
+ .emc-page h1 { font-size: clamp(3rem,10vw,4.6rem); }
+ .emc-story { grid-template-columns: 1fr; gap: 0; margin-top: 58px; }
+ .emc-story-photo img { height: 560px; }
+ .emc-story-grid .emc-story-photo { grid-row: 1; }
+ .emc-story-copy { padding: 12px 8px 0; margin-top: -20px; z-index: 1; }
+ .emc-people { gap: 12px; }
+ #team .team-assist { margin-top: 58px; }
+}
 </style>
 </head>
 <body>
@@ -643,17 +692,39 @@ section:first-of-type { padding-top: 120px; }
 
 <main>
   <div class="wrap">
-    <section id="team">
-      <div class="rule"></div>
-      <h2>Il <span class="red">team</span></h2>
-      <p class="sub">EMC2 Squadra Corse nasce da un'idea semplice: mettere insieme chi conosce la pista dall'interno e chi sa far andare una moto al massimo delle sue possibilità. Da una parte c'è l'esperienza di Emanuele Pusceddu come pilota, fatta di gare, di giri di prova e di tutto quello che si impara salendo in sella ogni weekend. Dall'altra c'è la competenza meccanica di Ercole Caligiuro, che della preparazione delle moto ha fatto il suo lavoro e il suo punto di riferimento.</p>
-      <p class="sub">Insieme sono i CEO del team, e da questa unione è nata la decisione di aprire EMC2 per dare un supporto concreto a piloti e amatori che corrono in Coppa Italia Velocità. Sappiamo quanto sia difficile, per chi si affaccia alle gare, trovare qualcuno che capisca davvero la moto, le gomme e le esigenze del weekend. Vogliamo essere quella squadra: presenti in pit lane, attenti ai dettagli e disponibili a capire insieme dove si può migliorare.</p>
-      <p class="sub">Il lavoro del team si misura nei risultati, e l'obiettivo è stare sempre nelle posizioni di vertice nei trofei in cui siamo impegnati: Dunlop, Pirelli, Amatori e R3 Cup. Ogni categoria ha le sue regole e le sue difficoltà, e per questo la preparazione è sempre costruita sul pilota e sul tipo di gara, senza soluzioni standard.</p>
-      <p class="sub">Dietro ogni weekend c'è una squadra che lavora su set-up, controllo della moto e strategia di gara, con un rapporto diretto con chi guida. Crediamo che la velocità nasca dalla fiducia tra pilota e meccanico, e che un buon team sia quello in cui ciascuno sa esattamente cosa fare e perché lo fa.</p>
+    <section id="team" class="emc-page">
+      <div class="emc-hero">
+        <div class="emc-hero-copy">
+          <img class="emc-logo" src="emc2-logo.png" alt="EMC² Squadra Corse" width="180" height="180">
+          <p class="emc-kicker">EMC² Squadra Corse</p>
+          <h1>Una squadra.<br><span>La stessa fame.</span></h1>
+          <p class="emc-lead">Esperienza in pista. Precisione ai box.<br>Un unico obiettivo: dare il massimo, insieme.</p>
+        </div>
+        <div class="emc-hero-photo"><img src="emc2-squadra.jpg" alt="La squadra EMC2 riunita ai box con le moto" width="900" height="1600"></div>
+      </div>
+      <div class="emc-story emc-story-box">
+        <div class="emc-story-photo"><img src="emc2-box.jpg" alt="Il team EMC2 davanti al box con la moto e la tabella tempi" loading="lazy" width="896" height="1195"></div>
+        <div class="emc-story-copy">
+          <p class="emc-kicker">01 / Le persone</p>
+          <h2>La velocità nasce<br><span>dalla fiducia.</span></h2>
+          <p>EMC2 Squadra Corse nasce dall'incontro tra l'esperienza di Emanuele Pusceddu come pilota e la competenza meccanica di Ercole Caligiuro. Due percorsi che si uniscono per costruire una squadra capace di capire la moto e chi la guida.</p>
+          <p>Insieme, alla guida del team, affiancano piloti e amatori nella Coppa Italia Velocità. Un rapporto diretto, presenza in pit lane e attenzione ai dettagli: il lavoro comincia molto prima del semaforo verde.</p>
+          <div class="emc-people"><div><b>Emanuele Pusceddu</b><span>Esperienza in pista</span></div><div><b>Ercole Caligiuro</b><span>Competenza meccanica</span></div></div>
+        </div>
+      </div>
+      <div class="emc-story emc-story-grid">
+        <div class="emc-story-copy">
+          <p class="emc-kicker">02 / Il nostro metodo</p>
+          <h2>Al tuo fianco.<br><span>Fino alla griglia.</span></h2>
+          <p>Set-up, controllo della moto e strategia di gara: ogni scelta parte dalle esigenze del pilota e dalle caratteristiche del weekend. La preparazione è costruita su chi guida, senza soluzioni standard.</p>
+          <p>Dunlop, Pirelli, Amatori e R3 Cup sono i trofei in cui portiamo il nostro impegno. L'obiettivo è crescere, migliorare a ogni uscita e lavorare per le posizioni di vertice.</p>
+          <p class="emc-quote">La tua fiducia.<br>Il nostro lavoro. La stessa direzione.</p>
+        </div>
+        <div class="emc-story-photo"><img src="emc2-griglia.jpg" alt="EMC2 al fianco del pilota e della moto numero 86 sulla griglia di partenza" loading="lazy" width="900" height="1600"></div>
+      </div>
       <div class="team-assist">
-        <div class="assist-copy"><p class="assist-label">EMC2 Squadra Corse</p><h3>Assistenza <span>in pista</span></h3>
-        <p>Ti serve assistenza nel weekend di gara o nelle libere?</p></div>
-        <button type="button" class="btn" data-contact-open>Contattaci</button>
+        <div class="assist-copy"><p class="assist-label">EMC2 Squadra Corse</p><h3>Assistenza <span>in pista</span></h3><p>Ti serve assistenza nel weekend di gara o nelle libere?</p></div>
+        <button type="button" class="btn" data-contact-open>Contattaci!</button>
       </div>
     </section>
   </div>
