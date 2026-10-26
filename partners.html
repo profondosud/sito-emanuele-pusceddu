@@ -699,6 +699,45 @@ section:first-of-type { padding-top: 120px; }
 .mail-field textarea { resize: vertical; min-height: 96px; }
 .mail-send { width: 100%; border: 0; cursor: pointer; }
 .mail-status { margin: 12px 0 0; font-size: .85rem; color: var(--muted); min-height: 1.2em; }
+/* Foto e contenuti si fondono in una sola composizione. */
+#partners-page .civ-grid { position: relative; isolation: isolate; display: block; overflow: hidden; background: #0a0a0b; min-height: 640px; }
+#partners-page .civ-photo { position: absolute; inset: 0; z-index: -2; }
+#partners-page .civ-photo img { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: 66% center; mask-image: none; -webkit-mask-image: none; box-shadow: none; }
+#partners-page .civ-photo::before { inset: 0; width: auto; background: linear-gradient(90deg,#0a0a0b 0%,rgba(10,10,11,.96) 24%,rgba(10,10,11,.8) 42%,rgba(10,10,11,.15) 72%),linear-gradient(0deg,#0a0a0b,transparent 30%,transparent 75%,rgba(10,10,11,.5)); }
+#partners-page .civ-photo::after { inset: 0; background: radial-gradient(ellipse at 20% 5%,rgba(241,43,54,.12),transparent 60%); }
+#partners-page .civ-info { width: 57%; padding: 48px 28px 48px 24px; }
+#partners-page .civ-info h2 { margin: 0 0 28px; font-size: clamp(2.5rem,5.6vw,4.4rem); line-height: .98; text-shadow: none; }
+#partners-page .civ-info h2 span { display: block; }
+#partners-page .civ-info .civ-stats, #partners-page .civ-info .civ-bullets, #partners-page .civ-info .civ-source, #partners-page .civ-info .actions { margin-right: 0; }
+#partners-page .civ-stats { border-top: 1px solid rgba(255,255,255,.18); padding-block: 22px; margin: 0 0 20px; border-bottom: 1px solid rgba(255,255,255,.12); }
+#partners-page .civ-stats b { font-size: 2.8rem; line-height: 1; }
+#partners-page .civ-bullets { font-size: .9rem; line-height: 1.7; gap: 14px; }
+#partners-page .civ-source { font-size: .68rem; line-height: 1.6; color: #88888f; }
+#partners-page .civ-outline { -webkit-text-stroke: 1px #f12b36; text-shadow: none; }
+#evento { display: block; min-height: 660px; margin-inline: 0; padding: 58px 36px; background-position: 35% center; border: 0; }
+#evento::before { background: linear-gradient(90deg,rgba(8,8,9,.05) 0%,rgba(8,8,9,.2) 28%,rgba(8,8,9,.86) 53%,#080809 100%),linear-gradient(0deg,#080809,transparent 28%,transparent 76%,#080809); }
+#evento::after { height: 1px; background: linear-gradient(90deg,transparent,rgba(241,43,54,.6),transparent); box-shadow: none; }
+#evento .evt-grid { width: 48%; max-width: 480px; margin: 0 0 0 auto; text-align: left; justify-items: stretch; }
+#evento .evt-info { justify-self: stretch; }
+#evento h2 { font-size: clamp(2.5rem,4.8vw,3.8rem); line-height: 1; margin: 0 0 30px; text-shadow: none; }
+#evento .civ-outline { -webkit-text-stroke: 0; color: #f12b36; text-shadow: none; }
+#evento .evt-num { border-block: 1px solid rgba(255,255,255,.15); padding: 22px 0; }
+#evento .evt-num b { font-size: clamp(3.7rem,7vw,5.5rem); text-shadow: none; }
+#evento .evt-num span { font-size: .7rem; letter-spacing: .15em; }
+#evento .civ-bullets { font-size: .88rem; line-height: 1.7; gap: 12px; }
+#evento .civ-source { font-size: .65rem; color: #88888f; line-height: 1.6; }
+@media (max-width: 639px) {
+ #partners-page .civ-grid { min-height: 0; }
+ #partners-page .civ-photo { height: 400px; }
+ #partners-page .civ-photo img { object-position: 62% center; }
+ #partners-page .civ-photo::before { background: linear-gradient(0deg,#0a0a0b 0%,rgba(10,10,11,.8) 16%,transparent 75%); }
+ #partners-page .civ-info { width: 100%; padding: 290px 20px 32px; }
+ #partners-page .civ-info h2 { font-size: clamp(2.5rem,10vw,3.5rem); }
+ #evento { padding: 290px 20px 38px; min-height: 0; background-size: auto 420px; background-position: 30% top; background-color: #080809; }
+ #evento::before { background: linear-gradient(0deg,#080809 0%,#080809 calc(100% - 370px),rgba(8,8,9,.6) calc(100% - 290px),transparent 100%); }
+ #evento .evt-grid { width: 100%; max-width: none; }
+ #evento h2 { font-size: 2.7rem; }
+}
 </style>
 </head>
 <body>
@@ -764,9 +803,9 @@ section:first-of-type { padding-top: 120px; }
     </section>
 
     <section id="evento" class="evt-section evt-bg">
-      <p class="civ-label">CIV Racing Night · Misano</p>
+
       <div class="evt-grid">
-        <div class="evt-info">
+        <div class="evt-info"><p class="civ-label">CIV Racing Night · Misano</p><h2>La notte <span class="civ-outline">accende la pista.</span></h2>
           <div class="evt-num"><b>22.000</b><span>presenze nel weekend</span></div>
           <ul class="civ-bullets">
             <li>Gare in notturna al Misano World Circuit</li>
@@ -781,9 +820,9 @@ section:first-of-type { padding-top: 120px; }
     <section class="cta-bar">
       <div>
         <p class="cta-text">Vuoi diventare un nostro partner e vivere esperienze come queste?</p>
-        <p class="cta-sub">Contattaci!</p>
+
       </div>
-      <button type="button" class="btn" data-contact-open>Contattaci</button>
+      <button type="button" class="btn" data-contact-open>Contattaci!</button>
     </section>
   </div>
 </main>
