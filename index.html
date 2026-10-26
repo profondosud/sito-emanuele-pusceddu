@@ -588,13 +588,22 @@ html { scroll-padding-top: 124px; }
 <script>
 (function () {
   var intro = document.getElementById('race-intro');
-  var key = 'push-intro-v2';
+  var key = 'push-intro-v3';
   var replay = new URLSearchParams(location.search).get('intro') === '1';
   var seen = false;
   try { seen = sessionStorage.getItem(key) === '1'; } catch (e) {}
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || (seen && !replay) || (location.hash && !replay)) return;
   intro.hidden = false;
   intro.style.animation = 'none';
+  intro.style.background = 'transparent';
+  var veil = document.createElement('div');
+  Object.assign(veil.style, { position: 'absolute', inset: '0', background: '#080809', pointerEvents: 'none' });
+  intro.prepend(veil);
+  var number = document.createElement('img');
+  number.src = 'numero-6-originale.png';
+  number.alt = 'Numero 6 — Emanuele Pusceddu';
+  Object.assign(number.style, { position: 'absolute', width: 'clamp(110px, 17vw, 190px)', height: 'auto', left: '50%', top: 'calc(50% - 165px)', transform: 'translateX(-50%)', opacity: '0', filter: 'drop-shadow(0 0 18px rgba(241,43,54,.22))' });
+  intro.appendChild(number);
   intro.querySelector('.intro-stage').style.display = 'none';
   var previousOverflow = document.documentElement.style.overflow;
   document.documentElement.style.overflow = 'hidden';
@@ -628,20 +637,21 @@ html { scroll-padding-top: 124px; }
     title.style.visibility = 'hidden';
     var scale = Math.min(1.55, innerWidth * .88 / rect.width);
     var x = (innerWidth - rect.width * scale) / 2 - rect.left;
-    var y = (innerHeight - rect.height * scale) / 2 - rect.top;
+    var y = (innerHeight - rect.height * scale) / 2 + 36 - rect.top;
     var centered = 'translate(' + x + 'px,' + y + 'px) scale(' + scale + ')';
     flight.animate([
       { transform: centered, opacity: 0, offset: 0 },
       { transform: centered, opacity: 1, offset: .18 },
       { transform: centered, opacity: 1, offset: .43 },
       { transform: 'translate(0,0) scale(1)', opacity: 1, offset: 1 }
-    ], { duration: 2300, easing: 'cubic-bezier(.65,0,.25,1)', fill: 'both' }).onfinish = finish;
-    intro.animate([{ backgroundColor: '#080809' }, { backgroundColor: 'rgba(8,8,9,0)' }], { delay: 1000, duration: 1250, fill: 'forwards', easing: 'ease-in-out' });
+    ], { duration: 2900, easing: 'cubic-bezier(.65,0,.25,1)', fill: 'both' }).onfinish = finish;
+    veil.animate([{ opacity: 1 }, { opacity: 0 }], { delay: 750, duration: 2050, fill: 'forwards', easing: 'cubic-bezier(.4,0,.2,1)' });
+    number.animate([{ opacity: 0, offset: 0 }, { opacity: 1, offset: .2 }, { opacity: 1, offset: .5 }, { opacity: 0, offset: 1 }], { duration: 2300, fill: 'both', easing: 'ease-in-out' });
     intro.querySelector('button').animate([{ opacity: 1 }, { opacity: 0 }], { delay: 1400, duration: 500, fill: 'forwards' });
   }
   // Il titolo animato usa le stesse misure del titolo reale, anche su mobile.
   Promise.race([document.fonts.ready, new Promise(function (resolve) { setTimeout(resolve, 700); })]).then(function () { requestAnimationFrame(launch); });
-  setTimeout(finish, 3400);
+  setTimeout(finish, 4100);
 })();
 </script>
 
