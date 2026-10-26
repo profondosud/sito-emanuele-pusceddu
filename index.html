@@ -655,6 +655,11 @@ html { scroll-padding-top: 124px; }
 @media (min-width: 768px) { .partners-row { grid-template-columns: repeat(3, 1fr); } }
 .partner-logo { background: #fff; aspect-ratio: 3 / 2; display: grid; place-items: center; padding: 18px; }
 .partner-logo img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+/* Selettore lingua: tre pulsanti */
+.lang { display: flex; gap: 6px; }
+.lang-btn { background: transparent; border: 1px solid #3a3a3a; color: var(--muted); font-family: var(--font-title); font-weight: 700; font-size: .8rem; letter-spacing: .08em; padding: 5px 10px; cursor: pointer; border-radius: 2px; }
+.lang-btn:hover, .lang-btn:focus-visible { color: var(--fg); border-color: var(--fg); }
+.lang-btn[aria-pressed="true"] { background: var(--red-grad); border-color: transparent; color: var(--fg); }
 </style>
 </head>
 <body>
@@ -746,6 +751,11 @@ html { scroll-padding-top: 124px; }
       <a class="team-link" href="team.html">Team</a>
       <a href="partners.html">Partner</a>
     </nav>
+    <div class="lang" role="group" aria-label="Lingua">
+        <button type="button" class="lang-btn" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
   </div>
 </header>
 
@@ -907,6 +917,20 @@ html { scroll-padding-top: 124px; }
     }
     status.textContent = 'Invio non ancora collegato: il messaggio non è stato inviato.';
   });
+})();
+</script>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.lang-btn');
+  function setLang(code) {
+    document.documentElement.lang = code;
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.lang === code ? 'true' : 'false'); });
+    try { localStorage.setItem('lang', code); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  if (saved) setLang(saved);
+  btns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
 })();
 </script>
 </body>
