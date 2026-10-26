@@ -27,6 +27,7 @@
     },
     "Campionato": { es: "Campeonato", en: "Championship" },
     "Campionato Italiano Velocità, categoria 1000.": { es: "Campeonato Italiano de Velocidad, categoría 1000.", en: "Italian Speed Championship, 1000 class." },
+    "Campionato Italiano Velocità Superbike": { es: "Campeonato Italiano de Velocidad Superbike", en: "Italian Speed Championship Superbike" },
     "Moto": { es: "Moto", en: "Bike" },
     "10,7 mila": { es: "10,7 mil", en: "10.7K" },
     "follower": { es: "seguidores", en: "followers" },
