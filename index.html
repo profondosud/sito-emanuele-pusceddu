@@ -520,7 +520,7 @@ html { scroll-padding-top: 124px; }
     linear-gradient(180deg, rgba(8,8,9,.12), transparent 28%, transparent 56%, rgba(8,8,9,.88)),
     linear-gradient(90deg, rgba(8,8,9,.45), transparent 20%, transparent 78%, rgba(8,8,9,.42)),
     url('ritratto-emanuele.png') 43% 25% / auto 160% no-repeat;
-  border: 1px solid rgba(255,255,255,.2);
+  border: 0;
   box-shadow: 0 22px 45px rgba(0,0,0,.55), 0 0 32px rgba(241,43,54,.08), inset 0 0 35px rgba(0,0,0,.25);
 }
 .bio-portrait::before {
@@ -533,15 +533,7 @@ html { scroll-padding-top: 124px; }
   z-index: 1;
   clip-path: polygon(0 0, 24% 0, 24% 2%, 2% 2%, 2% 22%, 0 22%);
 }
-.bio-portrait::after {
-  content: "";
-  position: absolute;
-  inset: 12px -8px -8px 12px;
-  border-right: 1px solid rgba(241,43,54,.65);
-  border-bottom: 1px solid rgba(241,43,54,.65);
-  pointer-events: none;
-  z-index: -1;
-}
+.bio-portrait::after { content: none; }
 .top .wrap { max-width: none; padding-inline: 16px; }
 .logo { margin-left: 0; }
 @media (max-width: 700px) {
@@ -595,10 +587,6 @@ html { scroll-padding-top: 124px; }
           <h2><span class="red">Biografia</span></h2>
           <p class="sub">Nato a Roma il 17 maggio 1996, Emanuele “Push” Pusceddu scopre la passione per le corse sulle minimoto. Dai primi giri da bambino ai circuiti internazionali, costruisce il suo percorso con talento, determinazione e la voglia di spingersi sempre oltre.</p>
           <p class="sub">Le esperienze nella Superstock 1000 e nel Mondiale Supersport lo portano a confrontarsi con alcuni dei palcoscenici più importanti del motociclismo. Nel CIV si afferma tra i protagonisti della velocità italiana: vittorie, podi e il titolo di vicecampione italiano Supersport nel 2023 raccontano la velocità e la tenacia con cui lascia il segno in pista.</p>
-          <div class="cards two">
-            <div class="card"><h3>Istruttore</h3><p>Attività formativa, da confermare con il pilota.</p><span class="tag">Da confermare</span></div>
-            <div class="card"><h3>Obiettivo</h3><p>Da definire con il pilota e il team.</p><span class="tag">Da definire</span></div>
-          </div>
         </div>
       </div>
     </section>
