@@ -567,6 +567,12 @@ html { scroll-padding-top: 124px; }
 @keyframes intro-exit { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-3%); visibility: hidden; } }
 @media (max-width: 700px) { .intro-kicker { font-size: .56rem; letter-spacing: .22em; } .intro-caption { font-size: .55rem; letter-spacing: .18em; } }
 @media (prefers-reduced-motion: reduce) { .race-intro { display: none; } }
+
+/* Numero di gara come sfondo della biografia */
+#profilo { position: relative; }
+.num-deco { position: absolute; right: 0; top: 56px; width: min(260px, 44vw); height: auto; opacity: .14; pointer-events: none; z-index: 0; }
+#profilo .grid-2 { position: relative; z-index: 1; }
+#profilo .sub { font-size: 1.08rem; line-height: 1.7; }
 </style>
 </head>
 <body>
@@ -633,6 +639,7 @@ html { scroll-padding-top: 124px; }
 
   <div class="wrap">
     <section id="profilo">
+      <img class="num-deco" src="numero-6-rosso.png" alt="" aria-hidden="true">
       <div class="grid-2">
         <div class="bio-portrait" role="img" aria-label="Emanuele Pusceddu ai box, con il casco e la tuta da gara"></div>
         <div>
