@@ -675,6 +675,16 @@ section:first-of-type { padding-top: 120px; }
 .evt-bg .evt-grid { margin-left: auto; margin-right: 0; width: 46%; max-width: 560px; justify-items: end; text-align: right; }
 .evt-bg .evt-info { justify-self: end; }
 .evt-bg .civ-bullets li { text-align: left; }
+/* CIV: foto più grande, sfumata, titolo che sconfina leggermente sulla foto */
+.civ-section .civ-grid { grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 900px) { .civ-section .civ-grid { grid-template-columns: 0.9fr 1.3fr; gap: 0; } }
+.civ-section .civ-info { position: relative; z-index: 2; }
+@media (min-width: 900px) { .civ-section .civ-info h2 { margin-right: -140px; } .civ-section .civ-info .civ-stats, .civ-section .civ-info .civ-bullets, .civ-section .civ-info .civ-source, .civ-section .civ-info .actions { margin-right: 40px; } }
+.civ-photo { position: relative; margin: 0; }
+.civ-photo img { width: 100%; height: auto; min-height: 420px; object-fit: cover; border-left: 0; box-shadow: 0 30px 60px rgba(0,0,0,.65), 0 0 40px rgba(225,6,0,.18); -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 100%); }
+.civ-photo::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 22%; z-index: 1; background: linear-gradient(90deg, #0a0a0a, rgba(10,10,10,0)); pointer-events: none; }
+.civ-photo::after { z-index: 1; }
+.civ-outline { text-shadow: 0 0 22px rgba(225,6,0,.45); }
 </style>
 </head>
 <body>
