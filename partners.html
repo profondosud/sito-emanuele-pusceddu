@@ -758,6 +758,17 @@ section:first-of-type { padding-top: 120px; }
 .partner-intro-text .partner-intro-lead { color: #f2f2f4; font-size: 1.05rem; line-height: 1.6; }
 .partner-intro-foot { font-size: .72rem; line-height: 1.7; color: #8d8d96; margin: 24px 0 0; padding-left: 16px; border-left: 2px solid #f12b36; }
 @media (max-width: 639px) { .partner-intro-text { grid-template-columns: 1fr; gap: 0; margin-bottom: 32px; } .partner-intro-title { margin-bottom: 28px; font-size: clamp(2.8rem,11vw,4rem); } }
+/* Zona testo più stretta e soggetto libero sulla destra. */
+@media(min-width: 640px) {
+ #partners-page .civ-info { width: 42%; padding: 42px 24px; }
+ #partners-page .civ-photo { left: 30%; }
+ #partners-page .civ-photo img { object-position: 62% center; }
+ #partners-page .civ-photo::before { background: linear-gradient(90deg,#0a0a0b 0%,rgba(10,10,11,.68) 12%,rgba(10,10,11,.12) 30%,transparent 50%),linear-gradient(0deg,#0a0a0b,transparent 28%,transparent 80%,rgba(10,10,11,.3)); }
+ #partners-page .civ-info h2 { font-size: clamp(2.5rem,4.8vw,4rem); }
+ #partners-page .civ-stats { gap: 12px; }
+ #partners-page .civ-stats span { font-size: .65rem; letter-spacing: .1em; }
+ #partners-page .civ-bullets { font-size: .85rem; }
+}
 </style>
 </head>
 <body>
