@@ -647,6 +647,15 @@ section:first-of-type { padding-top: 120px; }
 .evt-info .civ-bullets { margin-top: 24px; }
 .evt-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .evt-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border: 1px solid var(--line); border-top: 2px solid #e10600; }
+/* Fonti più staccate; sfumature bianche per dare profondità */
+.civ-source { margin-top: 22px !important; }
+.val-section .civ-source { margin-top: 36px !important; }
+.civ-section h2 { text-shadow: 0 0 28px rgba(255,255,255,.18); }
+.civ-section .civ-outline { text-shadow: 0 0 18px rgba(255,255,255,.25); }
+.civ-photo { position: relative; }
+.civ-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,.16) 50%, rgba(255,255,255,0) 65%); }
+.val-section h2 { text-shadow: 0 0 26px rgba(255,255,255,.16); }
+.val-item { background: linear-gradient(120deg, rgba(255,255,255,.07), rgba(255,255,255,0) 60%); }
 </style>
 </head>
 <body>

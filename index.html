@@ -697,6 +697,11 @@ html { scroll-padding-top: 124px; }
   .top .wrap { position: relative; }
   .top .nav { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
 }
+/* Telefono Instagram: PNG trasparente, centrato, con luce rossa */
+#social .ig-phone { position: relative; background: none; border: 0; box-shadow: none; padding: 0; max-width: 340px; isolation: isolate; }
+#social .ig-phone::before { content: ""; position: absolute; inset: -12% -18%; z-index: -1; background: radial-gradient(closest-side, rgba(225,6,0,.55), rgba(225,6,0,.12) 60%, transparent 75%); filter: blur(10px); }
+#social .ig-phone img { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 18px rgba(225,6,0,.55)) drop-shadow(0 24px 40px rgba(0,0,0,.7)); }
+@media (min-width: 900px) { #social .ig-wrap { align-items: center; } #social .ig-phone { margin-top: 0; justify-self: center; } }
 </style>
 </head>
 <body>
@@ -856,9 +861,7 @@ html { scroll-padding-top: 124px; }
           <p class="ig-follow">follower</p>
           <a class="btn" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener">Seguimi su Instagram →</a>
         </div>
-        <div class="ig-phone">
-          <img src="profilo-ig-screenshot.png" alt="Profilo Instagram di Emanuele Pusceddu">
-        </div>
+        <div class="ig-phone"><img src="phone-ig.png" alt="Profilo Instagram di Emanuele Pusceddu"></div>
       </div>
     </section>
 
