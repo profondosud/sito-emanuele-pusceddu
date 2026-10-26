@@ -613,7 +613,7 @@ html { scroll-padding-top: 124px; }
 .ig-bullets li::before { content: "◆ "; color: var(--red); }
 .ig-bullets b { font-family: var(--font-title); font-size: 1.15rem; }
 .ig-note { margin: 0; color: var(--muted); font-size: .8rem; }
-.ig-phone { width: 100%; max-width: 330px; justify-self: center; border: 1px solid #3a3a3a; border-radius: 34px; background: #0c0c0c; padding: 18px 16px 22px; box-shadow: 0 30px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(225,6,0,.15); }
+.ig-phone { width: 100%; max-width: 330px; justify-self: center; border: 1px solid #3a3a3a; border-radius: 34px; background: #0c0c0c; padding: 10px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(225,6,0,.15); }
 .ig-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
 .ig-user { font-family: var(--font-title); font-weight: 700; font-size: 1.05rem; }
 .ig-head { display: flex; gap: 14px; align-items: center; }
@@ -630,6 +630,7 @@ html { scroll-padding-top: 124px; }
 .ig-hl small { font-size: .62rem; color: var(--muted); }
 .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .ig-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+.ig-phone img { display: block; width: 100%; height: auto; border-radius: 26px; }
 </style>
 </head>
 <body>
@@ -772,7 +773,7 @@ html { scroll-padding-top: 124px; }
 
     <section id="social">
       <div class="rule"></div>
-      <h2>I suoi <span class="red">social</span></h2>
+      <h2>Seguici sui <span class="red">social!</span></h2>
       <p class="sub">Seguilo sui profili ufficiali per la stagione, le gare e il dietro le quinte.</p>
       <div class="ig-wrap">
         <div class="ig-info">
@@ -780,43 +781,11 @@ html { scroll-padding-top: 124px; }
           <p class="ig-handle">@emanuele_pusceddu</p>
           <p class="ig-big">10,7 mila</p>
           <p class="ig-follow">follower</p>
-          <ul class="ig-bullets">
-            <li><b>489</b> post</li>
-            <li><b>1312</b> seguiti</li>
-          </ul>
           <a class="btn" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener">Seguimi su Instagram →</a>
           <p class="ig-note">Dati del profilo: da aggiornare alla data dello screenshot.</p>
         </div>
-        <div class="ig-phone" aria-label="Anteprima del profilo Instagram">
-          <div class="ig-top">
-            <span class="ig-user">emanuele_pusceddu</span>
-          </div>
-          <div class="ig-head">
-            <img class="ig-avatar" src="profilo-ig.jpg" alt="Emanuele Pusceddu">
-            <div class="ig-counts">
-              <div><b>489</b><small>post</small></div>
-              <div><b>10,7 mila</b><small>follower</small></div>
-              <div><b>1312</b><small>seguiti</small></div>
-            </div>
-          </div>
-          <div class="ig-bio-s">
-            <p class="ig-name">Push6 🇮🇹</p>
-            <p>Atleta</p>
-            <p>2023 · Vicecampione CIV</p>
-            <p>Rider @axonseventeam SBK</p>
-            <p>CEO @emc2squadracorse</p>
-          </div>
-          <div class="ig-hls">
-            <div class="ig-hl"><span></span><small>Tenerife</small></div>
-            <div class="ig-hl"><span></span><small>CIV SBK</small></div>
-            <div class="ig-hl"><span></span><small>Zanzibar</small></div>
-            <div class="ig-hl"><span></span><small>Texas</small></div>
-          </div>
-          <div class="ig-grid">
-            <img src="post-1.jpg" alt="Post Instagram 1">
-            <img src="post-2.jpg" alt="Post Instagram 2">
-            <img src="post-3.jpg" alt="Post Instagram 3">
-          </div>
+        <div class="ig-phone">
+          <img src="profilo-ig-screenshot.jpg" alt="Profilo Instagram di Emanuele Pusceddu">
         </div>
       </div>
     </section>
