@@ -510,7 +510,38 @@ html { scroll-padding-top: 124px; }
 .hero h1 { font-size: clamp(2rem, 6.6vw, 6rem); }
 .hero .eyebrow { margin-bottom: 10px; }
 .hero .actions { margin-top: 18px; }
-.bio-portrait { width: 100%; aspect-ratio: 4 / 5; background: url('ritratto-emanuele.png') 43% 25% / auto 160% no-repeat; border: 1px solid var(--line); }
+.bio-portrait {
+  position: relative;
+  isolation: isolate;
+  width: calc(100% - 16px);
+  margin: 8px 0 16px 8px;
+  aspect-ratio: 4 / 5;
+  background:
+    linear-gradient(180deg, rgba(8,8,9,.12), transparent 28%, transparent 56%, rgba(8,8,9,.88)),
+    linear-gradient(90deg, rgba(8,8,9,.45), transparent 20%, transparent 78%, rgba(8,8,9,.42)),
+    url('ritratto-emanuele.png') 43% 25% / auto 160% no-repeat;
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 0 22px 45px rgba(0,0,0,.55), 0 0 32px rgba(241,43,54,.08), inset 0 0 35px rgba(0,0,0,.25);
+}
+.bio-portrait::before {
+  content: "";
+  position: absolute;
+  inset: -8px 8px 8px -8px;
+  border-top: 2px solid #f12b36;
+  border-left: 2px solid #f12b36;
+  pointer-events: none;
+  z-index: 1;
+  clip-path: polygon(0 0, 24% 0, 24% 2%, 2% 2%, 2% 22%, 0 22%);
+}
+.bio-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 12px -8px -8px 12px;
+  border-right: 1px solid rgba(241,43,54,.65);
+  border-bottom: 1px solid rgba(241,43,54,.65);
+  pointer-events: none;
+  z-index: -1;
+}
 .top .wrap { max-width: none; padding-inline: 16px; }
 .logo { margin-left: 0; }
 @media (max-width: 700px) {
