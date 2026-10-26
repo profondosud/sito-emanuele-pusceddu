@@ -600,6 +600,36 @@ html { scroll-padding-top: 124px; }
 .ig-bio { color: var(--muted); font-size: .95rem; line-height: 1.5; }
 .ig-bio p { margin: 0; }
 .ig-block .btn { justify-self: start; }
+
+/* Anteprima profilo Instagram: struttura a due colonne */
+.ig-wrap { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; margin-bottom: 32px; }
+@media (min-width: 900px) { .ig-wrap { grid-template-columns: 1fr 1fr; } }
+.ig-info { display: grid; gap: 14px; justify-items: start; }
+.ig-info .ig-label { margin: 0; font-family: var(--font-title); font-weight: 700; text-transform: uppercase; letter-spacing: .18em; font-size: .85rem; color: var(--red); }
+.ig-handle { margin: 0; font-family: var(--font-title); font-weight: 800; font-size: 1.8rem; text-transform: uppercase; }
+.ig-big { margin: 0; font-family: var(--font-title); font-weight: 800; font-size: clamp(4rem, 14vw, 8rem); line-height: .85; background: var(--red-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ig-follow { margin: 0; font-family: var(--font-title); font-weight: 700; letter-spacing: .4em; text-transform: uppercase; color: var(--fg); }
+.ig-bullets { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+.ig-bullets li::before { content: "◆ "; color: var(--red); }
+.ig-bullets b { font-family: var(--font-title); font-size: 1.15rem; }
+.ig-note { margin: 0; color: var(--muted); font-size: .8rem; }
+.ig-phone { width: 100%; max-width: 330px; justify-self: center; border: 1px solid #3a3a3a; border-radius: 34px; background: #0c0c0c; padding: 18px 16px 22px; box-shadow: 0 30px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(225,6,0,.15); }
+.ig-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.ig-user { font-family: var(--font-title); font-weight: 700; font-size: 1.05rem; }
+.ig-head { display: flex; gap: 14px; align-items: center; }
+.ig-avatar { width: 72px; height: 72px; flex: 0 0 auto; border-radius: 50%; background: var(--red-grad); padding: 2px; box-sizing: border-box; border: 0; }
+.ig-counts { display: flex; gap: 14px; flex: 1; justify-content: space-between; text-align: center; }
+.ig-counts b { display: block; font-family: var(--font-title); font-size: 1.05rem; line-height: 1; }
+.ig-counts small { font-size: .7rem; color: var(--muted); }
+.ig-bio-s { margin-top: 12px; font-size: .8rem; color: var(--fg); line-height: 1.45; }
+.ig-bio-s p { margin: 0; }
+.ig-name { font-weight: 700; }
+.ig-hls { display: flex; gap: 12px; margin: 14px 0; overflow: hidden; }
+.ig-hl { display: grid; justify-items: center; gap: 4px; flex: 0 0 auto; }
+.ig-hl span { width: 52px; height: 52px; border-radius: 50%; border: 2px solid #3a3a3a; background: #1a1a1a; }
+.ig-hl small { font-size: .62rem; color: var(--muted); }
+.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.ig-thumb { aspect-ratio: 1 / 1; background: #161616; border: 1px dashed #333; }
 </style>
 </head>
 <body>
@@ -744,23 +774,53 @@ html { scroll-padding-top: 124px; }
       <div class="rule"></div>
       <h2>I suoi <span class="red">social</span></h2>
       <p class="sub">Seguilo sui profili ufficiali per la stagione, le gare e il dietro le quinte.</p>
-      <div class="ig-block">
-        <p class="ig-label">Instagram</p>
-        <p class="ig-handle">@emanuele_pusceddu</p>
-        <p class="ig-big">10,7 mila <span>follower</span></p>
-        <ul class="ig-stats">
-          <li><b>489</b> post</li>
-          <li><b>1312</b> seguiti</li>
-        </ul>
-        <div class="ig-bio">
-          <p>Atleta</p>
-          <p>2023 · Vicecampione CIV</p>
-          <p>Rider @axonseventeam SBK</p>
-          <p>CEO @emc2squadracorse</p>
-          <p>Socio @salmourmotorpark</p>
-          <p>Istruttore @tutti_pazzi_per_la_pista</p>
+      <div class="ig-wrap">
+        <div class="ig-info">
+          <p class="ig-label">Instagram</p>
+          <p class="ig-handle">@emanuele_pusceddu</p>
+          <p class="ig-big">10,7 mila</p>
+          <p class="ig-follow">follower</p>
+          <ul class="ig-bullets">
+            <li><b>489</b> post</li>
+            <li><b>1312</b> seguiti</li>
+          </ul>
+          <a class="btn" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener">Seguimi su Instagram →</a>
+          <p class="ig-note">Dati del profilo: da aggiornare alla data dello screenshot.</p>
         </div>
-        <a class="btn" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener">Seguimi su Instagram →</a>
+        <div class="ig-phone" aria-label="Anteprima del profilo Instagram">
+          <div class="ig-top">
+            <span class="ig-user">emanuele_pusceddu</span>
+          </div>
+          <div class="ig-head">
+            <div class="ig-avatar"></div>
+            <div class="ig-counts">
+              <div><b>489</b><small>post</small></div>
+              <div><b>10,7 mila</b><small>follower</small></div>
+              <div><b>1312</b><small>seguiti</small></div>
+            </div>
+          </div>
+          <div class="ig-bio-s">
+            <p class="ig-name">Push6 🇮🇹</p>
+            <p>Atleta</p>
+            <p>2023 · Vicecampione CIV</p>
+            <p>Rider @axonseventeam SBK</p>
+            <p>CEO @emc2squadracorse</p>
+          </div>
+          <div class="ig-hls">
+            <div class="ig-hl"><span></span><small>Tenerife</small></div>
+            <div class="ig-hl"><span></span><small>CIV SBK</small></div>
+            <div class="ig-hl"><span></span><small>Zanzibar</small></div>
+            <div class="ig-hl"><span></span><small>Texas</small></div>
+          </div>
+          <div class="ig-grid">
+            <div class="ig-thumb"></div>
+            <div class="ig-thumb"></div>
+            <div class="ig-thumb"></div>
+            <div class="ig-thumb"></div>
+            <div class="ig-thumb"></div>
+            <div class="ig-thumb"></div>
+          </div>
+        </div>
       </div>
       <div class="cards">
         <div class="card">
