@@ -613,6 +613,22 @@ section:first-of-type { padding-top: 120px; }
 .partner-photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 24px; }
 @media (min-width: 768px) { .partner-photos { grid-template-columns: repeat(4, 1fr); } }
 .partner-photos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; border-radius: 10px; border: 1px solid var(--line); }
+/* Pagina Partner: blocco campionato con foto */
+.civ-section { padding-block: 40px 72px; }
+.civ-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
+@media (min-width: 900px) { .civ-grid { grid-template-columns: 1fr 1fr; gap: 48px; } }
+.civ-label { margin: 0 0 12px; font-family: var(--font-title); font-weight: 700; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+.civ-section h2 { font-size: clamp(2.6rem, 8vw, 4.4rem); }
+.civ-outline { color: transparent; -webkit-text-stroke: 2px #ff2a1a; }
+.civ-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0 18px; border-top: 2px solid #e10600; padding-top: 16px; }
+.civ-stats b { display: block; font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; color: var(--fg); }
+.civ-stats span { display: block; margin-top: 4px; font-family: var(--font-title); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.civ-bullets { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 12px; }
+.civ-bullets li { position: relative; padding-left: 22px; color: var(--muted); }
+.civ-bullets li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; background: #e10600; transform: rotate(45deg); }
+.civ-bullets b { color: var(--fg); }
+.civ-source { color: var(--muted); font-size: .8rem; margin: 0 0 22px; }
+.civ-photo img { width: 100%; height: auto; display: block; border-left: 3px solid #e10600; box-shadow: 0 24px 50px rgba(0,0,0,.6); }
 </style>
 </head>
 <body>
@@ -634,12 +650,27 @@ section:first-of-type { padding-top: 120px; }
 
 <main>
   <div class="wrap">
-    <section id="partners-page">
+    <section id="partners-page" class="civ-section">
       <p class="back"><a href="index.html#partner">← Torna alla home</a></p>
-      <div class="rule"></div>
-      <h2>I <span class="red">partner</span></h2>
-      <div class="actions">
-        <a class="btn" href="contatti.html" data-contact-open>Diventa partner</a>
+      <div class="civ-grid">
+        <div class="civ-info">
+          <p class="civ-label">Il campionato</p>
+          <h2>CIV <span class="civ-outline">SUPERBIKE</span></h2>
+          <div class="civ-stats">
+            <div><b>DA VERIFICARE</b><span>piloti nel 2026</span></div>
+            <div><b>DA VERIFICARE</b><span>case costruttrici</span></div>
+          </div>
+          <ul class="civ-bullets">
+            <li>Classe regina del <b>Campionato Italiano Velocità</b></li>
+            <li>Regolamento <b>Production Bike</b>, con griglie sempre più giovani</li>
+            <li>Dirette e replay sui canali del campionato, da confermare</li>
+          </ul>
+          <p class="civ-source">Fonte: da confermare sull'entry list ufficiale CIV 2026.</p>
+          <div class="actions">
+            <a class="btn" href="contatti.html" data-contact-open>Diventa partner</a>
+          </div>
+        </div>
+        <div class="civ-photo"><img src="partners-hero.jpg" alt="Emanuele Pusceddu in pista"></div>
       </div>
     </section>
   </div>
