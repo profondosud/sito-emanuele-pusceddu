@@ -503,24 +503,25 @@ html { scroll-padding-top: 124px; }
   .hero .actions { margin-top: 16px; }
 }
 
-/* Testi sotto la foto: il pilota resta completamente libero. */
-.hero { display: flex; flex-direction: column; min-height: 0; }
-.hero-photo {
-  position: relative;
-  inset: auto;
-  flex: none;
-  width: calc(100% - clamp(24px, 6vw, 84px));
-  height: min(840px, 90svh);
-  margin: 12px auto 0;
-}
-.hero-content {
-  flex: none;
-  align-self: auto;
-  padding: 24px clamp(20px, 5vw, 72px) 56px;
-}
+/* Testi sulla zona d'erba, sotto il pilota. */
+.hero { display: flex; flex-direction: column; justify-content: flex-end; min-height: min(840px, 90svh); }
+.hero-photo { position: absolute; inset: 12px clamp(12px, 3vw, 42px) 30px; width: auto; height: auto; margin: 0; }
+.hero-content { flex: none; align-self: auto; margin-top: auto; padding: 0 clamp(20px, 5vw, 72px) 54px; }
+.hero h1 { font-size: clamp(2rem, 6.6vw, 6rem); }
+.hero .eyebrow { margin-bottom: 10px; }
+.hero .actions { margin-top: 18px; }
+.bio-portrait { width: 100%; aspect-ratio: 4 / 5; background: url('ritratto-emanuele.png') 43% 25% / auto 160% no-repeat; border: 1px solid var(--line); }
+.top .wrap { max-width: none; padding-inline: 16px; }
+.logo { margin-left: 0; }
 @media (max-width: 700px) {
-  .hero-photo { width: calc(100% - 16px); height: 68svh; min-height: 400px; margin-top: 8px; }
-  .hero-content { padding: 24px 18px 42px; }
+  .hero { min-height: max(740px, 94svh); }
+  .hero-photo { inset: 8px 8px 22px; }
+  .hero-content { padding: 0 18px 42px; }
+  .hero h1 { font-size: clamp(1.8rem, 8.2vw, 3.8rem); }
+  .hero .actions { gap: 8px; margin-top: 14px; }
+  .hero .actions .btn { padding: 10px 14px; }
+  .top .wrap { padding-inline: 0; }
+  .logo { margin-left: 0; }
 }
 </style>
 </head>
@@ -557,12 +558,12 @@ html { scroll-padding-top: 124px; }
   <div class="wrap">
     <section id="profilo">
       <div class="grid-2">
-        <div class="photo-ph">Ritratto<br>da caricare</div>
+        <div class="bio-portrait" role="img" aria-label="Emanuele Pusceddu ai box, con il casco e la tuta da gara"></div>
         <div>
           <div class="rule"></div>
-          <h2>Il <span class="red">pilota</span></h2>
-          <p class="sub">Presentazione breve da approvare con Emanuele. Il testo finale non è ancora definitivo.</p>
-          <p class="sub">Segnaposto per il racconto di inizio carriera e della motivazione.</p>
+          <h2><span class="red">Biografia</span></h2>
+          <p class="sub">Nato a Roma il 17 maggio 1996, Emanuele “Push” Pusceddu scopre la passione per le corse sulle minimoto. Dai primi giri da bambino ai circuiti internazionali, costruisce il suo percorso con talento, determinazione e la voglia di spingersi sempre oltre.</p>
+          <p class="sub">Le esperienze nella Superstock 1000 e nel Mondiale Supersport lo portano a confrontarsi con alcuni dei palcoscenici più importanti del motociclismo. Nel CIV si afferma tra i protagonisti della velocità italiana: vittorie, podi e il titolo di vicecampione italiano Supersport nel 2023 raccontano la velocità e la tenacia con cui lascia il segno in pista.</p>
           <div class="cards two">
             <div class="card"><h3>Istruttore</h3><p>Attività formativa, da confermare con il pilota.</p><span class="tag">Da confermare</span></div>
             <div class="card"><h3>Obiettivo</h3><p>Da definire con il pilota e il team.</p><span class="tag">Da definire</span></div>
