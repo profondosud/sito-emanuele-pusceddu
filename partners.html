@@ -605,6 +605,11 @@ section:first-of-type { padding-top: 120px; }
 .value-item b { display: block; font-family: var(--font-title); font-size: 1.6rem; line-height: 1; background: var(--red-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .value-item span { display: block; margin-top: 6px; color: var(--muted); font-size: .85rem; }
 .value-source { color: var(--muted); font-size: .8rem; margin: 12px 0 0; }
+/* Menu centrato; i pulsanti lingua restano in alto a destra */
+@media (min-width: 700px) {
+  .top .wrap { position: relative; }
+  .top .nav { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
+}
 </style>
 </head>
 <body>

@@ -592,6 +592,11 @@ section:first-of-type { padding-top: 120px; }
 .lang-btn { background: transparent; border: 1px solid #3a3a3a; color: var(--muted); font-family: var(--font-title); font-weight: 700; font-size: .8rem; letter-spacing: .08em; padding: 5px 10px; cursor: pointer; border-radius: 2px; }
 .lang-btn:hover, .lang-btn:focus-visible { color: var(--fg); border-color: var(--fg); }
 .lang-btn[aria-pressed="true"] { background: var(--red-grad); border-color: transparent; color: var(--fg); }
+/* Menu centrato; i pulsanti lingua restano in alto a destra */
+@media (min-width: 700px) {
+  .top .wrap { position: relative; }
+  .top .nav { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
+}
 </style>
 </head>
 <body>

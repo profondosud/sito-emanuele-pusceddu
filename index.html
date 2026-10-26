@@ -692,6 +692,11 @@ html { scroll-padding-top: 124px; }
 @media (min-width: 700px) { .info-row { grid-template-columns: repeat(3, 1fr); } }
 .info-item span { display: block; font-family: var(--font-title); font-weight: 700; font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red); }
 .info-item b { display: block; margin-top: 4px; font-family: var(--font-title); font-weight: 700; font-size: 1.2rem; line-height: 1.2; color: var(--fg); }
+/* Menu centrato; i pulsanti lingua restano in alto a destra */
+@media (min-width: 700px) {
+  .top .wrap { position: relative; }
+  .top .nav { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
+}
 </style>
 </head>
 <body>
