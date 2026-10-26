@@ -330,6 +330,71 @@ h2 { letter-spacing: -.015em; }
   .card:hover, .partner:hover { transform: none; }
 }
 
+
+/* Header trasparente, logo e navigazione */
+html { scroll-padding-top: 124px; }
+.top {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 30;
+  background: linear-gradient(180deg, rgba(5,5,6,.74) 0%, rgba(5,5,6,.30) 72%, transparent 100%);
+  border-bottom: 0;
+  backdrop-filter: none;
+}
+.top .wrap { min-height: 98px; padding-block: 12px; }
+.logo { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.logo-img { height: 64px; width: auto; filter: drop-shadow(0 3px 12px rgba(0,0,0,.72)); }
+.nav { align-items: center; gap: clamp(14px, 2vw, 28px); }
+.nav a {
+  position: relative;
+  padding: 10px 0;
+  color: #fff;
+  font-size: .88rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-shadow: 0 2px 12px rgba(0,0,0,.9);
+  transition: color .2s ease, filter .2s ease, transform .2s ease;
+}
+.nav a:not(.team-link)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 3px;
+  height: 2px;
+  background: #ff3e49;
+  transition: right .2s ease;
+}
+.nav a:not(.team-link):hover::after,
+.nav a:not(.team-link):focus-visible::after { right: 0; }
+.nav a:not(.team-link):hover { color: #ff5962; }
+.nav .team-link {
+  padding: 10px 20px;
+  color: #fff;
+  background: var(--red-grad);
+  box-shadow: 0 5px 22px rgba(241,43,54,.34), 0 2px 10px rgba(0,0,0,.55);
+  text-shadow: none;
+  transform: skewX(-7deg);
+}
+.nav .team-link:hover,
+.nav .team-link:focus-visible { color: #fff; filter: brightness(1.16); transform: skewX(-7deg) translateY(-1px); }
+.hero-content { padding-top: 160px; }
+#team { scroll-margin-top: 124px; }
+@media (max-width: 700px) {
+  html { scroll-padding-top: 124px; }
+  .top { padding-inline: max(12px, env(safe-area-inset-left, 0px)); }
+  .top .wrap { min-height: 112px; align-content: center; row-gap: 4px; padding-block: 6px; }
+  .logo-img { height: 50px; }
+  .nav { gap: 15px; padding-bottom: 2px; }
+  .nav a { font-size: .74rem; padding: 7px 0; }
+  .nav .team-link { padding: 7px 13px; }
+  .hero-content { padding-block: 148px 46px; }
+  #team { scroll-margin-top: 124px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav a, .nav a::after { transition: none; }
+}
+
 </style>
 </head>
 <body>
@@ -341,8 +406,8 @@ h2 { letter-spacing: -.015em; }
       <a href="#profilo">Profilo</a>
       <a href="#carriera">Carriera</a>
       <a href="#stagione">Stagione</a>
+      <a class="team-link" href="#team">Team</a>
       <a href="#partner">Partner</a>
-      <a href="#media">Media</a>
       <a href="#contatti">Contatti</a>
     </nav>
   </div>
@@ -400,7 +465,7 @@ h2 { letter-spacing: -.015em; }
       <p class="sub">La stagione 2026 risulta conclusa. Posizione finale e statistiche complete da confermare con le classifiche ufficiali.</p>
       <div class="cards three">
         <div class="card"><h3>Campionato</h3><p>Campionato Italiano Velocità, categoria 1000.</p></div>
-        <div class="card"><h3>Team</h3><p>Axon Seven Team.</p></div>
+        <div class="card" id="team" tabindex="-1"><h3>Team</h3><p>Axon Seven Team.</p></div>
         <div class="card"><h3>Moto</h3><p>BMW S 1000 RR.</p></div>
       </div>
       <div class="gallery" style="margin-top:24px">
