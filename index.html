@@ -395,6 +395,39 @@ html { scroll-padding-top: 124px; }
   .nav a, .nav a::after { transition: none; }
 }
 
+
+/* Numero gara in filigrana dietro al nome */
+.hero h1 {
+  position: relative;
+  isolation: isolate;
+}
+.hero h1::before {
+  content: "6";
+  position: absolute;
+  z-index: -1;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-title);
+  font-size: clamp(19rem, 35vw, 31rem);
+  font-weight: 800;
+  line-height: .68;
+  color: rgba(241,43,54,.075);
+  -webkit-text-stroke: 1px rgba(241,43,54,.19);
+  text-shadow: 0 0 34px rgba(241,43,54,.10);
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 700px) {
+  .hero h1::before {
+    right: -2%;
+    top: 54%;
+    font-size: clamp(17rem, 62vw, 25rem);
+    color: rgba(241,43,54,.065);
+    -webkit-text-stroke-color: rgba(241,43,54,.16);
+  }
+}
+
 </style>
 </head>
 <body>
