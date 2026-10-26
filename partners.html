@@ -638,6 +638,15 @@ section:first-of-type { padding-top: 120px; }
 .val-item b { display: block; font-family: var(--font-title); font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); line-height: 1; background: linear-gradient(90deg, #ff3b2a, #e10600 60%, #7a0000); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .val-item span { display: block; margin-top: 8px; color: #fff; font-size: 1rem; }
 .val-item small { display: block; margin-top: 4px; color: var(--muted); font-size: .8rem; }
+/* Evento: schema dal sito di riferimento, colori Emanuele */
+.evt-section { border-top: 1px solid var(--line); padding-block: 56px 72px; }
+.evt-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; margin-top: 16px; }
+@media (min-width: 900px) { .evt-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+.evt-num b { display: block; font-family: var(--font-title); font-weight: 800; font-size: clamp(3rem, 10vw, 6rem); line-height: .9; background: linear-gradient(90deg, #ff3b2a, #e10600 60%, #7a0000); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.evt-num span { display: block; margin-top: 8px; font-family: var(--font-title); font-size: .9rem; letter-spacing: .2em; text-transform: uppercase; color: #fff; }
+.evt-info .civ-bullets { margin-top: 24px; }
+.evt-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.evt-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border: 1px solid var(--line); border-top: 2px solid #e10600; }
 </style>
 </head>
 <body>
@@ -695,6 +704,26 @@ section:first-of-type { padding-top: 120px; }
         <div class="val-item"><b>DA VERIFICARE</b><span>impression digitali</span><small>fonte da confermare</small></div>
       </div>
       <p class="civ-source">Fonte: da inserire, con la pubblicazione ufficiale del campionato.</p>
+    </section>
+
+    <section id="evento" class="evt-section">
+      <p class="civ-label">CIV Racing Night · Misano</p>
+      <div class="evt-grid">
+        <div class="evt-info">
+          <div class="evt-num"><b>DA VERIFICARE</b><span>presenze nel weekend</span></div>
+          <ul class="civ-bullets">
+            <li>Gare in notturna al Misano World Circuit</li>
+            <li>Pit walk, musica e festa nel paddock</li>
+            <li>Diretta FedermotoTV e replica Sky Sport MotoGP, da confermare</li>
+          </ul>
+          <p class="civ-source">Fonte: da inserire, con la comunicazione ufficiale dell'evento.</p>
+        </div>
+        <div class="evt-photos">
+          <img src="stagione-02.jpg" alt="Emanuele Pusceddu in pista">
+          <img src="stagione-05.jpg" alt="Emanuele Pusceddu in pista">
+          <img src="stagione-08.jpg" alt="Emanuele Pusceddu in pista">
+        </div>
+      </div>
     </section>
   </div>
 </main>
