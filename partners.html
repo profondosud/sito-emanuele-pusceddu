@@ -669,6 +669,12 @@ section:first-of-type { padding-top: 120px; }
 .cta-bar { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 28px; background: linear-gradient(120deg, rgba(225,6,0,.18), rgba(255,255,255,.04) 60%); border: 1px solid var(--line); border-left: 4px solid #e10600; box-shadow: 0 0 30px rgba(225,6,0,.18); }
 .cta-text { margin: 0; font-family: var(--font-title); font-weight: 800; font-size: clamp(1.3rem, 3.5vw, 1.8rem); text-transform: uppercase; color: #fff; }
 .cta-sub { margin: 4px 0 0; font-family: var(--font-title); font-weight: 800; font-size: 1.1rem; text-transform: uppercase; color: #ff3b2a; }
+/* Evento: testo sul lato destro, moto visibile a sinistra */
+.evt-bg { background-position: left center; }
+.evt-bg::before { background: linear-gradient(270deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.8) 36%, rgba(10,10,10,.2) 66%, rgba(10,10,10,.1) 100%), radial-gradient(55% 70% at 15% 35%, rgba(225,6,0,.3), transparent 70%); }
+.evt-bg .evt-grid { margin-left: auto; margin-right: 0; width: 46%; max-width: 560px; justify-items: end; text-align: right; }
+.evt-bg .evt-info { justify-self: end; }
+.evt-bg .civ-bullets li { text-align: left; }
 </style>
 </head>
 <body>
