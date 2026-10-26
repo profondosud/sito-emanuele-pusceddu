@@ -610,6 +610,9 @@ section:first-of-type { padding-top: 120px; }
   .top .wrap { position: relative; }
   .top .nav { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
 }
+.partner-photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 24px; }
+@media (min-width: 768px) { .partner-photos { grid-template-columns: repeat(4, 1fr); } }
+.partner-photos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; border-radius: 10px; border: 1px solid var(--line); }
 </style>
 </head>
 <body>
@@ -645,10 +648,11 @@ section:first-of-type { padding-top: 120px; }
         </div>
         <p class="value-source">Fonte: da confermare sul sito FMI o CIV prima della pubblicazione.</p>
       </div>
-      <div class="partners-row">
-        <div class="partner-logo"><img src="partner-1.png" alt="Reco Service"></div>
-        <div class="partner-logo"><img src="partner-2.png" alt="RS Group"></div>
-        <div class="partner-logo"><img src="partner-3.png" alt="ISMED"></div>
+      <div class="partner-photos">
+        <img src="stagione-02.jpg" alt="Emanuele Pusceddu in pista" loading="lazy">
+        <img src="stagione-03.jpg" alt="Emanuele Pusceddu in pista" loading="lazy">
+        <img src="stagione-04.jpg" alt="Emanuele Pusceddu in pista" loading="lazy">
+        <img src="stagione-05.jpg" alt="Emanuele Pusceddu in pista" loading="lazy">
       </div>
       <div class="actions">
         <a class="btn" href="contatti.html" data-contact-open>Diventa partner</a>
