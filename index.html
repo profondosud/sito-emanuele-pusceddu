@@ -702,6 +702,30 @@ html { scroll-padding-top: 124px; }
 #social .ig-phone::before { content: ""; position: absolute; inset: -12% -18%; z-index: -1; background: radial-gradient(closest-side, rgba(225,6,0,.55), rgba(225,6,0,.12) 60%, transparent 75%); filter: blur(10px); }
 #social .ig-phone img { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 18px rgba(225,6,0,.55)) drop-shadow(0 24px 40px rgba(0,0,0,.7)); }
 @media (min-width: 900px) { #social .ig-wrap { align-items: center; } #social .ig-phone { margin-top: 0; justify-self: center; } }
+/* Instagram: composizione allineata e telefono senza cornici duplicate. */
+#social { scroll-margin-top: 140px; }
+#social .ig-wrap { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); align-items: center; gap: clamp(28px,5vw,72px); margin: 0; padding: clamp(28px,4vw,56px); border: 1px solid rgba(255,255,255,.1); background: radial-gradient(ellipse at 95% 50%,rgba(241,43,54,.075),transparent 60%),linear-gradient(135deg,#131315,#09090a 65%); overflow: hidden; }
+#social .ig-info { min-width: 0; margin: 0; gap: 0; align-items: flex-start; }
+#social .ig-label { font-size: .68rem; letter-spacing: .14em; line-height: 1.7; margin: 0 0 22px; }
+#social h2 { font-size: clamp(2.6rem,4.5vw,4.2rem); line-height: .98; margin: 0 0 18px; max-width: 12ch; }
+#social .ig-handle { font: 500 clamp(.87rem,1.4vw,1rem) var(--font-body); text-transform: none; text-decoration: none; color: #fff; overflow-wrap: anywhere; }
+#social .ig-handle:hover { color: #ff5962; }
+#social .ig-description { max-width: 36ch; margin: 20px 0 28px; color: #aaaab2; font-size: .92rem; line-height: 1.8; }
+#social .ig-audience { align-self: stretch; padding: 24px 0; border-block: 1px solid rgba(255,255,255,.1); margin-bottom: 28px; }
+#social .ig-big { font-size: clamp(3.4rem,6vw,5.5rem); line-height: .95; margin: 0 0 9px; letter-spacing: -.025em; }
+#social .ig-big span { font-size: .52em; letter-spacing: 0; text-transform: none; color: #f12b36; -webkit-text-fill-color: #f12b36; }
+#social .ig-follow { font: 500 .65rem var(--font-body); letter-spacing: .18em; color: #a9a9b0; margin: 0; }
+#social .ig-cta { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin: 0; font-size: .9rem; padding: 15px 22px; width: min(100%,290px); }
+#social .ig-phone { display: block; width: min(100%,280px); max-width: 280px; aspect-ratio: 800 / 1440; margin: 0; justify-self: center; border: 0; border-radius: 0; background: none; box-shadow: none; overflow: hidden; }
+#social .ig-phone::before, #social .ig-phone::after { content: none; }
+#social .ig-phone img { width: 100%; height: auto; filter: none; image-rendering: auto; }
+@media (max-width: 639px) {
+  #social .ig-wrap { grid-template-columns: minmax(0,1fr); gap: 38px; padding: 28px 22px; }
+  #social h2 { max-width: none; font-size: clamp(2.5rem,10vw,3.5rem); }
+  #social .ig-description { max-width: none; }
+  #social .ig-phone { width: min(100%,265px); }
+  #social .ig-audience { padding-block: 20px; }
+}
 </style>
 </head>
 <body>
@@ -850,18 +874,20 @@ html { scroll-padding-top: 124px; }
       </div>
     </section>
 
-    <section id="social">
-      <div class="rule"></div>
-      <h2>Seguici sui <span class="red">social!</span></h2>
+    <section id="social" aria-labelledby="social-title">
       <div class="ig-wrap">
         <div class="ig-info">
-          <p class="ig-label">Instagram</p>
-          <p class="ig-handle">@emanuele_pusceddu</p>
-          <p class="ig-big">10,7 mila</p>
-          <p class="ig-follow">follower</p>
-          <a class="btn" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener">Seguimi su Instagram →</a>
+          <p class="ig-label">Instagram · Dentro e fuori la pista</p>
+          <h2 id="social-title">Oltre la <span class="red">bandiera.</span></h2>
+          <a class="ig-handle" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener">@emanuele_pusceddu</a>
+          <p class="ig-description">Gare, allenamenti e vita nel paddock. Segui Emanuele e scopri il dietro le quinte di ogni weekend in pista.</p>
+          <div class="ig-audience">
+            <p class="ig-big">10,7 <span>mila</span></p>
+            <p class="ig-follow">Follower su Instagram</p>
+          </div>
+          <a class="btn ig-cta" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener"><span>Seguimi su Instagram</span><span aria-hidden="true">↗</span></a>
         </div>
-        <div class="ig-phone"><img src="phone-ig.png" alt="Profilo Instagram di Emanuele Pusceddu"></div>
+        <a class="ig-phone" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener" aria-label="Apri il profilo Instagram di Emanuele Pusceddu"><img src="phone-ig.png" alt="Profilo Instagram di Emanuele Pusceddu nel telefono" loading="lazy" width="800" height="1550"></a>
       </div>
     </section>
 
