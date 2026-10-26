@@ -549,7 +549,7 @@ html { scroll-padding-top: 124px; }
 /* Intro tipografica racing: un solo passaggio per sessione. */
 .race-intro[hidden] { display: none; }
 .race-intro { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; overflow: hidden; background: #080809; animation: intro-exit .55s cubic-bezier(.76,0,.24,1) 1.85s both; }
-.race-intro::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 55%, rgba(241,43,54,.12), transparent 60%); }
+.race-intro::before { content: none; position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 55%, rgba(241,43,54,.12), transparent 60%); }
 .intro-stage { position: relative; width: min(1120px, 88vw); padding-block: 48px; }
 .intro-kicker { margin: 0 0 22px; color: #b7b7bd; font: 600 .68rem var(--font-body); text-transform: uppercase; letter-spacing: .34em; animation: intro-detail .6s ease .35s both; }
 .intro-name { margin: 0; font-family: var(--font-title); font-weight: 800; font-size: clamp(2rem, 10.2vw, 9rem); line-height: .93; letter-spacing: -.035em; text-transform: uppercase; white-space: nowrap; }
@@ -588,24 +588,60 @@ html { scroll-padding-top: 124px; }
 <script>
 (function () {
   var intro = document.getElementById('race-intro');
-  var key = 'push-intro-v1';
+  var key = 'push-intro-v2';
   var replay = new URLSearchParams(location.search).get('intro') === '1';
   var seen = false;
   try { seen = sessionStorage.getItem(key) === '1'; } catch (e) {}
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches || (seen && !replay)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || (seen && !replay) || (location.hash && !replay)) return;
   intro.hidden = false;
+  intro.style.animation = 'none';
+  intro.querySelector('.intro-stage').style.display = 'none';
   var previousOverflow = document.documentElement.style.overflow;
   document.documentElement.style.overflow = 'hidden';
+  var title, flight, finished = false;
   function finish() {
+    if (finished) return;
+    finished = true;
+    if (title) title.style.visibility = '';
     intro.hidden = true;
     document.documentElement.style.overflow = previousOverflow;
     try { sessionStorage.setItem(key, '1'); } catch (e) {}
     document.removeEventListener('keydown', escapeIntro);
+    window.removeEventListener('resize', finish);
   }
   function escapeIntro(event) { if (event.key === 'Escape') finish(); }
   document.addEventListener('keydown', escapeIntro);
+  window.addEventListener('resize', finish, { once: true });
   intro.querySelector('button').addEventListener('click', finish);
-  setTimeout(finish, 2450);
+  function launch() {
+    if (finished) return;
+    title = document.querySelector('.hero h1');
+    if (!title || !title.animate) { finish(); return; }
+    var rect = title.getBoundingClientRect();
+    var style = getComputedStyle(title);
+    flight = title.cloneNode(true);
+    flight.removeAttribute('id');
+    flight.setAttribute('aria-hidden', 'true');
+    ['fontFamily','fontWeight','fontSize','lineHeight','letterSpacing','textTransform','whiteSpace','textShadow'].forEach(function (prop) { flight.style[prop] = style[prop]; });
+    Object.assign(flight.style, { position: 'fixed', left: rect.left + 'px', top: rect.top + 'px', width: rect.width + 'px', maxWidth: 'none', margin: '0', transformOrigin: '0 0', zIndex: '1', pointerEvents: 'none' });
+    intro.appendChild(flight);
+    title.style.visibility = 'hidden';
+    var scale = Math.min(1.55, innerWidth * .88 / rect.width);
+    var x = (innerWidth - rect.width * scale) / 2 - rect.left;
+    var y = (innerHeight - rect.height * scale) / 2 - rect.top;
+    var centered = 'translate(' + x + 'px,' + y + 'px) scale(' + scale + ')';
+    flight.animate([
+      { transform: centered, opacity: 0, offset: 0 },
+      { transform: centered, opacity: 1, offset: .18 },
+      { transform: centered, opacity: 1, offset: .43 },
+      { transform: 'translate(0,0) scale(1)', opacity: 1, offset: 1 }
+    ], { duration: 2300, easing: 'cubic-bezier(.65,0,.25,1)', fill: 'both' }).onfinish = finish;
+    intro.animate([{ backgroundColor: '#080809' }, { backgroundColor: 'rgba(8,8,9,0)' }], { delay: 1000, duration: 1250, fill: 'forwards', easing: 'ease-in-out' });
+    intro.querySelector('button').animate([{ opacity: 1 }, { opacity: 0 }], { delay: 1400, duration: 500, fill: 'forwards' });
+  }
+  // Il titolo animato usa le stesse misure del titolo reale, anche su mobile.
+  Promise.race([document.fonts.ready, new Promise(function (resolve) { setTimeout(resolve, 700); })]).then(function () { requestAnimationFrame(launch); });
+  setTimeout(finish, 3400);
 })();
 </script>
 
