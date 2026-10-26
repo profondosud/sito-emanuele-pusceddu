@@ -597,6 +597,9 @@ section:first-of-type { padding-top: 120px; }
   .top .wrap { position: relative; }
   .top .nav { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
 }
+.team-assist { margin-top: 36px; padding: 24px; background: var(--bg-2); border: 1px solid var(--line); border-left: 3px solid var(--red); }
+.team-assist h3 { font-family: var(--font-title); font-size: 1.4rem; text-transform: uppercase; margin: 0 0 8px; }
+.team-assist p { margin: 0 0 16px; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -619,13 +622,14 @@ section:first-of-type { padding-top: 120px; }
 <main>
   <div class="wrap">
     <section id="team">
-      <p class="back"><a href="index.html">← Torna alla home</a></p>
       <div class="rule"></div>
       <h2>Il <span class="red">team</span></h2>
-      <p class="sub">Uno spazio dedicato alle persone e ai ruoli che accompagnano Emanuele nel suo percorso.</p>
-      <div class="card">
-        <h3>Presentazione in preparazione</h3>
-        <p>I dettagli saranno aggiunti dopo averli confermati con Emanuele.</p>
+      <p class="sub">EMC2 Squadra Corse nasce dall'unione di due competenze: l'esperienza in pista di Emanuele Pusceddu come pilota e quella meccanica di Ercole Caligiuro. Insieme sono CEO del team e hanno deciso di aprirlo per supportare piloti e amatori nella Coppa Italia Velocità.</p>
+      <p class="sub">Il team punta a restare sempre nelle posizioni di vertice nei trofei Dunlop, Pirelli, Amatori e R3 Cup, con un lavoro tecnico e di squadra curato nei dettagli.</p>
+      <div class="team-assist">
+        <h3>Assistenza in pista</h3>
+        <p>Ti serve assistenza nel weekend di gara o nelle libere? Contattaci.</p>
+        <button type="button" class="btn" data-contact-open>Contattaci</button>
       </div>
     </section>
   </div>
@@ -662,5 +666,57 @@ section:first-of-type { padding-top: 120px; }
 })();
 </script>
 <script src="i18n.js" defer></script>
+<div class="mail-panel" id="mail-panel" role="dialog" aria-modal="false" aria-labelledby="mail-title" hidden>
+  <div class="mail-head">
+    <p id="mail-title" class="mail-title">Proponi una <span class="red">partnership</span></p>
+    <button type="button" class="mail-close" id="mail-close" aria-label="Chiudi">×</button>
+  </div>
+  <form id="mail-form" novalidate>
+    <label class="mail-field">Nome e cognome
+      <input type="text" name="nome" autocomplete="name" required>
+    </label>
+    <label class="mail-field">Azienda
+      <input type="text" name="azienda" autocomplete="organization">
+    </label>
+    <label class="mail-field">Email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label class="mail-field">Messaggio
+      <textarea name="messaggio" rows="4" required></textarea>
+    </label>
+    <button type="submit" class="btn mail-send">Invia messaggio</button>
+    <p class="mail-status" id="mail-status" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<script>
+(function () {
+  var panel = document.getElementById('mail-panel');
+  var closeBtn = document.getElementById('mail-close');
+  var form = document.getElementById('mail-form');
+  var status = document.getElementById('mail-status');
+  if (!panel) return;
+  document.querySelectorAll('[data-contact-open]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      panel.hidden = false;
+      var first = panel.querySelector('input');
+      if (first) first.focus();
+    });
+  });
+  closeBtn.addEventListener('click', function () { panel.hidden = true; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.hidden) panel.hidden = true;
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      status.textContent = 'Compila nome, email e messaggio.';
+      return;
+    }
+    status.textContent = 'Invio non ancora collegato: il messaggio non è stato inviato.';
+  });
+})();
+</script>
 </body>
 </html>
