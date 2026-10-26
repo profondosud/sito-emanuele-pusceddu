@@ -665,6 +665,10 @@ section:first-of-type { padding-top: 120px; }
 .evt-bg .civ-source { color: #c9c9c9; }
 .partner-intro-text { max-width: 760px; margin: 18px 0 40px; }
 .partner-intro-text .sub { margin-bottom: 14px; }
+/* Barra contatto sotto la sezione evento */
+.cta-bar { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 28px; background: linear-gradient(120deg, rgba(225,6,0,.18), rgba(255,255,255,.04) 60%); border: 1px solid var(--line); border-left: 4px solid #e10600; box-shadow: 0 0 30px rgba(225,6,0,.18); }
+.cta-text { margin: 0; font-family: var(--font-title); font-weight: 800; font-size: clamp(1.3rem, 3.5vw, 1.8rem); text-transform: uppercase; color: #fff; }
+.cta-sub { margin: 4px 0 0; font-family: var(--font-title); font-weight: 800; font-size: 1.1rem; text-transform: uppercase; color: #ff3b2a; }
 </style>
 </head>
 <body>
@@ -744,6 +748,13 @@ section:first-of-type { padding-top: 120px; }
         </div>
       </div>
     </section>
+    <section class="cta-bar">
+      <div>
+        <p class="cta-text">Vuoi diventare un nostro partner e vivere esperienze come queste?</p>
+        <p class="cta-sub">Contattaci!</p>
+      </div>
+      <button type="button" class="btn" data-contact-open>Contattaci</button>
+    </section>
   </div>
 </main>
 
@@ -778,5 +789,57 @@ section:first-of-type { padding-top: 120px; }
 })();
 </script>
 <script src="i18n.js" defer></script>
+<div class="mail-panel" id="mail-panel" role="dialog" aria-modal="false" aria-labelledby="mail-title" hidden>
+  <div class="mail-head">
+    <p id="mail-title" class="mail-title">Proponi una <span class="red">partnership</span></p>
+    <button type="button" class="mail-close" id="mail-close" aria-label="Chiudi">×</button>
+  </div>
+  <form id="mail-form" novalidate>
+    <label class="mail-field">Nome e cognome
+      <input type="text" name="nome" autocomplete="name" required>
+    </label>
+    <label class="mail-field">Azienda
+      <input type="text" name="azienda" autocomplete="organization">
+    </label>
+    <label class="mail-field">Email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label class="mail-field">Messaggio
+      <textarea name="messaggio" rows="4" required></textarea>
+    </label>
+    <button type="submit" class="btn mail-send">Invia messaggio</button>
+    <p class="mail-status" id="mail-status" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<script>
+(function () {
+  var panel = document.getElementById('mail-panel');
+  var closeBtn = document.getElementById('mail-close');
+  var form = document.getElementById('mail-form');
+  var status = document.getElementById('mail-status');
+  if (!panel) return;
+  document.querySelectorAll('[data-contact-open]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      panel.hidden = false;
+      var first = panel.querySelector('input');
+      if (first) first.focus();
+    });
+  });
+  closeBtn.addEventListener('click', function () { panel.hidden = true; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.hidden) panel.hidden = true;
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      status.textContent = 'Compila nome, email e messaggio.';
+      return;
+    }
+    status.textContent = 'Invio non ancora collegato: il messaggio non è stato inviato.';
+  });
+})();
+</script>
 </body>
 </html>
