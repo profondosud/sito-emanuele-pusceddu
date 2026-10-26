@@ -602,7 +602,7 @@ html { scroll-padding-top: 124px; }
 .ig-block .btn { justify-self: start; }
 
 /* Anteprima profilo Instagram: struttura a due colonne */
-.ig-wrap { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; margin-bottom: 32px; }
+.ig-wrap { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; margin: 0 0 32px; }
 @media (min-width: 900px) { .ig-wrap { grid-template-columns: 1fr 1fr; } }
 .ig-info { display: grid; gap: 14px; justify-items: start; }
 .ig-info .ig-label { margin: 0; font-family: var(--font-title); font-weight: 700; text-transform: uppercase; letter-spacing: .18em; font-size: .85rem; color: var(--red); }
@@ -630,7 +630,7 @@ html { scroll-padding-top: 124px; }
 .ig-hl small { font-size: .62rem; color: var(--muted); }
 .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .ig-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
-.ig-phone img { display: block; width: 100%; height: auto; border-radius: 26px; }
+.ig-phone img { display: block; width: 100%; height: auto; border-radius: 26px; image-rendering: -webkit-optimize-contrast; }
 
 /* Pannello contatto in basso a destra */
 .mail-panel { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); width: min(380px, calc(100vw - 32px)); background: var(--bg-2); border: 1px solid var(--line); border-top: 3px solid var(--red); box-shadow: 0 24px 60px rgba(0,0,0,.6); padding: 20px; z-index: 30; max-height: calc(100vh - 32px); overflow-y: auto; }
@@ -646,6 +646,8 @@ html { scroll-padding-top: 124px; }
 .mail-field textarea { resize: vertical; min-height: 96px; }
 .mail-send { width: 100%; border: 0; cursor: pointer; }
 .mail-status { margin: 12px 0 0; font-size: .85rem; color: var(--muted); min-height: 1.2em; }
+#social .rule { margin-bottom: 14px; }
+#social h2 { margin-bottom: 0; }
 </style>
 </head>
 <body>
@@ -788,7 +790,6 @@ html { scroll-padding-top: 124px; }
     <section id="social">
       <div class="rule"></div>
       <h2>Seguici sui <span class="red">social!</span></h2>
-      <p class="sub">Seguilo sui profili ufficiali per la stagione, le gare e il dietro le quinte.</p>
       <div class="ig-wrap">
         <div class="ig-info">
           <p class="ig-label">Instagram</p>
@@ -796,10 +797,9 @@ html { scroll-padding-top: 124px; }
           <p class="ig-big">10,7 mila</p>
           <p class="ig-follow">follower</p>
           <a class="btn" href="https://www.instagram.com/emanuele_pusceddu/" target="_blank" rel="noopener">Seguimi su Instagram →</a>
-          <p class="ig-note">Dati del profilo: da aggiornare alla data dello screenshot.</p>
         </div>
         <div class="ig-phone">
-          <img src="profilo-ig-screenshot.jpg" alt="Profilo Instagram di Emanuele Pusceddu">
+          <img src="profilo-ig-screenshot.png" alt="Profilo Instagram di Emanuele Pusceddu">
         </div>
       </div>
     </section>
