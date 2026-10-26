@@ -604,7 +604,8 @@ html { scroll-padding-top: 124px; }
 /* Anteprima profilo Instagram: struttura a due colonne */
 .ig-wrap { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; margin: 0 0 32px; }
 @media (min-width: 900px) { .ig-wrap { grid-template-columns: 1fr 1fr; } }
-.ig-info { display: grid; gap: 14px; justify-items: start; }
+.ig-info { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.ig-info .btn { margin-top: auto; }
 .ig-info .ig-label { margin: 0; font-family: var(--font-title); font-weight: 700; text-transform: uppercase; letter-spacing: .18em; font-size: .85rem; color: var(--red); }
 .ig-handle { margin: 0; font-family: var(--font-title); font-weight: 800; font-size: 1.8rem; text-transform: uppercase; }
 .ig-big { margin: 0; font-family: var(--font-title); font-weight: 800; font-size: clamp(4rem, 14vw, 8rem); line-height: .85; background: var(--red-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -632,7 +633,7 @@ html { scroll-padding-top: 124px; }
 .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .ig-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
 .ig-phone img { display: block; width: 100%; height: auto; image-rendering: -webkit-optimize-contrast; }
-@media (min-width: 900px) { #social .ig-phone { margin-top: -48px; } }
+@media (min-width: 900px) { #social .ig-wrap > * { margin-top: -48px; } }
 
 /* Pannello contatto in basso a destra */
 .mail-panel { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); width: min(380px, calc(100vw - 32px)); background: var(--bg-2); border: 1px solid var(--line); border-top: 3px solid var(--red); box-shadow: 0 24px 60px rgba(0,0,0,.6); padding: 20px; z-index: 30; max-height: calc(100vh - 32px); overflow-y: auto; }
