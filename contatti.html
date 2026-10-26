@@ -588,7 +588,7 @@ html { scroll-padding-top: 124px; }
 .back a:hover, .back a:focus-visible { color: var(--fg); }
 section:first-of-type { padding-top: 120px; }
 /* Selettore lingua: tre pulsanti */
-.lang { display: flex; gap: 6px; }
+.lang { position: fixed; top: max(14px, env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); z-index: 60; display: flex; gap: 6px; }
 .lang-btn { background: transparent; border: 1px solid #3a3a3a; color: var(--muted); font-family: var(--font-title); font-weight: 700; font-size: .8rem; letter-spacing: .08em; padding: 5px 10px; cursor: pointer; border-radius: 2px; }
 .lang-btn:hover, .lang-btn:focus-visible { color: var(--fg); border-color: var(--fg); }
 .lang-btn[aria-pressed="true"] { background: var(--red-grad); border-color: transparent; color: var(--fg); }
@@ -658,19 +658,6 @@ section:first-of-type { padding-top: 120px; }
   open.addEventListener("click", function () { box.hidden = false; });
 })();
 </script>
-<script>
-(function () {
-  var btns = document.querySelectorAll('.lang-btn');
-  function setLang(code) {
-    document.documentElement.lang = code;
-    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.lang === code ? 'true' : 'false'); });
-    try { localStorage.setItem('lang', code); } catch (e) {}
-  }
-  var saved = null;
-  try { saved = localStorage.getItem('lang'); } catch (e) {}
-  if (saved) setLang(saved);
-  btns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
-})();
-</script>
+<script src="i18n.js" defer></script>
 </body>
 </html>
