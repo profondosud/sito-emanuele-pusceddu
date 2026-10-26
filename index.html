@@ -430,14 +430,14 @@ html { scroll-padding-top: 124px; }
 
 /* Apertura più leggibile: foto protagonista e logo più ampio */
 .hero::before, .hero::after { content: none !important; display: none !important; }
-.hero-photo { filter: brightness(1.16) saturate(1.06) contrast(1.07); }
+.hero-photo { opacity: 1 !important; filter: brightness(1.22) saturate(1.08) contrast(1.07); }
 .hero h1 { text-shadow: 0 4px 28px rgba(0,0,0,.62); }
 .hero .eyebrow { text-shadow: 0 2px 14px rgba(0,0,0,.8); }
-.logo { margin-left: clamp(14px, 2.2vw, 28px); }
-.logo-img { height: 82px; }
+.logo { margin-left: clamp(26px, 3vw, 40px); }
+.logo-img { height: 94px; }
 @media (max-width: 700px) {
-  .logo { margin-left: 8px; }
-  .logo-img { height: 62px; }
+  .logo { margin-left: 14px; }
+  .logo-img { height: 70px; }
 }
 
 </style>
