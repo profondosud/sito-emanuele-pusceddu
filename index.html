@@ -662,8 +662,10 @@ html { scroll-padding-top: 124px; }
 .lang-btn:hover, .lang-btn:focus-visible { color: var(--fg); border-color: var(--fg); }
 .lang-btn[aria-pressed="true"] { background: var(--red-grad); border-color: transparent; color: var(--fg); }
 /* Galleria stagione 2026: miniature quadrate, apertura a carosello */
-.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 28px; max-width: 760px; }
-@media (min-width: 900px) { .photo-grid { grid-template-columns: repeat(4, 1fr); } }
+.photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 24px; max-width: 520px; }
+@media (min-width: 900px) { .photo-grid { grid-template-columns: repeat(6, 1fr); max-width: 680px; } }
+.photo-grid.collapsed .is-extra { display: none; }
+.gallery-toggle { margin: 14px 0 0; }
 .ph-thumb { padding: 0; border: 1px solid var(--line); background: var(--bg-2); cursor: pointer; aspect-ratio: 1 / 1; overflow: hidden; }
 .ph-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease, filter .3s ease; }
 .ph-thumb:hover img, .ph-thumb:focus-visible img { transform: scale(1.05); filter: brightness(1.1); }
@@ -814,17 +816,18 @@ html { scroll-padding-top: 124px; }
         <div class="card"><h3>Team</h3><p>Axon Seven Team.</p></div>
         <div class="card"><h3>Moto</h3><p>BMW S 1000 RR.</p></div>
       </div>
-      <div class="photo-grid">
+      <div class="photo-grid collapsed" id="photo-grid">
         <button type="button" class="ph-thumb" data-slide="0" aria-label="Apri foto 1"><img src="stagione-01.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
         <button type="button" class="ph-thumb" data-slide="1" aria-label="Apri foto 2"><img src="stagione-02.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
         <button type="button" class="ph-thumb" data-slide="2" aria-label="Apri foto 3"><img src="stagione-03.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
         <button type="button" class="ph-thumb" data-slide="3" aria-label="Apri foto 4"><img src="stagione-04.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
         <button type="button" class="ph-thumb" data-slide="4" aria-label="Apri foto 5"><img src="stagione-05.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
         <button type="button" class="ph-thumb" data-slide="5" aria-label="Apri foto 6"><img src="stagione-06.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
-        <button type="button" class="ph-thumb" data-slide="6" aria-label="Apri foto 7"><img src="stagione-07.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
-        <button type="button" class="ph-thumb" data-slide="7" aria-label="Apri foto 8"><img src="stagione-08.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
-        <button type="button" class="ph-thumb" data-slide="8" aria-label="Apri foto 9"><img src="stagione-09.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
+        <button type="button" class="ph-thumb is-extra" data-slide="6" aria-label="Apri foto 7"><img src="stagione-07.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
+        <button type="button" class="ph-thumb is-extra" data-slide="7" aria-label="Apri foto 8"><img src="stagione-08.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
+        <button type="button" class="ph-thumb is-extra" data-slide="8" aria-label="Apri foto 9"><img src="stagione-09.jpg" alt="Emanuele Pusceddu in pista, stagione 2026" loading="lazy"></button>
       </div>
+      <p class="gallery-toggle"><button type="button" class="btn ghost" id="photo-toggle" aria-expanded="false">Espandi la galleria (9 foto)</button></p>
     </section>
 
     <section id="social">
@@ -1002,6 +1005,19 @@ html { scroll-padding-top: 124px; }
     if (e.key === 'Escape') close();
     if (e.key === 'ArrowRight') show(current + 1);
     if (e.key === 'ArrowLeft') show(current - 1);
+  });
+})();
+</script>
+<script>
+(function () {
+  var grid = document.getElementById('photo-grid');
+  var btn = document.getElementById('photo-toggle');
+  if (!grid || !btn) return;
+  var total = grid.querySelectorAll('.ph-thumb').length;
+  btn.addEventListener('click', function () {
+    var open = grid.classList.toggle('collapsed') === false;
+    btn.textContent = open ? 'Chiudi la galleria' : 'Espandi la galleria (' + total + ' foto)';
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 })();
 </script>
