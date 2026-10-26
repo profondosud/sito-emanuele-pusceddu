@@ -679,6 +679,14 @@ html { scroll-padding-top: 124px; }
 .lb-nav { display: flex; justify-content: space-between; align-items: center; }
 .lb-nav button { background: var(--red-grad); border: 0; color: var(--fg); font-family: var(--font-title); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 12px 18px; cursor: pointer; }
 .lb-nav button:focus-visible, .lb-close:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+/* Sezione partner: vetrina per gli sponsor */
+.partner-intro { margin-bottom: 28px; }
+.value-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 18px; }
+@media (min-width: 768px) { .value-grid { grid-template-columns: repeat(4, 1fr); } }
+.value-item { background: var(--bg-2); border: 1px solid var(--line); border-left: 3px solid var(--red); padding: 16px; }
+.value-item b { display: block; font-family: var(--font-title); font-size: 1.6rem; line-height: 1; background: var(--red-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.value-item span { display: block; margin-top: 6px; color: var(--muted); font-size: .85rem; }
+.value-source { color: var(--muted); font-size: .8rem; margin: 12px 0 0; }
 </style>
 </head>
 <body>
@@ -847,6 +855,16 @@ html { scroll-padding-top: 124px; }
     <section id="partner">
       <div class="rule"></div>
       <h2>I <span class="red">partner</span></h2>
+      <div class="partner-intro">
+        <p class="sub">Emanuele è un pilota seguito dal pubblico del Campionato Italiano Velocità: con 10,7 mila follower su Instagram e una stagione in categoria 1000 con BMW, il suo profilo è una vetrina concreta per chi sceglie di investire nello sport.</p>
+        <div class="value-grid">
+          <div class="value-item"><b>DA VERIFICARE</b><span>valore mediatico del campionato</span></div>
+          <div class="value-item"><b>DA VERIFICARE</b><span>contatti tra web, stampa e TV</span></div>
+          <div class="value-item"><b>DA VERIFICARE</b><span>spettatori TV</span></div>
+          <div class="value-item"><b>10,7 mila</b><span>follower su Instagram</span></div>
+        </div>
+        <p class="value-source">Fonte: da confermare sul sito FMI o CIV prima della pubblicazione.</p>
+      </div>
       <div class="partners-row">
         <div class="partner-logo"><img src="partner-1.png" alt="Reco Service"></div>
         <div class="partner-logo"><img src="partner-2.png" alt="RS Group"></div>
