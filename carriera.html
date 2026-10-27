@@ -733,6 +733,13 @@ section:first-of-type { padding-top: 120px; }
  .career-title-photo .career-photo { height:auto; min-height:0; }
  .career-title-photo .career-photo img { height:auto; min-height:0; max-height:none; aspect-ratio:4/3; object-position:53% center; }
 }
+/* Respiro tra i capitoli, mantenendo continue le composizioni fotografiche. */
+.career-chapter { padding-top:26px; padding-bottom:30px; }
+.career-chapter + .career-chapter { padding-top:30px; }
+@media(max-width:700px) {
+ .career-chapter { padding-top:22px; padding-bottom:24px; }
+ .career-chapter + .career-chapter { padding-top:26px; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
