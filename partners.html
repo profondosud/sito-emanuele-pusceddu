@@ -989,7 +989,15 @@ section:first-of-type { padding-top: 120px; }
       status.textContent = 'Compila nome, email e messaggio.';
       return;
     }
-    status.textContent = 'Invio non ancora collegato: il messaggio non è stato inviato.';
+    var fields = new FormData(form);
+    var body = 'Nome e cognome: ' + fields.get('nome') + '\n'
+      + 'Azienda: ' + (fields.get('azienda') || '—') + '\n'
+      + 'Email: ' + fields.get('email') + '\n\n'
+      + fields.get('messaggio');
+    var destination = 'mailto:ema.pusceddu@gmail.com?subject=' + encodeURIComponent('Richiesta partnership · Emanuele Pusceddu')
+      + '&body=' + encodeURIComponent(body);
+    status.textContent = 'Si apre la tua app email con il messaggio compilato. Premi Invia nell’app per inviarlo.';
+    window.location.href = destination;
   });
 })();
 </script>
