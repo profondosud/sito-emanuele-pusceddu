@@ -617,6 +617,14 @@ section:first-of-type { padding-top: 120px; }
 .career-pullquote { border-left:2px solid #b51c28; padding-left:16px; color:#eee; font:700 1.3rem/1.35 var(--font-title); text-transform:uppercase; margin:28px 0 0; }
 .career-action::after { background:linear-gradient(0deg,#080809,transparent 24%),linear-gradient(90deg,rgba(8,8,9,.3),transparent 25%); }
 @media(max-width:700px) { .career-opening { padding-bottom:34px; } .career-opening h1 { font-size:clamp(2.4rem,9vw,3.7rem); } .career-chapter { grid-template-columns:1fr; gap:12px; padding-bottom:36px; } .career-reverse .career-photo { grid-row:1; } .career-photo { margin-inline:8px; } .career-copy { padding-inline:4px; } .career-copy h2 { font-size:2.3rem; } .career-chapter + .career-chapter { padding-top:36px; } }
+/* Il ritorno: verticale in griglia, poi azione e podio nello stesso racconto. */
+.career-grid-return img { max-height:650px; object-fit:cover; object-position:center 48%; }
+.career-return-photos { display:grid; gap:22px; min-width:0; }
+.career-return-photos .career-photo { padding-bottom:20px; }
+.career-return-photos .career-frame { bottom:20px; }
+.career-return-photos .career-photo::after { bottom:20px; }
+.career-podium img { aspect-ratio:3 / 2; object-fit:contain; }
+@media(max-width:700px) { .career-return-results .career-return-photos { grid-row:2; gap:18px; margin-top:16px; } .career-grid-return img { max-height:580px; } }
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -650,6 +658,17 @@ section:first-of-type { padding-top: 120px; }
       <article class="career-chapter career-reverse">
         <div class="career-copy"><p class="career-label">02 / Il primo segno</p><h2>Il numero è piccolo.<br><span>Le ambizioni, no.</span></h2><p>Le vittorie arrivano presto. Negli anni delle minimoto Emanuele conquista quasi tutti i campionati a cui prende parte, imponendosi in un ambiente dove ogni confronto è una prova di carattere, oltre che di velocità.</p><p>Tra gli avversari che si lascia alle spalle ci sono anche piloti che oggi corrono nel Motomondiale. Sono le prime sfide di un percorso ancora tutto da costruire, ma una cosa è già chiara: quel bambino sulla minimoto non è lì soltanto per partecipare.</p><p class="career-pullquote">Da quei primi cordoli nasce una storia<br>che guarda sempre più lontano.</p></div>
         <figure class="career-photo career-action"><img src="carriera-minimoto-pista.png" alt="Emanuele in piega sulla minimoto blu con il numero 6" width="720" height="478" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Il numero 6, già davanti agli occhi.</figcaption></figure>
+      </article>
+      <article class="career-chapter career-comeback">
+        <figure class="career-photo career-grid-return"><img src="carriera-ripartenza-griglia.png" alt="Emanuele di nuovo sulla griglia di partenza, accanto alla moto numero 61" width="640" height="960" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Ritrovare la griglia. Ritrovare la propria strada.</figcaption></figure>
+        <div class="career-copy"><p class="career-label">03 / La battuta d'arresto</p><h2>La corsa si ferma.<br><span>La passione resta.</span></h2><p>Proprio quando il talento comincia a indicare una direzione, un infortunio serio interrompe il percorso di Emanuele. Le competizioni devono aspettare: arriva uno stop che lo tiene lontano dalle gare fino ai sedici anni.</p><p>Per chi è cresciuto tra partenze e cordoli, restare fuori significa rinunciare a una parte importante della propria quotidianità. La pista, però, rimane il punto a cui tornare. Quel capitolo sospeso non è la fine della storia.</p><p class="career-pullquote">Il momento più difficile.<br>Un nuovo punto di partenza.</p></div>
+      </article>
+      <article class="career-chapter career-reverse career-return-results">
+        <div class="career-copy"><p class="career-label">04 / Tornare a fare ciò che ama</p><h2>Di nuovo in sella.<br><span>Di nuovo davanti.</span></h2><p>La ripartenza passa dal Trofeo Michelin. Emanuele torna a fare quello che gli piace di più: guidare, confrontarsi, cercare il proprio limite un giro alla volta.</p><p>Il ritorno non si esaurisce nella gioia di essere di nuovo al via. Ritrova il ritmo, la velocità e le posizioni di vertice. Dopo il lungo stop, i risultati tornano a raccontare il suo talento: il percorso riprende, con la stessa voglia di lasciare il segno.</p><p>La griglia, la piega, il podio: tre immagini di una ripartenza che restituisce a Emanuele il suo posto nelle corse.</p></div>
+        <div class="career-return-photos">
+          <figure class="career-photo career-action"><img src="carriera-ripartenza-pista.png" alt="Emanuele in piega sulla moto numero 61 dopo il ritorno alle competizioni" width="702" height="468" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>La velocità ritrovata, un giro alla volta.</figcaption></figure>
+          <figure class="career-photo career-podium"><img src="carriera-ripartenza-podio.png" alt="Emanuele sul podio durante i primi anni del ritorno alle gare" width="960" height="640" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Il ritorno nelle posizioni di vertice.</figcaption></figure>
+        </div>
       </article>
     </section>
   </div>
