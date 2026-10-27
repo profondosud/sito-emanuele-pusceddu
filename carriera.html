@@ -801,6 +801,10 @@ section:first-of-type { padding-top: 120px; }
  .career-chapter .career-photo figcaption { display:none; }
  .career-chapter .career-photo-group::before { content:""; position:absolute; left:0; top:-1px; width:54px; height:2px; background:#b51c28; }
 }
+/* Il podio sfuma verso la colonna del racconto. */
+@media(min-width:701px) {
+ .career-title-photo .career-photo::after { display:block; content:""; position:absolute; inset:0; pointer-events:none; z-index:2; background:linear-gradient(90deg,#080809 0%,rgba(8,8,9,.76) 4%,rgba(8,8,9,.28) 12%,transparent 24%),linear-gradient(0deg,#080809,transparent 14%); }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
