@@ -692,6 +692,29 @@ section:first-of-type { padding-top: 120px; }
  .career-season-strip figcaption { font-size:.58rem; }
  .career-frame,.career-photo::after { bottom:12px; }
 }
+
+/* Composizioni fotografiche continue, senza fasce nere tra gli scatti. */
+.career-photo-group { position:relative; display:grid; gap:0; align-self:stretch; align-content:center; min-width:0; background:linear-gradient(135deg,rgba(120,19,30,.1),rgba(8,8,9,0) 65%); }
+.career-photo-group .career-photo { margin:0; padding:0; }
+.career-photo-group .career-photo img { display:block; width:100%; height:auto; max-height:290px; object-fit:cover; }
+.career-photo-group .career-photo + .career-photo { margin-top:0; }
+.career-photo-group .career-frame { inset:0; }
+.career-photo-group .career-frame::after,.career-photo-group figcaption { display:none; }
+.career-photo-group .career-frame { background:none; }
+.career-photo-group .career-photo:first-child .career-frame { background:linear-gradient(90deg,#a91b29,#a91b29) left top/70px 2px no-repeat; }
+.career-photo-group .career-photo:last-child .career-frame { border-right:1px solid rgba(255,255,255,.17); }
+.career-photo-group .career-photo::after { inset:0; background:linear-gradient(90deg,rgba(8,8,9,.12),transparent 20%,transparent 84%,rgba(8,8,9,.24)); }
+.career-photo-group .career-photo:last-child::after { background:linear-gradient(0deg,#080809,transparent 15%),linear-gradient(90deg,rgba(8,8,9,.12),transparent 20%,transparent 84%,rgba(8,8,9,.24)); }
+.career-chapter { align-items:center; padding-block:16px; }
+.career-chapter + .career-chapter { padding-top:18px; }
+.career-copy > p:last-child { margin-bottom:0; }
+@media(max-width:700px) {
+ .career-photo-group { align-self:auto; grid-row:auto; }
+ .career-photo-group .career-photo img { max-height:240px; }
+ .career-junior-results .career-photo-group { grid-row:1; }
+ .career-return-results .career-return-photos { margin-top:0; gap:0; }
+ .career-photo-group .career-photo::after { bottom:0; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -732,7 +755,7 @@ section:first-of-type { padding-top: 120px; }
       </article>
       <article class="career-chapter career-reverse career-return-results">
         <div class="career-copy"><p class="career-label">04 / Tornare a fare ciò che ama</p><h2>Il ritorno <span>nel Trofeo Michelin</span></h2><p>La ripartenza passa dal Trofeo Michelin. Emanuele torna a fare quello che gli piace di più: guidare, confrontarsi, cercare il proprio limite un giro alla volta.</p><p>Il ritorno non si esaurisce nella gioia di essere di nuovo al via. Ritrova il ritmo, la velocità e le posizioni di vertice. Dopo il lungo stop, i risultati tornano a raccontare il suo talento: il percorso riprende, con la stessa voglia di lasciare il segno.</p><p>La griglia, la piega, il podio: tre immagini di una ripartenza che restituisce a Emanuele il suo posto nelle corse.</p></div>
-        <div class="career-return-photos">
+        <div class="career-return-photos career-photo-group">
           <figure class="career-photo career-action"><img src="carriera-ripartenza-pista.png" alt="Emanuele in piega sulla moto numero 61 dopo il ritorno alle competizioni" width="702" height="468" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>La velocità ritrovata, un giro alla volta.</figcaption></figure>
           <figure class="career-photo career-podium"><img src="carriera-ripartenza-podio.png" alt="Emanuele sul podio durante i primi anni del ritorno alle gare" width="960" height="640" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Il ritorno nelle posizioni di vertice.</figcaption></figure>
         </div>
@@ -743,11 +766,12 @@ section:first-of-type { padding-top: 120px; }
       </article>
       <article class="career-chapter career-reverse career-junior-results">
         <div class="career-copy"><p class="career-label">06 / Lasciare il segno</p><h2>I successi <span>in Europa</span></h2><p>Emanuele risponde in pista: pole position, podi e vittorie trasformano il ritorno alle competizioni in una presenza costante nelle posizioni che contano. La fiducia ritrovata diventa velocità, e la velocità comincia a parlare anche sui circuiti internazionali.</p><p>A Imola arriva una delle immagini più forti di questo percorso: una vittoria davanti al pubblico italiano, conquistata imponendo il proprio ritmo. Il podio non è soltanto una festa, ma il segno di una carriera che ha ripreso slancio.</p><p>La Junior Cup gli restituisce una dimensione precisa: quella di un pilota capace di confrontarsi al vertice, pronto a portare questa esperienza nella sfida successiva.</p><p class="career-pullquote">Dalla ripartenza al podio.<br>La strada torna ad aprirsi.</p></div>
-        <figure class="career-photo career-junior-celebration"><img src="carriera-junior-vittoria.png" alt="Emanuele festeggia sul podio alzando la bottiglia" width="640" height="800" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>La gioia di un risultato costruito in pista.</figcaption></figure>
+        <div class="career-photo-group"><figure class="career-photo career-junior-celebration"><img src="carriera-junior-vittoria.png" alt="Emanuele festeggia sul podio alzando la bottiglia" width="640" height="800" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>La gioia di un risultato costruito in pista.</figcaption></figure>
+      <figure class="career-photo"><img src="carriera-junior-pista.png" alt="Emanuele sulla Honda numero 58 durante la European Junior Cup; fotografia con credito originale" width="960" height="640" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>European Junior Cup · Il salto verso il confronto internazionale.</figcaption></figure></div>
       </article>
-      <figure class="career-photo career-junior-wide"><img src="carriera-junior-pista.png" alt="Emanuele sulla Honda numero 58 durante la European Junior Cup; fotografia con credito originale" width="960" height="640" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>European Junior Cup · Il salto verso il confronto internazionale.</figcaption></figure>
+
       <article class="career-chapter career-stock-opening">
-        <div class="career-stock-pair">
+        <div class="career-stock-pair career-photo-group">
           <figure class="career-photo"><img src="carriera-stock-salto.png" alt="Emanuele sulla Superstock 1000 numero 58 mentre supera un dosso" width="1136" height="640" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Più potenza. Più velocità. Un nuovo livello di confronto.</figcaption></figure>
           <figure class="career-photo"><img src="carriera-stock-ducati.png" alt="Emanuele in azione sulla Ducati numero 58" width="1600" height="1066" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>La precisione richiesta dalle grandi cilindrate.</figcaption></figure>
         </div>
@@ -758,7 +782,7 @@ section:first-of-type { padding-top: 120px; }
         <figure class="career-photo"><img src="carriera-stock-cordoli.png" alt="Emanuele affronta i cordoli sulla Superstock numero 58" width="1136" height="640" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Tra difficoltà e ripartenze, il confronto resta in pista.</figcaption></figure>
       </article>
       <article class="career-chapter career-stock-resolve">
-        <div class="career-stock-pair">
+        <div class="career-stock-pair career-photo-group">
           <figure class="career-photo"><img src="carriera-stock-piega.png" alt="Emanuele in piega sulla moto gialla numero 6" width="960" height="640" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>La grinta di cercare il limite, ancora una volta.</figcaption></figure>
           <figure class="career-photo"><img src="carriera-stock-uscita.png" alt="Emanuele in accelerazione sulla Superstock numero 6" width="960" height="640" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Ogni occasione buona per mostrare il proprio potenziale.</figcaption></figure>
         </div>
@@ -779,13 +803,13 @@ section:first-of-type { padding-top: 120px; }
       <article class="career-chapter career-reverse">
         <div class="career-copy"><p class="career-label">13 / Tra i protagonisti della Supersport</p><h2>Vicecampione <span>italiano Supersport</span></h2><p>Nel corso di questo legame arrivano molteplici vittorie, podi e pole position sui circuiti italiani. Emanuele si afferma tra i protagonisti della SSP600, capace di dare battaglia e di lasciare il segno nei weekend che contano.</p><p>Il percorso culmina nella lotta per il titolo del CIV Supersport 2023. Sulla Yamaha del J. Angel Racing Team, Emanuele resta tra i riferimenti del campionato e chiude la stagione da <strong>vicecampione italiano</strong>, alle spalle di Simone Corsi.</p><p>Il percorso con J. Angel lo porta anche al Mondiale Supersport, la categoria SSP600 del paddock WorldSBK: Emanuele partecipa come wild card agli appuntamenti di Imola e Jerez, confrontandosi con i protagonisti della serie iridata. Un altro passaggio internazionale, costruito sulla velocità e sul lavoro maturati nel campionato italiano.</p>
 <p>Quel trofeo racconta molto più di una posizione in classifica: il lavoro di una squadra, la fiducia costruita negli anni e la risposta di un pilota che, dopo tante ripartenze, è tornato a giocarsi il vertice.</p><p class="career-pullquote">La fiducia diventa velocità.<br>Il lavoro di tutti, un risultato da condividere.</p></div>
-        <div class="career-stock-pair">
+        <div class="career-stock-pair career-photo-group">
 
 <figure class="career-photo"><img src="carriera-jangel-vicecampione.jpg" alt="Emanuele alza il trofeo di vicecampione italiano Supersport 2023" width="1600" height="1066" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Vicecampione italiano: il punto più alto di un legame speciale.</figcaption></figure>
 </div>
       </article>
       <article class="career-chapter">
-        <div class="career-stock-pair">
+        <div class="career-stock-pair career-photo-group">
           <figure class="career-photo"><img src="carriera-kuja-pista.png" alt="Emanuele in piega sulla Ducati del Kuja Racing" width="1440" height="960" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Una nuova moto. Un nuovo modo di cercare il limite.</figcaption></figure>
           <figure class="career-photo"><img src="carriera-kuja-box.png" alt="Il lavoro della squadra Kuja con Emanuele sulla Ducati prima di entrare in pista" width="1440" height="1440" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>La fiducia si costruisce anche fuori dalla pista.</figcaption></figure>
         </div>
@@ -793,7 +817,7 @@ section:first-of-type { padding-top: 120px; }
       </article>
       <article class="career-chapter career-reverse">
         <div class="career-copy"><p class="career-label">15 / L'esperienza torna a fare la differenza</p><h2>I risultati <span>con Kuja</span></h2><p>Quando i tasselli cominciano a trovare il proprio posto, tornano anche i risultati: podi, vittorie e pole position continuano a confermare la velocità di Emanuele e la sua capacità di essere competitivo nella classe.</p><p>Il successo al Mugello diventa uno dei momenti più significativi del percorso con Kuja: la risposta concreta a un adattamento costruito con pazienza, lavoro e determinazione.</p><p>Ormai tra i veterani della Supersport, Emanuele mette a frutto ciò che ha imparato nelle tante fasi della carriera. La capacità di leggere una gara, reagire alle difficoltà e lavorare con il team resta il filo che collega ogni nuova sfida.</p><p class="career-pullquote">L'esperienza non spegne la fame.<br>Le dà una direzione.</p></div>
-        <div class="career-stock-pair">
+        <div class="career-stock-pair career-photo-group">
           <figure class="career-photo"><img src="carriera-kuja-vittoria.png" alt="Emanuele festeggia la vittoria sul podio con la tuta Ducati Kuja" width="1440" height="1440" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Il ritorno sul gradino più alto.</figcaption></figure>
           <figure class="career-photo"><img src="carriera-kuja-squadra.png" alt="Emanuele e un membro del Kuja Racing con il trofeo sul podio" width="1440" height="1440" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Un risultato da condividere con la squadra.</figcaption></figure>
           <figure class="career-photo"><img src="carriera-kuja-vallelunga.jpg" alt="Emanuele sul secondo gradino del podio a Vallelunga con Kuja Racing" width="1600" height="1066" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Vallelunga · Un altro podio nel percorso con Kuja Racing.</figcaption></figure>
