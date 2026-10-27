@@ -672,6 +672,13 @@ section:first-of-type { padding-top: 120px; }
  #team .team-assist { margin-top: 58px; }
 }
 .nav .nav-team, .nav .nav-team:hover, .nav .nav-team:focus-visible { background:none; box-shadow:none; transform:none; padding:10px 0; color:inherit; text-shadow:none; }
+/* Cornici fotografiche EMC2: tagli gialli e linee bianche ai bordi. */
+.emc-photo-frame { position:absolute; inset:10px; z-index:2; pointer-events:none; border-right:1px solid rgba(255,255,255,.3); background:linear-gradient(90deg,#d9eb19,#d9eb19) left top / 88px 2px no-repeat,linear-gradient(180deg,#d9eb19,rgba(217,235,25,0)) left top / 2px 100px no-repeat,linear-gradient(90deg,transparent,rgba(255,255,255,.65)) right bottom / 130px 1px no-repeat; }
+.emc-photo-frame::before { content:""; position:absolute; bottom:22px; right:16px; width:56px; height:5px; transform:skewX(-30deg); background:#d9eb19; box-shadow:-70px 0 0 -1px rgba(255,255,255,.65); }
+.emc-photo-frame::after { content:""; position:absolute; right:14px; top:14px; width:35px; height:2px; background:rgba(255,255,255,.65); }
+.emc-story-box .emc-photo-frame { inset:0 0 24px 0; }
+.emc-hero-photo .emc-photo-frame { inset:18px 12px 22px 24px; }
+@media(max-width:700px) { .emc-photo-frame { inset:8px; } .emc-hero-photo .emc-photo-frame { inset:12px 8px 30px; } .emc-photo-frame::before { width:42px; box-shadow:-54px 0 0 -1px rgba(255,255,255,.65); } }
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -702,16 +709,16 @@ section:first-of-type { padding-top: 120px; }
           <h1>Una squadra.<br><span>La stessa fame.</span></h1>
           <p class="emc-lead">Esperienza in pista. Precisione ai box.<br>Un unico obiettivo: dare il massimo, insieme.</p>
         </div>
-        <div class="emc-hero-photo"><img src="emc2-squadra.jpg" alt="La squadra EMC2 riunita ai box con le moto" width="900" height="1600"></div>
+        <div class="emc-hero-photo"><span class="emc-photo-frame" aria-hidden="true"></span><img src="emc2-squadra.jpg" alt="La squadra EMC2 riunita ai box con le moto" width="900" height="1600"></div>
       </div>
       <div class="emc-story emc-story-box">
-        <div class="emc-story-photo"><img src="emc2-box.jpg" alt="Il team EMC2 davanti al box con la moto e la tabella tempi" loading="lazy" width="896" height="1195"></div>
+        <div class="emc-story-photo"><span class="emc-photo-frame" aria-hidden="true"></span><img src="emc2-box.jpg" alt="Il team EMC2 davanti al box con la moto e la tabella tempi" loading="lazy" width="896" height="1195"></div>
         <div class="emc-story-copy">
           <p class="emc-kicker">01 / Le persone</p>
           <h2>La velocità nasce<br><span>dalla fiducia.</span></h2>
-          <p>EMC2 Squadra Corse nasce dall'incontro tra l'esperienza di Emanuele Pusceddu come pilota e la competenza meccanica di Ercole Caligiuro. Due percorsi che si uniscono per costruire una squadra capace di capire la moto e chi la guida.</p>
+          <p>EMC2 Squadra Corse nasce dall'incontro tra l'esperienza di Emanuele Pusceddu come pilota e la competenza meccanica di Ercole Caligiuri. Due percorsi che si uniscono per costruire una squadra capace di capire la moto e chi la guida.</p>
           <p>Insieme, alla guida del team, affiancano piloti e amatori nella Coppa Italia Velocità. Un rapporto diretto, presenza in pit lane e attenzione ai dettagli: il lavoro comincia molto prima del semaforo verde.</p>
-          <div class="emc-people"><div><b>Emanuele Pusceddu</b><span>Esperienza in pista</span></div><div><b>Ercole Caligiuro</b><span>Competenza meccanica</span></div></div>
+          <div class="emc-people"><div><b>Emanuele Pusceddu</b><span>Esperienza in pista</span></div><div><b>Ercole Caligiuri</b><span>Competenza meccanica</span></div></div>
         </div>
       </div>
       <div class="emc-story emc-story-grid">
@@ -722,7 +729,7 @@ section:first-of-type { padding-top: 120px; }
           <p>Dunlop, Pirelli, Amatori e R3 Cup sono i trofei in cui portiamo il nostro impegno. L'obiettivo è crescere, migliorare a ogni uscita e lavorare per le posizioni di vertice.</p>
           <p class="emc-quote">La tua fiducia.<br>Il nostro lavoro. La stessa direzione.</p>
         </div>
-        <div class="emc-story-photo"><img src="emc2-griglia.jpg" alt="EMC2 al fianco del pilota e della moto numero 86 sulla griglia di partenza" loading="lazy" width="900" height="1600"></div>
+        <div class="emc-story-photo"><span class="emc-photo-frame" aria-hidden="true"></span><img src="emc2-griglia.jpg" alt="EMC2 al fianco del pilota e della moto numero 86 sulla griglia di partenza" loading="lazy" width="900" height="1600"></div>
       </div>
       <div class="team-assist">
         <div class="assist-copy"><p class="assist-label">EMC2 Squadra Corse</p><h3>Assistenza <span>in pista</span></h3><p>Ti serve assistenza nel weekend di gara o nelle libere?</p></div>
