@@ -784,6 +784,7 @@ section:first-of-type { padding-top: 120px; }
     <button type="button" class="mail-close" id="mail-close" aria-label="Chiudi">×</button>
   </div>
   <form id="mail-form" novalidate>
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
     <label class="mail-field">Nome e cognome
       <input type="text" name="nome" autocomplete="name" required>
     </label>
@@ -827,14 +828,25 @@ section:first-of-type { padding-top: 120px; }
       return;
     }
     var fields = new FormData(form);
-    var body = 'Nome e cognome: ' + fields.get('nome') + '\n'
-      + 'Azienda: ' + (fields.get('azienda') || '—') + '\n'
-      + 'Email: ' + fields.get('email') + '\n\n'
-      + fields.get('messaggio');
-    var destination = 'mailto:emc2.squadracorse@gmail.com?subject=' + encodeURIComponent('Assistenza in pista · EMC2')
-      + '&body=' + encodeURIComponent(body);
-    status.textContent = 'Si apre la tua app email con il messaggio compilato. Premi Invia nell’app per inviarlo.';
-    window.location.href = destination;
+    if (fields.get('_honey')) return;
+    fields.set('_subject', 'Assistenza in pista · EMC2');
+    fields.set('_template', 'table');
+    fields.set('_url', window.location.href);
+    var button = form.querySelector('[type="submit"]');
+    button.disabled = true;
+    status.textContent = 'Invio in corso…';
+    fetch('https://formsubmit.co/ajax/emc2.squadracorse@gmail.com', {
+      method: 'POST', body: fields, headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+      if (!response.ok) throw new Error('http');
+      return response.json();
+    }).then(function(result) {
+      if (result.success !== true && result.success !== 'true') throw new Error('delivery');
+      status.textContent = 'Messaggio inviato. Grazie per averci contattato!';
+      form.reset();
+    }).catch(function() {
+      status.textContent = 'Invio non riuscito. Riprova tra poco oppure scrivi a emc2.squadracorse@gmail.com.';
+    }).finally(function() { button.disabled = false; });
   });
 })();
 </script>
