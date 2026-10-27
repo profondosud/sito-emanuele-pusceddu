@@ -1,0 +1,58 @@
+/* Foto e racconto rimangono affiancati anche sugli schermi piccoli. */
+@media(max-width:900px) {
+ .career-chapter,.emc-story { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(12px,3vw,24px); }
+ .career-chapter > *, .emc-story > *, #profilo .grid-2 > * { min-width:0; }
+ .career-reverse .career-photo,.career-junior-results .career-photo-group,.career-return-results .career-return-photos,.emc-story-grid .emc-story-photo { grid-row:auto; }
+ .career-copy h2,.emc-page h2 { font-size:clamp(1.35rem,3.7vw,2.5rem); overflow-wrap:anywhere; }
+ .career-copy > p:not(.career-label):not(.career-pullquote),.emc-story-copy > p:not(.emc-kicker):not(.emc-quote) { font-size:clamp(.78rem,1.6vw,.92rem); line-height:1.65; }
+ .career-label,.emc-kicker { font-size:.56rem; letter-spacing:.08em; }
+ .career-pullquote,.emc-quote { font-size:1rem; padding-left:10px; }
+ .career-photo { margin-inline:0; }
+ .career-photo-group { align-self:stretch; align-content:center; }
+ .career-photo-group .career-photo img { max-height:330px; }
+ .career-title-photo .career-photo,.career-title-photo .career-photo img { min-height:0; height:100%; }
+ .career-title-photo .career-photo img { aspect-ratio:auto; }
+ .career-frame { inset:0; }
+ .emc-story-copy { padding:12px 0; margin-top:0; }
+ .emc-story-photo img { height:100%; min-height:340px; max-height:650px; }
+ .emc-story-photo { align-self:stretch; }
+ .emc-people { grid-template-columns:1fr; gap:10px; margin-top:16px; padding-top:16px; }
+ .emc-people b { font-size:1rem; }
+ .emc-hero { grid-template-columns:minmax(0,1fr) minmax(0,1fr); min-height:440px; }
+ .emc-hero-copy { grid-column:1; grid-row:1; padding:18px 0; }
+ .emc-hero-photo { position:relative; inset:auto; grid-column:2; grid-row:1; height:100%; min-height:440px; margin:0; }
+ .emc-hero-photo::after { background:linear-gradient(90deg,#080909,transparent 25%),linear-gradient(0deg,#080909,transparent 20%); }
+ .emc-page h1 { font-size:clamp(1.8rem,5.4vw,3.8rem); }
+ .emc-lead { font-size:.8rem; line-height:1.7; margin-top:16px; }
+ .emc-logo { width:80px; height:80px; margin-bottom:16px; }
+ #profilo .grid-2 { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(12px,3vw,26px); align-items:stretch; }
+ #profilo .bio-portrait { height:100%; min-height:360px; }
+ #profilo h2 { font-size:clamp(1.7rem,4.2vw,2.8rem); }
+ #profilo .sub { font-size:.8rem; line-height:1.7; overflow-wrap:anywhere; }
+ #social .ig-wrap { grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:14px; padding:22px 14px; }
+ #social h2 { font-size:clamp(1.6rem,4.5vw,3rem); }
+ #social .ig-description { font-size:.78rem; line-height:1.65; margin:14px 0; }
+ #social .ig-handle { font-size:.74rem; }
+ #social .ig-big { font-size:clamp(2rem,6vw,4rem); }
+ #social .ig-audience { padding-block:14px; margin-bottom:16px; }
+ #social .ig-cta { font-size:.7rem; padding:12px 8px; }
+ #social .ig-phone { width:100%; align-self:center; }
+ .partner-intro-text { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; }
+ .partner-intro-title { font-size:clamp(1.9rem,5vw,3rem); }
+ .partner-intro-copy p { font-size:.8rem; line-height:1.7; }
+ #partners-page .civ-info { width:48%; padding:26px 12px; }
+ #partners-page .civ-photo { left:43%; height:100%; }
+ #partners-page .civ-photo img { object-position:60% center; }
+ #partners-page .civ-photo::before { background:linear-gradient(90deg,#0a0a0b,transparent 30%),linear-gradient(0deg,#0a0a0b,transparent 20%); }
+ #partners-page .civ-info h2 { font-size:clamp(1.7rem,4.6vw,3rem); }
+ #partners-page .civ-stats { gap:8px; }
+ #partners-page .civ-stats span { font-size:.52rem; letter-spacing:.04em; }
+ #partners-page .civ-bullets { font-size:.75rem; line-height:1.6; }
+ #evento { padding:30px 12px; min-height:520px; }
+ #evento::before { inset:0 48% 0 0; height:100%; background:linear-gradient(90deg,transparent 65%,#080809),linear-gradient(0deg,#080809,transparent 20%),url('evento-bg.jpg') 38% center/cover no-repeat; }
+ #evento .evt-grid { width:48%; max-width:none; margin-left:auto; margin-right:0; padding-left:12px; }
+ #evento h2 { font-size:clamp(1.5rem,4vw,2.5rem); }
+ #evento .evt-num b { font-size:clamp(2.4rem,7vw,4rem); }
+ #evento .civ-bullets { font-size:.75rem; gap:10px; }
+ #evento .civ-source { font-size:.6rem; }
+}
