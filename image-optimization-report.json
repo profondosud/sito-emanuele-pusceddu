@@ -1,7 +1,7 @@
 {
   "images": 45,
   "original_asset_bytes": 31483262,
-  "optimized_asset_bytes": 6003498,
+  "optimized_asset_bytes": 11520480,
   "html_before": 3454790,
   "html_after": 257778,
   "embedded_unique": 1,
@@ -9,7 +9,7 @@
     {
       "source": "carriera-2026-bmw.jpg",
       "original": 194326,
-      "optimized": 139398,
+      "optimized": 266842,
       "file": "optimized/carriera-2026-bmw.webp",
       "width": 1600,
       "height": 1066
@@ -17,7 +17,7 @@
     {
       "source": "carriera-2026-pista.jpg",
       "original": 200221,
-      "optimized": 155248,
+      "optimized": 298562,
       "file": "optimized/carriera-2026-pista.webp",
       "width": 1600,
       "height": 1066
@@ -25,7 +25,7 @@
     {
       "source": "carriera-jangel-festa.jpg",
       "original": 402409,
-      "optimized": 363774,
+      "optimized": 606880,
       "file": "optimized/carriera-jangel-festa.webp",
       "width": 1600,
       "height": 1066
@@ -33,7 +33,7 @@
     {
       "source": "carriera-jangel-squadra.png",
       "original": 1225657,
-      "optimized": 186426,
+      "optimized": 279752,
       "file": "optimized/carriera-jangel-squadra.webp",
       "width": 720,
       "height": 960
@@ -41,7 +41,7 @@
     {
       "source": "carriera-jangel-vicecampione.jpg",
       "original": 295292,
-      "optimized": 235236,
+      "optimized": 420114,
       "file": "optimized/carriera-jangel-vicecampione.webp",
       "width": 1600,
       "height": 1066
@@ -49,7 +49,7 @@
     {
       "source": "carriera-junior-pista.png",
       "original": 891156,
-      "optimized": 78734,
+      "optimized": 143622,
       "file": "optimized/carriera-junior-pista.webp",
       "width": 960,
       "height": 640
@@ -57,7 +57,7 @@
     {
       "source": "carriera-junior-ritratto.png",
       "original": 602997,
-      "optimized": 50412,
+      "optimized": 90186,
       "file": "optimized/carriera-junior-ritratto.webp",
       "width": 640,
       "height": 640
@@ -65,7 +65,7 @@
     {
       "source": "carriera-junior-vittoria.png",
       "original": 728600,
-      "optimized": 63032,
+      "optimized": 113130,
       "file": "optimized/carriera-junior-vittoria.webp",
       "width": 640,
       "height": 800
@@ -73,7 +73,7 @@
     {
       "source": "carriera-kuja-box.png",
       "original": 3024575,
-      "optimized": 425058,
+      "optimized": 678994,
       "file": "optimized/carriera-kuja-box.webp",
       "width": 1440,
       "height": 1440
@@ -81,7 +81,7 @@
     {
       "source": "carriera-kuja-pista.png",
       "original": 1795802,
-      "optimized": 160110,
+      "optimized": 276390,
       "file": "optimized/carriera-kuja-pista.webp",
       "width": 1440,
       "height": 960
@@ -89,7 +89,7 @@
     {
       "source": "carriera-kuja-vallelunga.jpg",
       "original": 362256,
-      "optimized": 314306,
+      "optimized": 540714,
       "file": "optimized/carriera-kuja-vallelunga.webp",
       "width": 1600,
       "height": 1066
@@ -97,7 +97,7 @@
     {
       "source": "carriera-kuja-vittoria.png",
       "original": 2905511,
-      "optimized": 337634,
+      "optimized": 562960,
       "file": "optimized/carriera-kuja-vittoria.webp",
       "width": 1440,
       "height": 1440
@@ -105,7 +105,7 @@
     {
       "source": "carriera-minimoto-box.png",
       "original": 743505,
-      "optimized": 105528,
+      "optimized": 163784,
       "file": "optimized/carriera-minimoto-box.webp",
       "width": 720,
       "height": 540
@@ -113,7 +113,7 @@
     {
       "source": "carriera-minimoto-pista.png",
       "original": 514169,
-      "optimized": 56240,
+      "optimized": 98800,
       "file": "optimized/carriera-minimoto-pista.webp",
       "width": 720,
       "height": 478
@@ -121,7 +121,7 @@
     {
       "source": "carriera-national-pista.png",
       "original": 856397,
-      "optimized": 73634,
+      "optimized": 127380,
       "file": "optimized/carriera-national-pista.webp",
       "width": 960,
       "height": 640
@@ -129,7 +129,7 @@
     {
       "source": "carriera-national-podio.png",
       "original": 1305706,
-      "optimized": 224678,
+      "optimized": 324076,
       "file": "optimized/carriera-national-podio.webp",
       "width": 960,
       "height": 640
@@ -137,7 +137,7 @@
     {
       "source": "carriera-ripartenza-griglia.png",
       "original": 1052383,
-      "optimized": 143958,
+      "optimized": 235262,
       "file": "optimized/carriera-ripartenza-griglia.webp",
       "width": 640,
       "height": 960
@@ -145,7 +145,7 @@
     {
       "source": "carriera-ripartenza-pista.png",
       "original": 489656,
-      "optimized": 44164,
+      "optimized": 79204,
       "file": "optimized/carriera-ripartenza-pista.webp",
       "width": 702,
       "height": 468
@@ -153,7 +153,7 @@
     {
       "source": "carriera-ripartenza-podio.png",
       "original": 1059673,
-      "optimized": 127004,
+      "optimized": 199310,
       "file": "optimized/carriera-ripartenza-podio.webp",
       "width": 960,
       "height": 640
@@ -161,7 +161,7 @@
     {
       "source": "carriera-stock-cordoli.png",
       "original": 1087826,
-      "optimized": 107844,
+      "optimized": 181500,
       "file": "optimized/carriera-stock-cordoli.webp",
       "width": 1136,
       "height": 640
@@ -169,7 +169,7 @@
     {
       "source": "carriera-stock-ducati.png",
       "original": 1454111,
-      "optimized": 154070,
+      "optimized": 264650,
       "file": "optimized/carriera-stock-ducati.webp",
       "width": 1600,
       "height": 1066
@@ -177,7 +177,7 @@
     {
       "source": "carriera-stock-piega.png",
       "original": 866412,
-      "optimized": 78518,
+      "optimized": 135500,
       "file": "optimized/carriera-stock-piega.webp",
       "width": 960,
       "height": 640
@@ -185,7 +185,7 @@
     {
       "source": "carriera-stock-salto.png",
       "original": 454077,
-      "optimized": 48018,
+      "optimized": 82736,
       "file": "optimized/carriera-stock-salto.webp",
       "width": 1136,
       "height": 640
@@ -193,7 +193,7 @@
     {
       "source": "carriera-stock-uscita.png",
       "original": 865298,
-      "optimized": 79166,
+      "optimized": 136830,
       "file": "optimized/carriera-stock-uscita.webp",
       "width": 960,
       "height": 640
@@ -201,15 +201,15 @@
     {
       "source": "emc2-logo.png",
       "original": 913347,
-      "optimized": 156226,
+      "optimized": 551600,
       "file": "optimized/emc2-logo.webp",
-      "width": 640,
-      "height": 551
+      "width": 1352,
+      "height": 1163
     },
     {
       "source": "evento-bg.jpg",
       "original": 233705,
-      "optimized": 123446,
+      "optimized": 304894,
       "file": "optimized/evento-bg.webp",
       "width": 1600,
       "height": 1066
@@ -217,15 +217,15 @@
     {
       "source": "logo-push.png",
       "original": 228923,
-      "optimized": 62378,
+      "optimized": 100744,
       "file": "optimized/logo-push.webp",
-      "width": 640,
-      "height": 343
+      "width": 2239,
+      "height": 1199
     },
     {
       "source": "numero-6-originale.png",
       "original": 18511,
-      "optimized": 4376,
+      "optimized": 4512,
       "file": "optimized/numero-6-originale.webp",
       "width": 715,
       "height": 615
@@ -233,39 +233,39 @@
     {
       "source": "numero-6-rosso.png",
       "original": 129292,
-      "optimized": 62994,
+      "optimized": 40840,
       "file": "optimized/numero-6-rosso.webp",
-      "width": 1000,
-      "height": 858
+      "width": 1777,
+      "height": 1525
     },
     {
       "source": "partner-1.png",
       "original": 181415,
-      "optimized": 40148,
+      "optimized": 77556,
       "file": "optimized/partner-1.webp",
-      "width": 800,
-      "height": 353
+      "width": 2977,
+      "height": 1313
     },
     {
       "source": "partner-2.png",
       "original": 161557,
-      "optimized": 61070,
+      "optimized": 67130,
       "file": "optimized/partner-2.webp",
-      "width": 631,
-      "height": 800
+      "width": 1141,
+      "height": 1447
     },
     {
       "source": "partner-3.png",
       "original": 497917,
-      "optimized": 100222,
+      "optimized": 258650,
       "file": "optimized/partner-3.webp",
-      "width": 800,
-      "height": 434
+      "width": 1600,
+      "height": 868
     },
     {
       "source": "partners-hero.jpg",
       "original": 128739,
-      "optimized": 67136,
+      "optimized": 136750,
       "file": "optimized/partners-hero.webp",
       "width": 1100,
       "height": 733
@@ -273,15 +273,15 @@
     {
       "source": "phone-ig.png",
       "original": 1394124,
-      "optimized": 133852,
+      "optimized": 933752,
       "file": "optimized/phone-ig.webp",
-      "width": 722,
-      "height": 1400
+      "width": 801,
+      "height": 1553
     },
     {
       "source": "ritratto-emanuele.png",
       "original": 2225957,
-      "optimized": 249390,
+      "optimized": 458982,
       "file": "optimized/ritratto-emanuele.webp",
       "width": 1066,
       "height": 1600
@@ -289,7 +289,7 @@
     {
       "source": "stagione-02.jpg",
       "original": 143269,
-      "optimized": 80156,
+      "optimized": 157898,
       "file": "optimized/stagione-02.webp",
       "width": 1000,
       "height": 666
@@ -297,7 +297,7 @@
     {
       "source": "stagione-03.jpg",
       "original": 154417,
-      "optimized": 89176,
+      "optimized": 165818,
       "file": "optimized/stagione-03.webp",
       "width": 1000,
       "height": 666
@@ -305,7 +305,7 @@
     {
       "source": "stagione-04.jpg",
       "original": 137387,
-      "optimized": 74134,
+      "optimized": 145456,
       "file": "optimized/stagione-04.webp",
       "width": 1000,
       "height": 666
@@ -313,7 +313,7 @@
     {
       "source": "stagione-05.jpg",
       "original": 191016,
-      "optimized": 127338,
+      "optimized": 230756,
       "file": "optimized/stagione-05.webp",
       "width": 1000,
       "height": 666
@@ -321,7 +321,7 @@
     {
       "source": "stagione-06.jpg",
       "original": 336351,
-      "optimized": 198674,
+      "optimized": 371984,
       "file": "optimized/stagione-06.webp",
       "width": 1000,
       "height": 1501
@@ -329,7 +329,7 @@
     {
       "source": "stagione-07.jpg",
       "original": 312261,
-      "optimized": 175812,
+      "optimized": 349984,
       "file": "optimized/stagione-07.webp",
       "width": 1000,
       "height": 1501
@@ -337,7 +337,7 @@
     {
       "source": "stagione-08.jpg",
       "original": 117700,
-      "optimized": 61164,
+      "optimized": 120454,
       "file": "optimized/stagione-08.webp",
       "width": 1000,
       "height": 666
@@ -345,7 +345,7 @@
     {
       "source": "stagione-09.jpg",
       "original": 354686,
-      "optimized": 213516,
+      "optimized": 406258,
       "file": "optimized/stagione-09.webp",
       "width": 1000,
       "height": 1501
@@ -353,18 +353,19 @@
     {
       "source": "switchup-logo.webp",
       "original": 44452,
-      "optimized": 14852,
+      "optimized": 30722,
       "file": "optimized/switchup-logo.webp",
-      "width": 640,
-      "height": 169
+      "width": 1200,
+      "height": 317
     },
     {
       "source": "embedded-4543e78cb9",
       "original": 200221,
-      "optimized": 155248,
+      "optimized": 298562,
       "file": "optimized/hero-4543e78cb9.webp",
       "width": 1600,
       "height": 1066
     }
-  ]
+  ],
+  "quality_profile": "96, original resolution; lossless logos and phone"
 }

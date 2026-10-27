@@ -49,7 +49,7 @@
  #partners-page .civ-stats span { font-size:.52rem; letter-spacing:.04em; }
  #partners-page .civ-bullets { font-size:.75rem; line-height:1.6; }
  #evento { padding:30px 12px; min-height:520px; }
- #evento::before { inset:0 48% 0 0; height:100%; background:linear-gradient(90deg,transparent 65%,#080809),linear-gradient(0deg,#080809,transparent 20%),url('optimized/evento-bg.webp') 38% center/cover no-repeat; }
+ #evento::before { inset:0 48% 0 0; height:100%; background:linear-gradient(90deg,transparent 65%,#080809),linear-gradient(0deg,#080809,transparent 20%),url('optimized/evento-bg.webp?v=hq2') 38% center/cover no-repeat; }
  #evento .evt-grid { width:48%; max-width:none; margin-left:auto; margin-right:0; padding-left:12px; }
  #evento h2 { font-size:clamp(1.5rem,4vw,2.5rem); }
  #evento .evt-num b { font-size:clamp(2.4rem,7vw,4rem); }
@@ -72,7 +72,7 @@
  #partners-page .civ-photo img { display:block; width:100%; height:auto; object-fit:contain; }
  #partners-page .civ-photo::before { background:linear-gradient(0deg,#0a0a0b,transparent 12%); }
  #evento { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:12px; padding:26px 10px; min-height:0; align-items:center; }
- #evento::before { position:relative; inset:auto; display:block; width:100%; height:auto; aspect-ratio:3/2; grid-column:1; grid-row:1; background:linear-gradient(0deg,#080809,transparent 12%),url('optimized/evento-bg.webp') center/contain no-repeat; }
+ #evento::before { position:relative; inset:auto; display:block; width:100%; height:auto; aspect-ratio:3/2; grid-column:1; grid-row:1; background:linear-gradient(0deg,#080809,transparent 12%),url('optimized/evento-bg.webp?v=hq2') center/contain no-repeat; }
  #evento .evt-grid { grid-column:2; grid-row:1; width:100%; padding-left:10px; margin:0; }
  #evento .evt-num span { font-size:.54rem; letter-spacing:.06em; }
  #profilo .bio-portrait { align-self:center; height:auto; min-height:0; aspect-ratio:4/5; background-size:contain; background-repeat:no-repeat; }
