@@ -782,6 +782,25 @@ section:first-of-type { padding-top: 120px; }
  .career-copy > p:last-child { margin-bottom:0; }
  .top { background:#080809; }
 }
+/* Mobile: titolo, composizione compatta, racconto; ogni capitolo resta autonomo. */
+@media(max-width:700px) {
+ .career-chapter,.career-chapter + .career-chapter { gap:0; padding:26px 0 30px; }
+ .career-chapter > .career-copy { display:contents; }
+ .career-chapter .career-copy > .career-label { order:0; margin:0 4px 10px; }
+ .career-chapter .career-copy > h2 { order:1; margin:0 4px 18px; font-size:1.85rem; line-height:1.12; }
+ .career-chapter > .career-photo,.career-chapter > .career-photo-group,.career-chapter > .career-stock-pair,.career-chapter > .career-return-photos { order:2; margin:0 0 20px; }
+ .career-chapter .career-copy > p:not(.career-label) { order:3; margin:0 4px 16px; }
+ .career-chapter .career-copy > .career-pullquote { margin-top:4px; margin-bottom:0; }
+ .career-chapter .career-photo-group,.career-chapter .career-stock-pair,.career-chapter .career-return-photos { position:relative; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; gap:8px; padding:12px 6px; border-top:1px solid rgba(255,255,255,.16); border-bottom:1px solid rgba(181,28,40,.4); background:radial-gradient(ellipse at 50% 100%,rgba(139,19,32,.17),transparent 75%),#0b0b0d; }
+ .career-chapter .career-photo-group:has(> .career-photo:only-child) { grid-template-columns:minmax(0,1fr); }
+ .career-chapter .career-photo-group .career-photo,.career-chapter .career-stock-pair .career-photo,.career-chapter .career-return-photos .career-photo { min-width:0; margin:0; padding:0; }
+ .career-chapter .career-photo-group .career-photo img,.career-chapter .career-stock-pair .career-photo img,.career-chapter .career-return-photos .career-photo img { width:100%; height:clamp(145px,44vw,210px); min-height:0; max-height:210px; aspect-ratio:auto; object-fit:contain; }
+ .career-chapter .career-photo-group .career-photo::after { display:block; content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(11,11,13,.5),transparent 16%); pointer-events:none; }
+ .career-chapter .career-photo-group .career-photo::before,.career-chapter .career-photo-group .career-frame { display:none; }
+ .career-chapter > .career-photo img { width:100%; height:auto; max-height:290px; object-fit:contain; }
+ .career-chapter .career-photo figcaption { display:none; }
+ .career-chapter .career-photo-group::before { content:""; position:absolute; left:0; top:-1px; width:54px; height:2px; background:#b51c28; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
