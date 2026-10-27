@@ -858,6 +858,13 @@ section:first-of-type { padding-top: 120px; }
  .career-photo-group { padding-bottom:18px; }
  .career-photo-group::after { content:""; position:absolute; left:0; right:0; bottom:0; height:16px; pointer-events:none; background:linear-gradient(90deg,transparent,rgba(255,255,255,.5)) right bottom/64% 1px no-repeat,linear-gradient(90deg,#b51c28,#b51c28) right 6px/48px 4px no-repeat,linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,.7)) right 66px bottom 6px/38px 2px no-repeat; }
 }
+/* Desktop e tablet: nessun ritaglio dei soggetti nelle composizioni. */
+@media(min-width:701px) {
+ .career-chapter .career-photo img,.career-chapter .career-photo-group .career-photo img,.career-chapter .career-stock-pair .career-photo img,.career-chapter .career-return-photos .career-photo img { display:block; width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:auto; object-fit:contain; object-position:center; }
+ .career-chapter .career-photo-group { align-self:center; }
+ .career-title-photo .career-photo { height:auto; min-height:0; }
+ .career-junior-results .career-junior-celebration { width:min(100%,360px); justify-self:center; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
