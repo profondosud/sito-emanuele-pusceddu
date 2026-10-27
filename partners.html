@@ -774,6 +774,27 @@ section:first-of-type { padding-top: 120px; }
 #partners-page .civ-racing-lines::before { content:""; position:absolute; right:22px; bottom:26px; width:86px; height:5px; transform:skewX(-32deg); background:#f12b36; box-shadow:-100px 0 0 -1px rgba(255,255,255,.7); }
 #partners-page .civ-racing-lines::after { content:""; position:absolute; right:22px; top:24px; width:36px; height:2px; background:rgba(255,255,255,.7); }
 @media(max-width:639px) { #partners-page .civ-racing-lines { inset:10px; background-size:80px 2px,2px 70px,100px 1px; } #partners-page .civ-racing-lines::before { width:50px; right:12px; bottom:18px; box-shadow:-64px 0 0 -1px rgba(255,255,255,.6); } }
+/* Racing Night: foto libera a sinistra, racconto raccolto a destra. */
+#evento { background:none; background-color:#080809; }
+#evento::before { inset:0 34% 0 0; background:linear-gradient(90deg,transparent 65%,#080809 100%),linear-gradient(0deg,#080809,transparent 23%,transparent 80%,#080809),url('evento-bg.jpg') 32% center / cover no-repeat; }
+#evento::after { inset:14px 12px auto auto; width:100px; height:2px; background:#f12b36; box-shadow:none; }
+#evento .evt-grid { position:relative; width:34%; max-width:390px; padding-left:22px; border-left:1px solid rgba(255,255,255,.12); }
+#evento .evt-grid::after { content:""; position:absolute; right:0; bottom:-26px; width:65px; height:4px; transform:skewX(-32deg); background:#f12b36; box-shadow:-78px 0 0 -1px rgba(255,255,255,.6); }
+#evento h2 { font-size:clamp(2rem,3.3vw,2.9rem); }
+#evento .civ-label { font-size:.62rem; letter-spacing:.12em; }
+#evento .evt-num { padding:19px 0; }
+#evento .evt-num b { font-size:clamp(3.4rem,6vw,4.8rem); }
+#evento .civ-bullets { font-size:.82rem; gap:13px; }
+#evento .civ-bullets li { padding-left:15px; }
+#evento .civ-bullets li::before { width:5px; height:5px; }
+@media(min-width:640px) and (max-width:900px) { #evento { padding-inline:20px; min-height:650px; } #evento .evt-grid { width:35%; padding-left:15px; } #evento h2 { font-size:2rem; } }
+@media(max-width:639px) {
+ #evento { padding:310px 20px 48px; }
+ #evento::before { inset:0 0 auto; height:365px; background:linear-gradient(0deg,#080809,transparent 44%),linear-gradient(180deg,rgba(8,8,9,.25),transparent 35%),url('evento-bg.jpg') center / cover no-repeat; }
+ #evento .evt-grid { width:100%; max-width:none; padding-left:16px; }
+ #evento h2 { font-size:2.5rem; }
+ #evento .civ-bullets { font-size:.87rem; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
