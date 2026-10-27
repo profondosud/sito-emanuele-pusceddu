@@ -751,6 +751,15 @@ section:first-of-type { padding-top: 120px; }
  .career-photo-group .career-photo:not(:last-child)::after { background:linear-gradient(to bottom,transparent calc(100% - 18px),#080809 100%); }
  .career-photo-group .career-photo + .career-photo::before { height:18px; }
 }
+/* Chiusura del racconto: anticipazione della prossima stagione. */
+.career-next { position:relative; isolation:isolate; overflow:hidden; min-height:260px; display:flex; align-items:center; justify-content:flex-end; padding:40px clamp(24px,5vw,64px); margin:30px 0 36px; border-top:1px solid rgba(255,255,255,.15); border-bottom:1px solid rgba(190,25,40,.4); background:radial-gradient(ellipse at 18% 90%,rgba(125,13,26,.22),transparent 65%),linear-gradient(110deg,#101012,#080809 72%); }
+.career-next-year { position:absolute; left:3%; top:50%; transform:translateY(-50%) skewX(-8deg); font:900 clamp(120px,18vw,230px)/1 var(--font-title); letter-spacing:-.045em; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.2); user-select:none; }
+.career-next-year span { color:#a71928; -webkit-text-stroke:0; }
+.career-next-copy { position:relative; z-index:1; max-width:57%; }
+.career-next-copy h2 { margin:0; font-size:clamp(2rem,3.8vw,3.5rem); line-height:1.12; }
+.career-next-copy h2 span { color:#e22a37; }
+.career-next-lines { position:absolute; bottom:0; left:0; width:32%; height:3px; background:#bd1c2a; transform:skewX(-28deg); box-shadow:70px -9px 0 -1px rgba(255,255,255,.4); }
+@media(max-width:700px) { .career-next { min-height:240px; margin:20px 0 24px; padding:30px 22px; align-items:flex-end; justify-content:flex-start; } .career-next-year { top:8px; left:auto; right:14px; transform:skewX(-8deg); font-size:130px; opacity:.6; } .career-next-copy { max-width:100%; } .career-next-copy h2 { font-size:2rem; } .career-next-copy .career-label { margin-bottom:8px; } }
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -869,6 +878,11 @@ section:first-of-type { padding-top: 120px; }
         </div>
 
 
+      <aside class="career-next" aria-label="Il prossimo capitolo">
+        <div class="career-next-year" aria-hidden="true">2027<span>?</span></div>
+        <div class="career-next-copy"><p class="career-label">Il prossimo capitolo</p><h2>2027?<br><span>Lo scoprirete presto!</span></h2></div>
+        <span class="career-next-lines" aria-hidden="true"></span>
+      </aside>
     </section>
   </div>
 </main>
