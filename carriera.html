@@ -724,6 +724,15 @@ section:first-of-type { padding-top: 120px; }
  .career-photo-group .career-photo + .career-photo { margin-top:-28px; }
  .career-photo-group .career-photo + .career-photo img { -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 32px); mask-image:linear-gradient(to bottom,transparent 0,#000 32px); }
 }
+/* Foto del titolo: proporzione verticale a fianco del racconto. */
+.career-title-photo { align-self:stretch; align-content:stretch; }
+.career-title-photo .career-photo { height:100%; min-height:540px; }
+.career-title-photo .career-photo img { height:100%; min-height:540px; max-height:none; object-fit:cover; object-position:53% center; }
+@media(max-width:700px) {
+ .career-title-photo { align-self:auto; }
+ .career-title-photo .career-photo { height:auto; min-height:0; }
+ .career-title-photo .career-photo img { height:auto; min-height:0; max-height:none; aspect-ratio:4/3; object-position:53% center; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -812,7 +821,7 @@ section:first-of-type { padding-top: 120px; }
       <article class="career-chapter career-reverse">
         <div class="career-copy"><p class="career-label">13 / Tra i protagonisti della Supersport</p><h2>Vicecampione <span>italiano Supersport</span></h2><p>Nel corso di questo legame arrivano molteplici vittorie, podi e pole position sui circuiti italiani. Emanuele si afferma tra i protagonisti della SSP600, capace di dare battaglia e di lasciare il segno nei weekend che contano.</p><p>Il percorso culmina nella lotta per il titolo del CIV Supersport 2023. Sulla Yamaha del J. Angel Racing Team, Emanuele resta tra i riferimenti del campionato e chiude la stagione da <strong>vicecampione italiano</strong>, alle spalle di Simone Corsi.</p><p>Il percorso con J. Angel lo porta anche al Mondiale Supersport, la categoria SSP600 del paddock WorldSBK: Emanuele partecipa come wild card agli appuntamenti di Imola e Jerez, confrontandosi con i protagonisti della serie iridata. Un altro passaggio internazionale, costruito sulla velocità e sul lavoro maturati nel campionato italiano.</p>
 <p>Quel trofeo racconta molto più di una posizione in classifica: il lavoro di una squadra, la fiducia costruita negli anni e la risposta di un pilota che, dopo tante ripartenze, è tornato a giocarsi il vertice.</p><p class="career-pullquote">La fiducia diventa velocità.<br>Il lavoro di tutti, un risultato da condividere.</p></div>
-        <div class="career-stock-pair career-photo-group">
+        <div class="career-stock-pair career-photo-group career-title-photo">
 
 <figure class="career-photo"><img src="carriera-jangel-vicecampione.jpg" alt="Emanuele alza il trofeo di vicecampione italiano Supersport 2023" width="1600" height="1066" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Vicecampione italiano: il punto più alto di un legame speciale.</figcaption></figure>
 </div>
