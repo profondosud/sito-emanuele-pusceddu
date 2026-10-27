@@ -598,6 +598,25 @@ section:first-of-type { padding-top: 120px; }
   .top .nav { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
 }
 .nav .nav-team, .nav .nav-team:hover, .nav .nav-team:focus-visible { background:none; box-shadow:none; transform:none; padding:10px 0; color:inherit; text-shadow:none; }
+/* Racconto carriera: capitoli alternati, fotografie e testo sullo stesso ritmo. */
+.career-opening { padding:14px 0 54px; max-width:900px; }
+.career-label { font:600 .64rem var(--font-body); letter-spacing:.19em; text-transform:uppercase; color:#f12b36; margin:0 0 18px; }
+.career-opening h1 { font-size:clamp(2.6rem,5vw,4.8rem); line-height:.98; letter-spacing:-.02em; max-width:none; }
+.career-opening h1 span { color:#c51c29; }
+.career-chapter { position:relative; display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:clamp(28px,5vw,64px); align-items:center; padding:24px 0 66px; }
+.career-chapter + .career-chapter { padding-top:48px; border-top:1px solid rgba(255,255,255,.08); }
+.career-photo { position:relative; margin:0; padding-bottom:24px; }
+.career-photo img { width:100%; height:auto; display:block; }
+.career-photo::after { content:""; position:absolute; inset:0 0 24px; pointer-events:none; background:linear-gradient(0deg,#080809,transparent 28%),linear-gradient(90deg,rgba(8,8,9,.15),transparent 25%,transparent 75%,rgba(8,8,9,.24)); }
+.career-frame { position:absolute; inset:-8px -8px 24px; z-index:1; pointer-events:none; background:linear-gradient(90deg,#b51c28,#b51c28) left top / 80px 2px no-repeat,linear-gradient(180deg,#b51c28,transparent) left top / 2px 80px no-repeat,linear-gradient(0deg,rgba(255,255,255,.45),transparent) right bottom / 1px 85px no-repeat; }
+.career-frame::after { content:""; position:absolute; right:12px; bottom:12px; width:48px; height:4px; transform:skewX(-30deg); background:#a91622; box-shadow:-62px 0 0 -1px rgba(255,255,255,.6); }
+.career-photo figcaption { position:relative; margin-top:12px; color:#74747f; font-size:.62rem; letter-spacing:.07em; }
+.career-copy h2 { font-size:clamp(2rem,3.5vw,3.1rem); line-height:1.02; margin-bottom:26px; }
+.career-copy h2 span { color:#e12a36; }
+.career-copy > p:not(.career-label):not(.career-pullquote) { color:#b0b0b9; font-size:.92rem; line-height:1.9; margin:0 0 18px; }
+.career-pullquote { border-left:2px solid #b51c28; padding-left:16px; color:#eee; font:700 1.3rem/1.35 var(--font-title); text-transform:uppercase; margin:28px 0 0; }
+.career-action::after { background:linear-gradient(0deg,#080809,transparent 24%),linear-gradient(90deg,rgba(8,8,9,.3),transparent 25%); }
+@media(max-width:700px) { .career-opening { padding-bottom:34px; } .career-opening h1 { font-size:clamp(2.4rem,9vw,3.7rem); } .career-chapter { grid-template-columns:1fr; gap:12px; padding-bottom:36px; } .career-reverse .career-photo { grid-row:1; } .career-photo { margin-inline:8px; } .career-copy { padding-inline:4px; } .career-copy h2 { font-size:2.3rem; } .career-chapter + .career-chapter { padding-top:36px; } }
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -623,7 +642,15 @@ section:first-of-type { padding-top: 120px; }
     <section id="carriera">
       <p class="back"><a href="index.html">← Torna alla home</a></p>
       <div class="rule"></div>
-      <h2>La <span class="red">carriera</span></h2>
+      <div class="career-opening"><p class="career-label">La carriera · Gli inizi</p><h1>Prima dei grandi circuiti.<br><span>La stessa voglia di vincere.</span></h1></div>
+      <article class="career-chapter">
+        <figure class="career-photo"><img src="carriera-minimoto-box.png" alt="Emanuele da bambino, con casco e tuta, in sella alla sua minimoto" width="720" height="540"><span class="career-frame" aria-hidden="true"></span><figcaption>Le prime partenze. Una passione già grande.</figcaption></figure>
+        <div class="career-copy"><p class="career-label">01 / Dove tutto comincia</p><h2>Piccole moto.<br><span>Un talento che si fa notare.</span></h2><p>Nato a Roma il 17 maggio 1996, Emanuele Pusceddu comincia a scrivere la propria storia sulle minimoto. Il casco sembra ancora grande, i circuiti sono piccoli. Ma la voglia di correre è già quella che lo accompagnerà negli anni a venire.</p><p>Fin dalle prime gare emergono velocità, sensibilità e una naturale capacità di interpretare la pista. Non è soltanto entusiasmo: è un talento che, giro dopo giro, comincia a trasformarsi in risultati.</p></div>
+      </article>
+      <article class="career-chapter career-reverse">
+        <div class="career-copy"><p class="career-label">02 / Il primo segno</p><h2>Il numero è piccolo.<br><span>Le ambizioni, no.</span></h2><p>Le vittorie arrivano presto. Negli anni delle minimoto Emanuele conquista quasi tutti i campionati a cui prende parte, imponendosi in un ambiente dove ogni confronto è una prova di carattere, oltre che di velocità.</p><p>Tra gli avversari che si lascia alle spalle ci sono anche piloti che oggi corrono nel Motomondiale. Sono le prime sfide di un percorso ancora tutto da costruire, ma una cosa è già chiara: quel bambino sulla minimoto non è lì soltanto per partecipare.</p><p class="career-pullquote">Da quei primi cordoli nasce una storia<br>che guarda sempre più lontano.</p></div>
+        <figure class="career-photo career-action"><img src="carriera-minimoto-pista.png" alt="Emanuele in piega sulla minimoto blu con il numero 6" width="720" height="478" loading="lazy"><span class="career-frame" aria-hidden="true"></span><figcaption>Il numero 6, già davanti agli occhi.</figcaption></figure>
+      </article>
     </section>
   </div>
 </main>
