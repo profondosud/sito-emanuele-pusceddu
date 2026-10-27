@@ -777,7 +777,7 @@ section:first-of-type { padding-top: 120px; }
   open.addEventListener("click", function () { box.hidden = false; });
 })();
 </script>
-<script src="i18n.js" defer></script>
+<script src="i18n.js?v=review1" defer></script>
 <div class="mail-panel" id="mail-panel" role="dialog" aria-modal="false" aria-labelledby="mail-title" hidden>
   <div class="mail-head">
     <p id="mail-title" class="mail-title">Assistenza <span class="red">in pista</span></p>
@@ -824,7 +824,7 @@ section:first-of-type { padding-top: 120px; }
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.checkValidity()) {
-      status.textContent = 'Compila nome, email e messaggio.';
+      status.textContent = window.siteText ? window.siteText('Compila nome, email e messaggio.') : 'Compila nome, email e messaggio.';
       return;
     }
     var fields = new FormData(form);
@@ -834,7 +834,7 @@ section:first-of-type { padding-top: 120px; }
     fields.set('_url', window.location.href);
     var button = form.querySelector('[type="submit"]');
     button.disabled = true;
-    status.textContent = 'Invio in corso…';
+    status.textContent = window.siteText ? window.siteText('Invio in corso…') : 'Invio in corso…';
     fetch('https://formsubmit.co/ajax/emc2.squadracorse@gmail.com', {
       method: 'POST', body: fields, headers: { 'Accept': 'application/json' }
     }).then(function(response) {
@@ -842,10 +842,10 @@ section:first-of-type { padding-top: 120px; }
       return response.json();
     }).then(function(result) {
       if (result.success !== true && result.success !== 'true') throw new Error('delivery');
-      status.textContent = 'Messaggio inviato. Grazie per averci contattato!';
+      status.textContent = window.siteText ? window.siteText('Messaggio inviato. Grazie per averci contattato!') : 'Messaggio inviato. Grazie per averci contattato!';
       form.reset();
     }).catch(function() {
-      status.textContent = 'Invio non riuscito. Riprova tra poco oppure scrivi a emc2.squadracorse@gmail.com.';
+      status.textContent = window.siteText ? window.siteText('Invio non riuscito. Riprova tra poco oppure scrivi a emc2.squadracorse@gmail.com.') : 'Invio non riuscito. Riprova tra poco oppure scrivi a emc2.squadracorse@gmail.com.';
     }).finally(function() { button.disabled = false; });
   });
 })();
