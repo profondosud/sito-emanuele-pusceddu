@@ -769,6 +769,11 @@ section:first-of-type { padding-top: 120px; }
  #partners-page .civ-stats span { font-size: .65rem; letter-spacing: .1em; }
  #partners-page .civ-bullets { font-size: .85rem; }
 }
+/* Accenti racing ai bordi, senza attraversare il soggetto. */
+#partners-page .civ-racing-lines { position:absolute; inset:12px; z-index:1; pointer-events:none; background:linear-gradient(90deg,#f12b36,#f12b36) right top / 115px 2px no-repeat,linear-gradient(180deg,#f12b36,rgba(241,43,54,0)) right top / 2px 100px no-repeat,linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.5)) right bottom / 180px 1px no-repeat; }
+#partners-page .civ-racing-lines::before { content:""; position:absolute; right:22px; bottom:26px; width:86px; height:5px; transform:skewX(-32deg); background:#f12b36; box-shadow:-100px 0 0 -1px rgba(255,255,255,.7); }
+#partners-page .civ-racing-lines::after { content:""; position:absolute; right:22px; top:24px; width:36px; height:2px; background:rgba(255,255,255,.7); }
+@media(max-width:639px) { #partners-page .civ-racing-lines { inset:10px; background-size:80px 2px,2px 70px,100px 1px; } #partners-page .civ-racing-lines::before { width:50px; right:12px; bottom:18px; box-shadow:-64px 0 0 -1px rgba(255,255,255,.6); } }
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -802,7 +807,7 @@ section:first-of-type { padding-top: 120px; }
           <p class="partner-intro-foot">Il campionato, gli eventi, i numeri: scopri il valore di questa collaborazione.</p>
         </div>
       </div>
-      <div class="civ-grid">
+      <div class="civ-grid"><div class="civ-racing-lines" aria-hidden="true"></div>
         <div class="civ-info">
           <p class="civ-label">Il campionato</p>
           <h2>CIV <span class="civ-outline">SUPERBIKE</span></h2>
