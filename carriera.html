@@ -819,6 +819,19 @@ section:first-of-type { padding-top: 120px; }
  .career-chapter > .career-grid-return .career-frame { inset:0; background:linear-gradient(90deg,#c51c29,#c51c29) left top/48px 2px no-repeat,linear-gradient(180deg,#c51c29,transparent) left top/2px 52px no-repeat,linear-gradient(90deg,transparent,rgba(255,255,255,.7)) right bottom/64px 1px no-repeat; }
  .career-chapter > .career-grid-return::after { display:block; content:""; position:absolute; inset:8px; pointer-events:none; background:linear-gradient(0deg,rgba(8,8,9,.65),transparent 12%); }
 }
+/* Mobile: distribuire gli scatti dentro il racconto, senza miniature affiancate. */
+@media(max-width:700px) {
+ .career-chapter .career-photo-group,.career-chapter .career-stock-pair,.career-chapter .career-return-photos { display:contents; }
+ .career-chapter .career-photo-group::before { display:none; }
+ .career-chapter .career-copy > p:not(.career-label) { order:5; }
+ .career-chapter .career-copy > p:nth-of-type(2) { order:3; }
+ .career-chapter .career-photo-group > .career-photo,.career-chapter .career-stock-pair > .career-photo,.career-chapter .career-return-photos > .career-photo { order:4; width:calc(100% - 12px); align-self:center; display:block; height:auto; aspect-ratio:auto; margin:4px 0 20px; padding:6px; overflow:hidden; background:linear-gradient(135deg,rgba(125,18,30,.14),#0c0c0e); border:1px solid rgba(255,255,255,.15); }
+ .career-chapter .career-photo-group > .career-photo:first-child,.career-chapter .career-stock-pair > .career-photo:first-child,.career-chapter .career-return-photos > .career-photo:first-child { order:2; }
+ .career-chapter .career-photo-group .career-photo img,.career-chapter .career-stock-pair .career-photo img,.career-chapter .career-return-photos .career-photo img { width:100%; height:auto; max-height:300px; min-height:0; object-fit:contain; }
+ .career-chapter .career-photo-group:has(.career-junior-celebration) .career-photo { height:auto; aspect-ratio:auto; }
+ .career-chapter .career-photo-group .career-photo::after { display:block; background:linear-gradient(90deg,#bd2030,#bd2030) left top/48px 2px no-repeat,linear-gradient(180deg,#bd2030,transparent) left top/2px 44px no-repeat,linear-gradient(0deg,rgba(8,8,9,.55),transparent 14%); }
+ .career-chapter .career-copy > .career-pullquote { order:6; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
