@@ -743,6 +743,15 @@ html { scroll-padding-top: 124px; }
 #partner .partner-logo img { inset:18%; width:64%; height:64%; }
 @media(max-width:639px) { #partner .partners-row { gap:8px; } #partner .partner-logo { border-radius:10px; border-width:1px; } #partner .partner-logo img { inset:10%; width:80%; height:80%; } #partner .actions .btn { font-size:.8rem; padding:13px 18px; } }
 .nav .nav-team, .nav .nav-team:hover, .nav .nav-team:focus-visible { background:none; box-shadow:none; transform:none; padding:10px 0; color:inherit; text-shadow:none; }
+/* Intro ferma: scrittura del nome, numero in profondità e dissolvenza. */
+.race-intro { animation:none; background:#080809; }
+.race-intro .intro-stage { z-index:2; width:min(1120px,88vw); padding-block:32px; }
+.race-intro .intro-name { font-size:clamp(2rem,9.7vw,8.5rem); }
+.race-intro .intro-word { animation:none; transform:none; }
+.race-intro .intro-number-bg { position:absolute; z-index:1; width:min(58vw,600px); height:auto; max-height:74vh; object-fit:contain; left:50%; top:50%; transform:translate(-50%,-50%); opacity:0; pointer-events:none; }
+.race-intro .intro-track, .race-intro .intro-caption { display:none; }
+.race-intro .intro-kicker { animation:none; font-size:.62rem; color:#8b8b93; }
+@media(max-width:639px) { .race-intro .intro-number-bg { width:82vw; } .race-intro .intro-kicker { font-size:.52rem; letter-spacing:.16em; } }
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -762,63 +771,35 @@ html { scroll-padding-top: 124px; }
   var replay = new URLSearchParams(location.search).get('intro') === '1';
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || (location.hash && !replay)) return;
   intro.hidden = false;
-  intro.style.animation = 'none';
-  intro.style.background = 'transparent';
-  var veil = document.createElement('div');
-  Object.assign(veil.style, { position: 'absolute', inset: '0', background: '#080809', pointerEvents: 'none' });
-  intro.prepend(veil);
   var number = document.createElement('img');
   number.src = 'numero-6-originale.png';
-  number.alt = 'Numero 6 — Emanuele Pusceddu';
-  Object.assign(number.style, { position: 'absolute', width: 'clamp(110px, 17vw, 190px)', height: 'auto', left: '50%', top: 'calc(50% - 165px)', transform: 'translateX(-50%)', opacity: '0', filter: 'drop-shadow(0 0 18px rgba(241,43,54,.22))' });
-  intro.appendChild(number);
-  intro.querySelector('.intro-stage').style.display = 'none';
+  number.alt = '';
+  number.className = 'intro-number-bg';
+  intro.prepend(number);
   var previousOverflow = document.documentElement.style.overflow;
   document.documentElement.style.overflow = 'hidden';
-  var title, flight, finished = false;
+  var finished = false;
   function finish() {
     if (finished) return;
     finished = true;
-    if (title) title.style.visibility = '';
     intro.hidden = true;
     document.documentElement.style.overflow = previousOverflow;
     document.removeEventListener('keydown', escapeIntro);
-    window.removeEventListener('resize', finish);
   }
   function escapeIntro(event) { if (event.key === 'Escape') finish(); }
   document.addEventListener('keydown', escapeIntro);
-  window.addEventListener('resize', finish, { once: true });
   intro.querySelector('button').addEventListener('click', finish);
   function launch() {
     if (finished) return;
-    title = document.querySelector('.hero h1');
-    if (!title || !title.animate) { finish(); return; }
-    var rect = title.getBoundingClientRect();
-    var style = getComputedStyle(title);
-    flight = title.cloneNode(true);
-    flight.removeAttribute('id');
-    flight.setAttribute('aria-hidden', 'true');
-    ['fontFamily','fontWeight','fontSize','lineHeight','letterSpacing','textTransform','whiteSpace','textShadow'].forEach(function (prop) { flight.style[prop] = style[prop]; });
-    Object.assign(flight.style, { position: 'fixed', left: rect.left + 'px', top: rect.top + 'px', width: rect.width + 'px', maxWidth: 'none', margin: '0', transformOrigin: '0 0', zIndex: '1', pointerEvents: 'none' });
-    intro.appendChild(flight);
-    title.style.visibility = 'hidden';
-    var scale = Math.min(1.55, innerWidth * .88 / rect.width);
-    var x = (innerWidth - rect.width * scale) / 2 - rect.left;
-    var y = (innerHeight - rect.height * scale) / 2 + 36 - rect.top;
-    var centered = 'translate(' + x + 'px,' + y + 'px) scale(' + scale + ')';
-    flight.animate([
-      { transform: centered, opacity: 0, offset: 0 },
-      { transform: centered, opacity: 1, offset: .18 },
-      { transform: centered, opacity: 1, offset: .43 },
-      { transform: 'translate(0,0) scale(1)', opacity: 1, offset: 1 }
-    ], { duration: 2900, easing: 'cubic-bezier(.65,0,.25,1)', fill: 'both' }).onfinish = finish;
-    veil.animate([{ opacity: 1 }, { opacity: 0 }], { delay: 750, duration: 2050, fill: 'forwards', easing: 'cubic-bezier(.4,0,.2,1)' });
-    number.animate([{ opacity: 0, offset: 0 }, { opacity: 1, offset: .2 }, { opacity: 1, offset: .5 }, { opacity: 0, offset: 1 }], { duration: 2300, fill: 'both', easing: 'ease-in-out' });
-    intro.querySelector('button').animate([{ opacity: 1 }, { opacity: 0 }], { delay: 1400, duration: 500, fill: 'forwards' });
+    if (!intro.animate) { finish(); return; }
+    intro.querySelector('.intro-name').animate([
+      { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }
+    ], { delay: 180, duration: 1450, easing: 'steps(22, end)', fill: 'both' });
+    number.animate([{ opacity: 0 }, { opacity: .26 }], { delay: 450, duration: 1400, easing: 'ease-in-out', fill: 'both' });
+    intro.animate([{ opacity: 1 }, { opacity: 0 }], { delay: 2450, duration: 1400, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'both' }).onfinish = finish;
   }
-  // Il titolo animato usa le stesse misure del titolo reale, anche su mobile.
-  Promise.race([document.fonts.ready, new Promise(function (resolve) { setTimeout(resolve, 700); })]).then(function () { requestAnimationFrame(launch); });
-  setTimeout(finish, 4100);
+  Promise.race([document.fonts.ready, new Promise(function(resolve) { setTimeout(resolve,700); })]).then(launch);
+  setTimeout(finish, 4800);
 })();
 </script>
 
