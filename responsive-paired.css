@@ -83,3 +83,7 @@
  .emc-story { margin-top:38px; }
  .emc-story-copy > p:not(.emc-kicker):not(.emc-quote),.career-copy > p:not(.career-label):not(.career-pullquote) { font-size:.8rem; }
 }
+/* Ritratto reale: nessuna dipendenza dalle dimensioni dei livelli di sfondo. */
+#profilo .bio-portrait { background:none; height:auto; min-height:0; aspect-ratio:auto; align-self:center; }
+#profilo .bio-portrait img { display:block; width:100%; height:auto; object-fit:contain; }
+#profilo .bio-portrait::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(0deg,#080809,transparent 14%); }
