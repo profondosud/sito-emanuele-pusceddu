@@ -832,6 +832,16 @@ section:first-of-type { padding-top: 120px; }
  .career-chapter .career-photo-group .career-photo::after { display:block; background:linear-gradient(90deg,#bd2030,#bd2030) left top/48px 2px no-repeat,linear-gradient(180deg,#bd2030,transparent) left top/2px 44px no-repeat,linear-gradient(0deg,rgba(8,8,9,.55),transparent 14%); }
  .career-chapter .career-copy > .career-pullquote { order:6; }
 }
+
+@media(max-width:700px) {
+ .career-chapter.mobile-story { display:block; }
+ .career-chapter.mobile-story > .career-copy { display:block; }
+ .career-chapter.mobile-story > .career-photo-group,.career-chapter.mobile-story > .career-stock-pair,.career-chapter.mobile-story > .career-return-photos { display:none; }
+ .career-chapter.mobile-story .career-copy > .career-photo { display:block; width:calc(100% - 12px); height:auto; min-height:0; aspect-ratio:auto; margin:18px auto 22px; padding:6px; position:relative; border:1px solid rgba(255,255,255,.16); background:linear-gradient(135deg,rgba(125,18,30,.14),#0c0c0e); }
+ .career-chapter.mobile-story .career-copy > .career-photo img { display:block; width:100%; height:auto; min-height:0; max-height:300px; aspect-ratio:auto; object-fit:contain; }
+ .career-chapter.mobile-story .career-copy > .career-photo::after { display:block; content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,#bd2030,#bd2030) left top/48px 2px no-repeat,linear-gradient(0deg,rgba(8,8,9,.4),transparent 12%); }
+ .career-chapter.mobile-story .career-copy > .career-photo .career-frame,.career-chapter.mobile-story .career-copy > .career-photo figcaption { display:none; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -998,5 +1008,30 @@ section:first-of-type { padding-top: 120px; }
 })();
 </script>
 <script src="i18n.js" defer></script>
+
+<script>
+(function(){
+ const query=window.matchMedia('(max-width:700px)');
+ const chapters=[...document.querySelectorAll('.career-chapter')].map(chapter=>{
+  const copy=chapter.querySelector('.career-copy');
+  const photos=[...chapter.querySelectorAll('figure.career-photo')].map(photo=>{
+   const anchor=document.createComment('photo original position');photo.before(anchor);return {photo,anchor};
+  });return {chapter,copy,photos};
+ });
+ function arrange(){chapters.forEach(({chapter,copy,photos})=>{
+  if(!copy)return;
+  photos.forEach(({photo,anchor})=>anchor.after(photo));
+  chapter.classList.toggle('mobile-story',query.matches);
+  if(!query.matches)return;
+  const heading=copy.querySelector('h2');
+  const paragraphs=[...copy.children].filter(e=>e.tagName==='P'&&!e.classList.contains('career-label')&&!e.classList.contains('career-pullquote'));
+  photos.forEach(({photo},index)=>{
+   const target=index===0?heading:paragraphs[Math.min(index-1,paragraphs.length-1)];
+   if(target)target.after(photo);
+  });
+ });}
+ arrange();query.addEventListener('change',arrange);
+})();
+</script>
 </body>
 </html>
