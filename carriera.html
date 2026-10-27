@@ -715,6 +715,15 @@ section:first-of-type { padding-top: 120px; }
  .career-return-results .career-return-photos { margin-top:0; gap:0; }
  .career-photo-group .career-photo::after { bottom:0; }
 }
+/* Raccordo morbido tra gli scatti della stessa composizione. */
+.career-photo-group .career-photo + .career-photo { margin-top:-38px; }
+.career-photo-group .career-photo + .career-photo img { -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 42px); mask-image:linear-gradient(to bottom,transparent 0,#000 42px); }
+.career-photo-group .career-photo { border:0; background:transparent; }
+.career-photo-group .career-photo img { border:0; }
+@media(max-width:700px) {
+ .career-photo-group .career-photo + .career-photo { margin-top:-28px; }
+ .career-photo-group .career-photo + .career-photo img { -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 32px); mask-image:linear-gradient(to bottom,transparent 0,#000 32px); }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
