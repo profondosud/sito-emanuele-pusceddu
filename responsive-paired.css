@@ -56,3 +56,30 @@
  #evento .civ-bullets { font-size:.75rem; gap:10px; }
  #evento .civ-source { font-size:.6rem; }
 }
+/* Schermi piccoli: conservare l'inquadratura, senza allungare le foto sul testo. */
+@media(max-width:900px) {
+ .emc-story-photo { align-self:center; }
+ .emc-story-photo img { display:block; width:100%; height:auto; min-height:0; max-height:none; object-fit:contain; }
+ .emc-hero-photo { align-self:center; height:auto; min-height:0; }
+ .emc-hero-photo img { display:block; height:auto; width:100%; object-fit:contain; }
+ .emc-hero-photo::after { background:linear-gradient(0deg,#080909,transparent 12%); }
+ .career-photo-group { align-self:center; }
+ .career-photo img,.career-photo-group .career-photo img,.career-title-photo .career-photo img { height:auto; min-height:0; max-height:none; aspect-ratio:auto; object-fit:contain; }
+ .career-title-photo .career-photo { height:auto; min-height:0; }
+ #partners-page .civ-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); align-items:center; min-height:0; overflow:visible; }
+ #partners-page .civ-info { grid-column:1; grid-row:1; width:auto; padding:24px 10px; }
+ #partners-page .civ-photo { position:relative; inset:auto; grid-column:2; grid-row:1; align-self:center; height:auto; z-index:0; }
+ #partners-page .civ-photo img { display:block; width:100%; height:auto; object-fit:contain; }
+ #partners-page .civ-photo::before { background:linear-gradient(0deg,#0a0a0b,transparent 12%); }
+ #evento { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:12px; padding:26px 10px; min-height:0; align-items:center; }
+ #evento::before { position:relative; inset:auto; display:block; width:100%; height:auto; aspect-ratio:3/2; grid-column:1; grid-row:1; background:linear-gradient(0deg,#080809,transparent 12%),url('evento-bg.jpg') center/contain no-repeat; }
+ #evento .evt-grid { grid-column:2; grid-row:1; width:100%; padding-left:10px; margin:0; }
+ #evento .evt-num span { font-size:.54rem; letter-spacing:.06em; }
+ #profilo .bio-portrait { align-self:center; height:auto; min-height:0; aspect-ratio:4/5; background-size:contain; background-repeat:no-repeat; }
+}
+@media(max-width:600px) {
+ .top { padding-block:6px; }
+ .top .brand img { max-height:58px; width:auto; }
+ .emc-story { margin-top:38px; }
+ .emc-story-copy > p:not(.emc-kicker):not(.emc-quote),.career-copy > p:not(.career-label):not(.career-pullquote) { font-size:.8rem; }
+}
