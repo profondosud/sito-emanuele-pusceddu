@@ -806,6 +806,11 @@ section:first-of-type { padding-top: 120px; }
 .cta-bar .btn { min-width:180px; padding:18px 28px; font-size:1.05rem; text-align:center; }
 @media(max-width:639px) { .cta-bar { grid-template-columns:1fr; gap:28px; margin-top:44px; padding:30px 24px; } .cta-bar .btn { width:100%; } }
 .nav .nav-team, .nav .nav-team:hover, .nav .nav-team:focus-visible { background:none; box-shadow:none; transform:none; padding:10px 0; color:inherit; text-shadow:none; }
+/* Racing Night mobile: inquadratura intera e centrata. */
+@media(max-width:639px) {
+ #evento { padding-top:clamp(230px,72vw,365px); }
+ #evento::before { inset:0 0 auto; width:100%; height:auto; aspect-ratio:3/2; background-image:linear-gradient(0deg,#080809,transparent 16%),url('evento-bg.jpg'); background-position:center bottom,center center; background-size:100% 100%,contain; background-repeat:no-repeat; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
