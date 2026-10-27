@@ -847,6 +847,12 @@ section:first-of-type { padding-top: 120px; }
  .career-chapter.mobile-story .career-copy > .career-season-lead { width:100%; padding:6px; margin-inline:0; }
  .career-chapter.mobile-story .career-copy > .career-season-lead img,.career-chapter > .career-season-lead img { display:block; width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:auto; object-fit:contain; }
 }
+/* 2026: mostrare gli scatti orizzontali completi su ogni schermo. */
+.career-season-lead { align-self:center; }
+.career-season-lead img,.career-season-strip img { display:block; width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:auto; object-fit:contain; object-position:center; }
+@media(max-width:700px) {
+ .career-chapter.mobile-story .career-copy > .career-season-lead img { width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:auto; object-fit:contain; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
