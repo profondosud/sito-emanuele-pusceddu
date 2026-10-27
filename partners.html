@@ -795,6 +795,17 @@ section:first-of-type { padding-top: 120px; }
  #evento h2 { font-size:2.5rem; }
  #evento .civ-bullets { font-size:.87rem; }
 }
+/* Invito partnership: una chiusura di pagina con una gerarchia forte. */
+.cta-bar { position:relative; isolation:isolate; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:42px; align-items:center; margin-top:70px; padding:clamp(32px,5vw,64px); border:1px solid rgba(255,255,255,.13); border-left:0; overflow:hidden; background:radial-gradient(ellipse at 0 50%,rgba(241,43,54,.22),transparent 65%),#0e0e10; box-shadow:none; }
+.cta-bar::before { content:""; position:absolute; top:0; left:0; width:120px; height:3px; background:#f12b36; }
+.cta-bar::after { content:""; position:absolute; inset:-60% -10% -60% 72%; z-index:-1; transform:skewX(-18deg); border-left:1px solid rgba(255,255,255,.12); background:linear-gradient(90deg,rgba(241,43,54,.06),transparent); }
+.cta-bar .cta-eyebrow { color:#a9a9b2; font:600 .65rem var(--font-body); text-transform:uppercase; letter-spacing:.18em; margin:0 0 20px; }
+.cta-bar .cta-text { font-family:var(--font-title); font-size:clamp(2.8rem,5.5vw,4.8rem); font-weight:800; line-height:.98; letter-spacing:-.02em; margin:0 0 22px; text-transform:uppercase; }
+.cta-bar .cta-text span { display:block; color:#f12b36; }
+.cta-bar .cta-description { margin:0; max-width:44ch; color:#a9a9b2; font-size:.9rem; line-height:1.8; }
+.cta-bar .btn { min-width:180px; padding:18px 28px; font-size:1.05rem; text-align:center; }
+@media(max-width:639px) { .cta-bar { grid-template-columns:1fr; gap:28px; margin-top:44px; padding:30px 24px; } .cta-bar .btn { width:100%; } }
+.nav .nav-team, .nav .nav-team:hover, .nav .nav-team:focus-visible { background:none; box-shadow:none; transform:none; padding:10px 0; color:inherit; text-shadow:none; }
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -878,7 +889,7 @@ section:first-of-type { padding-top: 120px; }
     </section>
     <section class="cta-bar">
       <div>
-        <p class="cta-text">Vuoi diventare un nostro partner e vivere esperienze come queste?</p>
+        <p class="cta-eyebrow">Il prossimo capitolo, insieme.</p><h2 class="cta-text">Entra nella <span>nostra corsa.</span></h2><p class="cta-description">Diventa partner di Emanuele e vivi il campionato da protagonista, dentro e fuori la pista.</p>
 
       </div>
       <button type="button" class="btn" data-contact-open>Contattaci!</button>
