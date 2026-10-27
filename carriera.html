@@ -805,6 +805,20 @@ section:first-of-type { padding-top: 120px; }
 @media(min-width:701px) {
  .career-title-photo .career-photo::after { display:block; content:""; position:absolute; inset:0; pointer-events:none; z-index:2; background:linear-gradient(90deg,#080809 0%,rgba(8,8,9,.76) 4%,rgba(8,8,9,.28) 12%,transparent 24%),linear-gradient(0deg,#080809,transparent 14%); }
 }
+/* Composizioni mobili: inquadrature intere dentro una cornice racing comune. */
+@media(max-width:700px) {
+ .career-chapter .career-photo-group,.career-chapter .career-stock-pair,.career-chapter .career-return-photos { gap:10px; padding:8px; align-items:stretch; border:1px solid rgba(255,255,255,.14); background:linear-gradient(135deg,rgba(112,16,28,.16),#101013 48%,#080809); box-shadow:0 12px 24px rgba(0,0,0,.25); }
+ .career-chapter .career-photo-group .career-photo,.career-chapter .career-stock-pair .career-photo,.career-chapter .career-return-photos .career-photo { position:relative; display:grid; place-items:center; aspect-ratio:4/3; min-width:0; overflow:hidden; background:#080809; border:1px solid rgba(255,255,255,.16); }
+ .career-chapter .career-photo-group .career-photo img,.career-chapter .career-stock-pair .career-photo img,.career-chapter .career-return-photos .career-photo img { display:block; width:100%; height:100%; max-height:none; min-height:0; object-fit:contain; }
+ .career-chapter .career-photo-group .career-photo::after { display:block; content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,#bd2030,#bd2030) left top/28px 2px no-repeat,linear-gradient(180deg,#bd2030,transparent) left top/2px 25px no-repeat,linear-gradient(90deg,transparent,rgba(255,255,255,.7)) right bottom/34px 1px no-repeat; }
+ .career-chapter .career-photo-group:has(.career-junior-celebration) { grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); }
+ .career-chapter .career-photo-group:has(.career-junior-celebration) .career-photo { aspect-ratio:auto; height:185px; }
+ .career-chapter .career-photo-group:has(> .career-photo:only-child) .career-photo { aspect-ratio:3/2; }
+ .career-chapter > .career-grid-return { width:min(76%,290px); align-self:center; padding:8px; background:linear-gradient(135deg,rgba(136,18,31,.2),#0d0d10); border:1px solid rgba(255,255,255,.18); box-shadow:0 14px 28px rgba(0,0,0,.35); }
+ .career-chapter > .career-grid-return img { width:100%; height:auto; max-height:none; object-fit:contain; }
+ .career-chapter > .career-grid-return .career-frame { inset:0; background:linear-gradient(90deg,#c51c29,#c51c29) left top/48px 2px no-repeat,linear-gradient(180deg,#c51c29,transparent) left top/2px 52px no-repeat,linear-gradient(90deg,transparent,rgba(255,255,255,.7)) right bottom/64px 1px no-repeat; }
+ .career-chapter > .career-grid-return::after { display:block; content:""; position:absolute; inset:8px; pointer-events:none; background:linear-gradient(0deg,rgba(8,8,9,.65),transparent 12%); }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
