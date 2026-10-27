@@ -752,6 +752,22 @@ html { scroll-padding-top: 124px; }
 .race-intro .intro-track, .race-intro .intro-caption { display:none; }
 .race-intro .intro-kicker { animation:none; font-size:.62rem; color:#8b8b93; }
 @media(max-width:639px) { .race-intro .intro-number-bg { width:82vw; } .race-intro .intro-kicker { font-size:.52rem; letter-spacing:.16em; } }
+/* Cornice racing: tagli netti e accenti opachi ai margini. */
+.hero-racing-frame { position:absolute; inset:112px clamp(12px,3vw,42px) 26px; z-index:1; pointer-events:none; overflow:hidden; border-right:1px solid rgba(255,255,255,.15); }
+.hero-racing-frame::before { content:""; position:absolute; inset:0; background:#a6131d; clip-path:polygon(0 0,17% 0,16.5% .5%,.45% .5%,.45% 17%,0 19%); }
+.hero-racing-frame::after { content:""; position:absolute; inset:0; background:rgba(255,255,255,.64); clip-path:polygon(100% 76%,100% 100%,79% 100%,79.6% 99.7%,99.7% 99.7%,99.7% 77%); }
+.hero-racing-frame i { position:absolute; display:block; right:22px; top:16px; height:3px; width:66px; background:#ae1822; transform:skewX(-34deg); }
+.hero-racing-frame i:nth-child(2) { right:94px; width:30px; background:rgba(255,255,255,.65); }
+.hero-racing-frame i:nth-child(3) { top:auto; bottom:30px; right:24px; width:100px; height:7px; background:#98131c; box-shadow:-116px 0 0 -2px rgba(255,255,255,.62); }
+.hero .eyebrow { padding-left:12px; border-left:3px solid #bd1824; }
+.hero .btn { box-shadow:none; border-radius:0; }
+.hero .btn:not(.ghost) { background:linear-gradient(110deg,#c51c29,#8b101a); clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%); }
+@media(max-width:700px) {
+ .hero-racing-frame { inset:126px 2px auto; height:calc((100vw - 24px) * .66625); }
+ .hero-racing-frame i { width:40px; right:12px; top:10px; height:2px; }
+ .hero-racing-frame i:nth-child(2) { right:58px; width:20px; }
+ .hero-racing-frame i:nth-child(3) { right:14px; bottom:16px; width:42px; height:4px; box-shadow:-54px 0 0 -1px rgba(255,255,255,.6); }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -820,7 +836,7 @@ html { scroll-padding-top: 124px; }
 </header>
 
 <main>
-  <div id="hero" class="hero">
+  <div id="hero" class="hero"><div class="hero-racing-frame" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="hero-photo" role="img" aria-label="Emanuele Pusceddu in gara"></div>
     <div class="wrap hero-content">
       <!-- FOTO APERTURA: sostituire il segnaposto con la foto ad alta risoluzione in azione -->
