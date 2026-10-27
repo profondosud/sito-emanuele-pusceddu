@@ -760,6 +760,28 @@ section:first-of-type { padding-top: 120px; }
 .career-next-copy h2 span { color:#e22a37; }
 .career-next-lines { position:absolute; bottom:0; left:0; width:32%; height:3px; background:#bd1c2a; transform:skewX(-28deg); box-shadow:70px -9px 0 -1px rgba(255,255,255,.4); }
 @media(max-width:700px) { .career-next { min-height:240px; margin:20px 0 24px; padding:30px 22px; align-items:flex-end; justify-content:flex-start; } .career-next-year { top:8px; left:auto; right:14px; transform:skewX(-8deg); font-size:130px; opacity:.6; } .career-next-copy { max-width:100%; } .career-next-copy h2 { font-size:2rem; } .career-next-copy .career-label { margin-bottom:8px; } }
+/* Mobile: ciascun capitolo conserva titolo, racconto e foto in un solo blocco. */
+@media(max-width:700px) {
+ .career-chapter,.career-chapter + .career-chapter { display:flex; flex-direction:column; align-items:stretch; gap:22px; padding:30px 0 28px; margin:0; }
+ .career-chapter::before { display:none; }
+ .career-chapter::after,.career-chapter:first-of-type::after { display:block; content:""; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,#c51c29 0 62px,rgba(255,255,255,.24) 62px,rgba(255,255,255,.08) 65%,transparent); }
+ .career-chapter > .career-copy { order:0; padding:0 4px; margin:0; }
+ .career-chapter > .career-photo,.career-chapter > .career-photo-group,.career-chapter > .career-stock-pair,.career-chapter > .career-return-photos { order:1; width:100%; align-self:auto; }
+ .career-chapter .career-photo-group,.career-chapter .career-stock-pair,.career-chapter .career-return-photos { display:flex; flex-direction:column; gap:18px; margin:0; padding:0; background:none; }
+ .career-chapter .career-photo,.career-reverse .career-photo,.career-junior-results .career-photo-group,.career-return-results .career-return-photos { grid-row:auto; grid-column:auto; height:auto; min-height:0; margin:0; padding:0; }
+ .career-chapter .career-photo + .career-photo { margin:0; }
+ .career-chapter .career-photo img,.career-title-photo .career-photo img { display:block; width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:auto; object-fit:contain; mask-image:none; -webkit-mask-image:none; }
+ .career-chapter .career-photo::before,.career-chapter .career-photo::after { display:none; }
+ .career-chapter .career-photo .career-frame { inset:0; border:0; background:linear-gradient(90deg,#b51c28,#b51c28) left top/56px 2px no-repeat; }
+ .career-chapter .career-frame::after { display:none; }
+ .career-season-strip { display:flex; flex-direction:column; gap:18px; margin:0 0 28px; }
+ .career-season-strip .career-photo { margin:0; padding:0; }
+ .career-season-strip img { width:100%; height:auto; max-height:none; aspect-ratio:auto; object-fit:contain; }
+ .career-copy h2 { margin-top:0; }
+ .career-label { margin-bottom:12px; }
+ .career-copy > p:last-child { margin-bottom:0; }
+ .top { background:#080809; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
