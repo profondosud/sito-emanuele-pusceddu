@@ -740,6 +740,17 @@ section:first-of-type { padding-top: 120px; }
  .career-chapter { padding-top:22px; padding-bottom:24px; }
  .career-chapter + .career-chapter { padding-top:26px; }
 }
+/* Raccordo scuro: nessuna sovrapposizione dei soggetti. */
+.career-photo-group .career-photo + .career-photo { margin-top:0; }
+.career-photo-group .career-photo + .career-photo img { -webkit-mask-image:none; mask-image:none; }
+.career-photo-group .career-photo:not(:last-child)::after { inset:0; background:linear-gradient(to bottom,transparent calc(100% - 24px),#080809 100%); }
+.career-photo-group .career-photo + .career-photo::before { content:""; position:absolute; inset:0 0 auto; height:24px; z-index:2; pointer-events:none; background:linear-gradient(to bottom,#080809,transparent); }
+@media(max-width:700px) {
+ .career-photo-group .career-photo + .career-photo { margin-top:0; }
+ .career-photo-group .career-photo + .career-photo img { -webkit-mask-image:none; mask-image:none; }
+ .career-photo-group .career-photo:not(:last-child)::after { background:linear-gradient(to bottom,transparent calc(100% - 18px),#080809 100%); }
+ .career-photo-group .career-photo + .career-photo::before { height:18px; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
