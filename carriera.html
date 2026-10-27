@@ -842,6 +842,11 @@ section:first-of-type { padding-top: 120px; }
  .career-chapter.mobile-story .career-copy > .career-photo::after { display:block; content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,#bd2030,#bd2030) left top/48px 2px no-repeat,linear-gradient(0deg,rgba(8,8,9,.4),transparent 12%); }
  .career-chapter.mobile-story .career-copy > .career-photo .career-frame,.career-chapter.mobile-story .career-copy > .career-photo figcaption { display:none; }
 }
+/* La foto singola del 2026 conserva dimensioni e inquadratura complete. */
+@media(max-width:700px) {
+ .career-chapter.mobile-story .career-copy > .career-season-lead { width:100%; padding:6px; margin-inline:0; }
+ .career-chapter.mobile-story .career-copy > .career-season-lead img,.career-chapter > .career-season-lead img { display:block; width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:auto; object-fit:contain; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
