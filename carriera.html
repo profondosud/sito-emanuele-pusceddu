@@ -876,6 +876,15 @@ section:first-of-type { padding-top: 120px; }
  .career-junior-results .career-photo-group .career-photo .career-frame { inset:0; border:0; background:linear-gradient(90deg,#b51c28,#b51c28) left top/64px 2px no-repeat,linear-gradient(90deg,transparent,rgba(255,255,255,.5)) right bottom/60% 1px no-repeat; }
  .career-junior-results .career-photo-group .career-frame::after { display:block; right:10px; bottom:7px; width:40px; height:3px; background:#b51c28; box-shadow:-52px 0 0 -1px rgba(255,255,255,.7); }
 }
+/* Ritratto del vicecampione: inquadratura verticale centrata su Emanuele e trofeo. */
+@media(min-width:701px) {
+ .career-chapter .career-title-photo { align-self:center; }
+ .career-chapter .career-title-photo .career-vicechampion { width:100%; height:auto; min-height:0; padding-bottom:20px; }
+ .career-chapter .career-title-photo .career-vicechampion img { display:block; width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:4/5; object-fit:cover; object-position:53% center; }
+}
+@media(max-width:700px) {
+ .career-chapter.mobile-story .career-copy > .career-vicechampion img { width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:4/5; object-fit:cover; object-position:53% center; }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
@@ -966,7 +975,7 @@ section:first-of-type { padding-top: 120px; }
 <p>Quel trofeo racconta molto più di una posizione in classifica: il lavoro di una squadra, la fiducia costruita negli anni e la risposta di un pilota che, dopo tante ripartenze, è tornato a giocarsi il vertice.</p></div>
         <div class="career-stock-pair career-photo-group career-title-photo">
 
-<figure class="career-photo"><img src="optimized/carriera-jangel-vicecampione.webp?v=hq2" alt="Emanuele alza il trofeo di vicecampione italiano Supersport 2023" width="1600" height="1066" loading="lazy" decoding="async"><span class="career-frame" aria-hidden="true"></span><figcaption>Vicecampione italiano: il punto più alto di un legame speciale.</figcaption></figure>
+<figure class="career-photo career-vicechampion"><img src="optimized/carriera-jangel-vicecampione.webp?v=hq2" alt="Emanuele alza il trofeo di vicecampione italiano Supersport 2023" width="1600" height="1066" loading="lazy" decoding="async"><span class="career-frame" aria-hidden="true"></span><figcaption>Vicecampione italiano: il punto più alto di un legame speciale.</figcaption></figure>
 </div>
       </article>
       <article class="career-chapter">
