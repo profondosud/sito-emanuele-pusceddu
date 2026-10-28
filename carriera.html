@@ -865,6 +865,17 @@ section:first-of-type { padding-top: 120px; }
  .career-title-photo .career-photo { height:auto; min-height:0; }
  .career-junior-results .career-junior-celebration { width:min(100%,360px); justify-self:center; }
 }
+/* Junior Cup: scatti distinti, cornici autonome e inquadrature complete. */
+@media(min-width:701px) {
+ .career-junior-results .career-photo-group { gap:24px; padding-bottom:0; background:none; }
+ .career-junior-results .career-photo-group::after { display:none; }
+ .career-junior-results .career-photo-group .career-photo { width:100%; max-width:none; padding:8px 8px 22px; margin:0; border:1px solid rgba(255,255,255,.17); background:#0b0b0d; }
+ .career-junior-results .career-photo-group .career-photo img { display:block; width:100%; height:auto; min-height:0; max-height:none; aspect-ratio:auto; object-fit:contain; }
+ .career-junior-results .career-photo-group .career-photo::before { display:none; }
+ .career-junior-results .career-photo-group .career-photo::after { display:none; }
+ .career-junior-results .career-photo-group .career-photo .career-frame { inset:0; border:0; background:linear-gradient(90deg,#b51c28,#b51c28) left top/64px 2px no-repeat,linear-gradient(90deg,transparent,rgba(255,255,255,.5)) right bottom/60% 1px no-repeat; }
+ .career-junior-results .career-photo-group .career-frame::after { display:block; right:10px; bottom:7px; width:40px; height:3px; background:#b51c28; box-shadow:-52px 0 0 -1px rgba(255,255,255,.7); }
+}
 </style>
 <link rel="stylesheet" href="footer.css?v=3">
 </head>
